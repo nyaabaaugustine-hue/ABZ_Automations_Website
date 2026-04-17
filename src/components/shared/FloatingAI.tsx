@@ -49,10 +49,10 @@ export function FloatingAI() {
   };
 
   return (
-    <div className="fixed bottom-8 right-8 z-[100] flex flex-col items-end">
+    <div className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-[100] flex flex-col items-end">
       {isOpen && (
-        <Card className="mb-4 w-[350px] sm:w-[400px] h-[500px] flex flex-col shadow-2xl border border-white/20 glass animate-in fade-in slide-in-from-bottom-8 duration-500 overflow-hidden rounded-[24px]">
-          <CardHeader className="bg-primary text-white p-4 flex flex-row items-center justify-between">
+        <Card className="mb-4 w-[calc(100vw-2.5rem)] sm:w-[400px] h-[500px] max-h-[calc(100vh-140px)] flex flex-col shadow-2xl border border-white/20 glass animate-in fade-in slide-in-from-bottom-8 duration-500 overflow-hidden rounded-[24px]">
+          <CardHeader className="bg-primary text-white p-4 flex flex-row items-center justify-between shrink-0">
             <div className="flex items-center gap-2">
               <Sparkles className="w-5 h-5 text-accent" />
               <CardTitle className="text-sm font-headline">ABZ Tech Assistant</CardTitle>
@@ -62,7 +62,7 @@ export function FloatingAI() {
             </Button>
           </CardHeader>
           
-          <CardContent className="flex-1 p-0 flex flex-col overflow-hidden">
+          <CardContent className="flex-1 p-0 flex flex-col overflow-hidden bg-background/50">
             <ScrollArea className="flex-1 p-4">
               <div className="space-y-4">
                 {messages.map((m, i) => (
@@ -88,7 +88,7 @@ export function FloatingAI() {
               </div>
             </ScrollArea>
             
-            <form onSubmit={handleSubmit} className="p-4 bg-white border-t border-border flex gap-2">
+            <form onSubmit={handleSubmit} className="p-4 bg-white border-t border-border flex gap-2 shrink-0">
               <Input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
@@ -107,15 +107,15 @@ export function FloatingAI() {
       <Button 
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          "w-16 h-16 rounded-[6%] shadow-2xl transition-all duration-500 flex items-center justify-center group",
+          "w-14 h-14 md:w-16 md:h-16 rounded-[6%] shadow-2xl transition-all duration-500 flex items-center justify-center group",
           isOpen ? "bg-accent text-accent-foreground rotate-90" : "bg-primary text-white hover:scale-110"
         )}
       >
-        {isOpen ? <X className="w-8 h-8" /> : <MessageSquare className="w-8 h-8 group-hover:scale-110 transition-transform" />}
+        {isOpen ? <X className="w-7 h-7 md:w-8 md:h-8" /> : <MessageSquare className="w-7 h-7 md:w-8 md:h-8 group-hover:scale-110 transition-transform" />}
         {!isOpen && (
-          <span className="absolute -top-2 -left-2 flex h-5 w-5">
+          <span className="absolute -top-1 -left-1 flex h-4 w-4 md:h-5 md:w-5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-5 w-5 bg-accent items-center justify-center text-[10px] font-bold text-accent-foreground">1</span>
+            <span className="relative inline-flex rounded-full h-4 w-4 md:h-5 md:w-5 bg-accent items-center justify-center text-[9px] md:text-[10px] font-bold text-accent-foreground">1</span>
           </span>
         )}
       </Button>

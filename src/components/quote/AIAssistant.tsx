@@ -62,21 +62,21 @@ export function AIAssistant() {
   };
 
   return (
-    <Card className="w-full h-[600px] flex flex-col shadow-2xl border-none rounded-3xl overflow-hidden bg-white">
-      <CardHeader className="bg-primary text-white pb-6">
+    <Card className="w-full min-h-[500px] h-[70vh] lg:h-[600px] flex flex-col shadow-2xl border-none rounded-3xl overflow-hidden bg-white">
+      <CardHeader className="bg-primary text-white pb-6 shrink-0">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center shadow-lg shadow-black/20">
             <Sparkles className="w-6 h-6" />
           </div>
           <div>
-            <CardTitle className="font-headline">AI Quote Assistant</CardTitle>
-            <CardDescription className="text-white/60">Crafting your perfect solution together</CardDescription>
+            <CardTitle className="font-headline text-lg md:text-xl">AI Quote Assistant</CardTitle>
+            <CardDescription className="text-white/60 text-xs md:text-sm">Crafting your perfect solution together</CardDescription>
           </div>
         </div>
       </CardHeader>
       
       <CardContent className="flex-1 p-0 flex flex-col overflow-hidden bg-background/50">
-        <ScrollArea className="flex-1 p-6">
+        <ScrollArea className="flex-1 p-4 md:p-6">
           <div className="space-y-6">
             {messages.map((m, i) => (
               <div
@@ -88,7 +88,7 @@ export function AIAssistant() {
                 }`}>
                   {m.role === "user" ? <User className="w-4 h-4" /> : <Bot className="w-4 h-4" />}
                 </div>
-                <div className={`max-w-[80%] p-4 rounded-2xl shadow-sm ${
+                <div className={`max-w-[85%] p-4 rounded-2xl shadow-sm ${
                   m.role === "user" 
                   ? "bg-accent text-white rounded-tr-none" 
                   : "bg-white text-foreground rounded-tl-none border border-border"
@@ -127,7 +127,7 @@ export function AIAssistant() {
         </ScrollArea>
 
         {!isComplete && (
-          <form onSubmit={handleSubmit} className="p-4 bg-white border-t border-border flex gap-2">
+          <form onSubmit={handleSubmit} className="p-4 bg-white border-t border-border flex gap-2 shrink-0">
             <Input
               value={input}
               onChange={(e) => setInput(e.target.value)}
