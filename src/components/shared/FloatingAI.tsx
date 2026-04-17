@@ -52,8 +52,9 @@ export function FloatingAI() {
   return (
     <div className={cn(
       "fixed right-6 md:right-10 z-[100] flex flex-col items-end transition-all duration-500",
-      // Positioned significantly higher to clear the massive WhatsApp button
-      "bottom-[310px] md:bottom-[420px]"
+      // Stack nicely above the massive WhatsApp button
+      // Offset calculated based on the WhatsApp button's responsive heights
+      "bottom-[220px] sm:bottom-[280px] md:bottom-[380px]"
     )}>
       {isOpen && (
         <Card className="mb-4 w-[calc(100vw-3rem)] sm:w-[400px] h-[500px] max-h-[calc(100vh-450px)] flex flex-col shadow-2xl border border-white/20 glass animate-in fade-in slide-in-from-bottom-8 duration-500 overflow-hidden rounded-[24px]">
