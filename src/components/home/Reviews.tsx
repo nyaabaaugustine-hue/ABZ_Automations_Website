@@ -3,7 +3,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { Star, Quote, CheckCircle2 } from "lucide-react";
+import { Star, Quote, CheckCircle2, Building2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -42,26 +42,35 @@ const reviews = [
   }
 ];
 
+const partners = [
+  { name: "KNUST", logo: "KNUST" },
+  { name: "GWCL", logo: "GWCL" },
+  { name: "MOFA", logo: "MOFA" },
+  { name: "GSA", logo: "GSA" },
+  { name: "TIDD", logo: "TIDD" },
+];
+
 export function Reviews() {
   return (
-    <section className="py-24 bg-background relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-1/2 left-0 w-full h-1/2 bg-white/50 -skew-y-3 pointer-events-none"></div>
+    <section className="py-32 bg-background relative overflow-hidden">
+      {/* Background Soft Gradients */}
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] translate-x-1/2 translate-y-1/2"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-20 space-y-6">
-          <Badge className="bg-accent/10 text-accent border-none px-4 py-1 font-bold uppercase tracking-widest text-[10px]">
+        <div className="text-center max-w-3xl mx-auto mb-24 space-y-6">
+          <Badge className="bg-primary/10 text-primary border-none px-5 py-2 font-bold uppercase tracking-[0.3em] text-[11px] rounded-full">
             Social Proof
           </Badge>
-          <h2 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold">
+          <h2 className="font-headline text-5xl md:text-6xl font-bold leading-tight">
             Trusted by <span className="text-primary">Industry Leaders</span>
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed">
-            Don't just take our word for it. See how ABZ Automations is making a real difference for farms, homes, and businesses across the country.
+          <p className="text-xl text-muted-foreground leading-relaxed">
+            See how ABZ Automations is making a real difference for farms, homes, and businesses across the country.
           </p>
         </div>
 
-        <div className="px-12">
+        <div className="relative px-4 md:px-12">
           <Carousel
             opts={{
               align: "start",
@@ -69,39 +78,41 @@ export function Reviews() {
             }}
             className="w-full"
           >
-            <CarouselContent>
+            <CarouselContent className="-ml-4">
               {reviews.map((review) => (
-                <CarouselItem key={review.id} className="md:basis-1/2 lg:basis-1/3 p-4">
-                  <Card className="h-full border-none shadow-xl rounded-[32px] overflow-hidden bg-white group hover:-translate-y-2 transition-all duration-500">
+                <CarouselItem key={review.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card className="h-full border-none shadow-[0_32px_64px_-12px_rgba(0,0,0,0.06)] rounded-[40px] overflow-hidden bg-white group hover:-translate-y-3 transition-all duration-700 hover:shadow-[0_48px_80px_-16px_rgba(31,114,173,0.12)]">
                     <CardContent className="p-10 flex flex-col h-full">
-                      <div className="flex items-center gap-1 mb-6">
+                      <div className="flex items-center gap-1 mb-8">
                         {[...Array(review.rating)].map((_, i) => (
                           <Star key={i} className="w-5 h-5 fill-accent text-accent" />
                         ))}
                       </div>
 
-                      <div className="relative mb-8">
-                        <Quote className="absolute -top-4 -left-4 w-12 h-12 text-primary/10 -z-10" />
-                        <p className="text-foreground/80 leading-relaxed italic relative z-10">
+                      <div className="relative mb-10 flex-grow">
+                        <Quote className="absolute -top-6 -left-6 w-16 h-16 text-primary/5 -z-10" />
+                        <p className="text-foreground/80 text-lg leading-relaxed italic relative z-10">
                           "{review.text}"
                         </p>
                       </div>
 
-                      <div className="mt-auto pt-8 border-t border-border/50 flex items-center gap-4">
-                        <div className="relative w-14 h-14 shrink-0">
+                      <div className="mt-auto pt-10 border-t border-border/50 flex items-center gap-5">
+                        <div className="relative w-16 h-16 shrink-0 group-hover:scale-110 transition-transform duration-500">
                           <Image
                             src={review.avatar}
                             alt={review.name}
                             fill
                             className="object-cover rounded-2xl"
                           />
+                          <div className="absolute -bottom-2 -right-2 w-7 h-7 bg-accent rounded-full border-4 border-white flex items-center justify-center text-white shadow-lg">
+                            <CheckCircle2 className="w-3.5 h-3.5" />
+                          </div>
                         </div>
-                        <div>
-                          <h4 className="font-bold text-lg flex items-center gap-2">
+                        <div className="space-y-1">
+                          <h4 className="font-bold text-xl text-foreground">
                             {review.name}
-                            <CheckCircle2 className="w-4 h-4 text-accent" />
                           </h4>
-                          <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider">
+                          <p className="text-xs text-muted-foreground font-bold uppercase tracking-widest leading-none">
                             {review.role}
                           </p>
                         </div>
@@ -111,24 +122,38 @@ export function Reviews() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="hidden md:block">
-              <CarouselPrevious className="h-12 w-12 rounded-2xl border-primary/20 text-primary hover:bg-primary hover:text-white transition-all -left-16" />
-              <CarouselNext className="h-12 w-12 rounded-2xl border-primary/20 text-primary hover:bg-primary hover:text-white transition-all -right-16" />
+            
+            <div className="flex justify-center md:block mt-12 md:mt-0">
+              <CarouselPrevious className="static md:absolute h-14 w-14 rounded-2xl border-primary/20 text-primary hover:bg-primary hover:text-white transition-all md:-left-16 shadow-lg shadow-primary/5" />
+              <CarouselNext className="static md:absolute h-14 w-14 rounded-2xl border-primary/20 text-primary hover:bg-primary hover:text-white transition-all md:-right-16 ml-4 md:ml-0 shadow-lg shadow-primary/5" />
             </div>
           </Carousel>
         </div>
 
-        {/* Trust Logos */}
-        <div className="mt-32 pt-20 border-t border-border/50">
-          <p className="text-center text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-12">
-            In Partnership With & Trusted By
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale hover:grayscale-0 transition-all">
-            <div className="text-2xl font-black tracking-tighter">KNUST</div>
-            <div className="text-2xl font-black tracking-tighter">GWCL</div>
-            <div className="text-2xl font-black tracking-tighter">MOFA</div>
-            <div className="text-2xl font-black tracking-tighter">GSA</div>
-            <div className="text-2xl font-black tracking-tighter">TIDD</div>
+        {/* Premium Partner Section */}
+        <div className="mt-40">
+          <div className="flex items-center gap-8 mb-16 overflow-hidden whitespace-nowrap">
+            <div className="h-px flex-grow bg-gradient-to-r from-transparent to-border/50"></div>
+            <p className="text-center text-xs font-bold uppercase tracking-[0.4em] text-muted-foreground/60">
+              In Partnership With & Trusted By
+            </p>
+            <div className="h-px flex-grow bg-gradient-to-l from-transparent to-border/50"></div>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 lg:gap-20 items-center justify-items-center opacity-40 hover:opacity-100 transition-opacity duration-700 grayscale hover:grayscale-0">
+            {partners.map((partner) => (
+              <div 
+                key={partner.name} 
+                className="group flex flex-col items-center gap-4 transition-all duration-500 hover:scale-110"
+              >
+                <div className="w-16 h-16 rounded-2xl bg-secondary/50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-500 shadow-sm border border-border/20">
+                  <Building2 className="w-8 h-8" />
+                </div>
+                <span className="text-2xl font-black tracking-tighter text-foreground/80 group-hover:text-primary transition-colors">
+                  {partner.name}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
