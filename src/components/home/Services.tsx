@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from "react";
@@ -14,7 +13,6 @@ import {
   Activity,
   Waves
 } from "lucide-react";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Badge } from "@/components/ui/badge";
 
 const services = [
@@ -23,7 +21,7 @@ const services = [
     title: "Pump Installation",
     description: "Industrial-grade programmable controllers that eliminate tank overflow and dry-run hazards.",
     icon: Settings,
-    image: PlaceHolderImages.find(img => img.id === "service-pump")?.imageUrl || "https://picsum.photos/seed/pump/600/400",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422275/abz_42_v8oxdy.jpg",
     stat: "99% Efficiency"
   },
   {
@@ -31,7 +29,7 @@ const services = [
     title: "Sanitization",
     description: "Advanced chemical-free filtration and cleaning to ensure hospital-grade water quality.",
     icon: Droplets,
-    image: PlaceHolderImages.find(img => img.id === "service-tank")?.imageUrl || "https://picsum.photos/seed/tank/600/400",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776424323/mn1_toifu3.jpg",
     stat: "Zero Algae"
   },
   {
@@ -39,7 +37,7 @@ const services = [
     title: "R/O Automation",
     description: "Smart feedback loops for reverse osmosis systems to prevent membrane rupture.",
     icon: FlaskConical,
-    image: PlaceHolderImages.find(img => img.id === "service-ro")?.imageUrl || "https://picsum.photos/seed/ro-auto/600/400",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422279/abz_68_i0ndl4.jpg",
     stat: "Smart Monitoring"
   },
   {
@@ -47,7 +45,7 @@ const services = [
     title: "Pressure Logic",
     description: "VFD-driven booster systems that maintain precise pressure across multi-story buildings.",
     icon: Activity,
-    image: PlaceHolderImages.find(img => img.id === "service-booster")?.imageUrl || "https://picsum.photos/seed/booster/600/400",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422275/abz_35_fxfkg4.jpg",
     stat: "Constant Flow"
   },
   {
@@ -55,7 +53,7 @@ const services = [
     title: "Technical Support",
     description: "Certified engineering support for complex residential and industrial plumbing architectures.",
     icon: Wrench,
-    image: PlaceHolderImages.find(img => img.id === "service-plumbing")?.imageUrl || "https://picsum.photos/seed/plumbing/600/400",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776425339/erq_ksrxax.jpg",
     stat: "24/7 Response"
   },
   {
@@ -63,7 +61,7 @@ const services = [
     title: "Bespoke R&D",
     description: "Custom hardware and software development for unique agricultural or industrial challenges.",
     icon: Waves,
-    image: PlaceHolderImages.find(img => img.id === "service-custom")?.imageUrl || "https://picsum.photos/seed/custom-water/600/400",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776256939/abz_64_jw9ixn.jpg",
     stat: "Custom Logic"
   }
 ];
