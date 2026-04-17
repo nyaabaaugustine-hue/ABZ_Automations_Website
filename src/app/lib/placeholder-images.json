@@ -81,21 +81,27 @@
     },
     {
       "id": "team-member-1",
-      "description": "ABZ Automations Founder",
-      "imageUrl": "https://picsum.photos/seed/team1/400/400",
+      "description": "Abdullah Mohammed Zainudeen - CEO",
+      "imageUrl": "https://picsum.photos/seed/team-abz-1/600/800",
       "imageHint": "professional man"
     },
     {
       "id": "team-member-2",
-      "description": "Lead Engineer",
-      "imageUrl": "https://picsum.photos/seed/team2/400/400",
-      "imageHint": "engineer woman"
+      "description": "Mohammed Hardi Abdul Baaki - COO",
+      "imageUrl": "https://picsum.photos/seed/team-abz-2/600/800",
+      "imageHint": "professional man"
     },
     {
       "id": "team-member-3",
-      "description": "Operations Manager",
-      "imageUrl": "https://picsum.photos/seed/team3/400/400",
-      "imageHint": "business professional"
+      "description": "Yakubu Bunyamin - CTO",
+      "imageUrl": "https://picsum.photos/seed/team-abz-3/600/800",
+      "imageHint": "professional man"
+    },
+    {
+      "id": "team-member-4",
+      "description": "Abdul Rahim Mettle Nii Okai - CMO",
+      "imageUrl": "https://picsum.photos/seed/team-abz-4/600/800",
+      "imageHint": "professional man"
     },
     {
       "id": "news-1",
