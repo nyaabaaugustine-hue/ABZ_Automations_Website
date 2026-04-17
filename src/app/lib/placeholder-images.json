@@ -3,20 +3,20 @@
   "placeholderImages": [
     {
       "id": "hero-water-1",
-      "description": "Smart water management system visualization",
-      "imageUrl": "https://picsum.photos/seed/abz-hero1/1200/800",
+      "description": "Premium water management system visualization",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776257017/vvv_jxssbr.jpg",
       "imageHint": "water automation"
     },
     {
       "id": "hero-water-2",
       "description": "Advanced irrigation controller in a farm",
-      "imageUrl": "https://picsum.photos/seed/abz-hero2/1200/800",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776230139/1_2_l2sh9g.jpg",
       "imageHint": "smart irrigation"
     },
     {
       "id": "hero-water-3",
       "description": "Industrial water purification plant",
-      "imageUrl": "https://picsum.photos/seed/abz-hero3/1200/800",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776230139/1_1_trzrxy.jpg",
       "imageHint": "industrial water"
     },
     {

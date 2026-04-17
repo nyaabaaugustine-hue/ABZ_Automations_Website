@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -20,7 +21,7 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -30,12 +31,14 @@ export function Navbar() {
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-6 py-4",
-        scrolled ? "bg-white/80 backdrop-blur-xl border-b shadow-sm py-3" : "bg-transparent py-6"
+        scrolled 
+          ? "bg-white/90 backdrop-blur-2xl border-b border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.1)] py-3" 
+          : "bg-transparent py-6"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-11 h-11 rounded-2xl bg-primary flex items-center justify-center text-white shadow-xl shadow-primary/20 group-hover:scale-105 transition-transform duration-300">
+          <div className="w-11 h-11 rounded-2xl bg-primary flex items-center justify-center text-white shadow-xl shadow-primary/30 group-hover:scale-105 transition-transform duration-300">
             <Droplets className="w-6 h-6" />
           </div>
           <span className={cn(
@@ -53,16 +56,16 @@ export function Navbar() {
               key={item.name}
               href={item.href}
               className={cn(
-                "text-sm font-semibold transition-all duration-300 hover:scale-105",
+                "text-sm font-bold transition-all duration-300 hover:scale-105",
                 scrolled 
                   ? "text-muted-foreground hover:text-primary" 
-                  : "text-white/80 hover:text-white"
+                  : "text-white/90 hover:text-white"
               )}
             >
               {item.name}
             </Link>
           ))}
-          <Button asChild className="bg-primary hover:bg-primary/90 font-bold shadow-lg shadow-primary/20 px-8 h-12 rounded-2xl">
+          <Button asChild className="bg-primary hover:bg-primary/90 font-bold shadow-lg shadow-primary/30 px-8 h-12 rounded-2xl transition-all hover:-translate-y-1">
             <Link href="/quote">Get a Quote</Link>
           </Button>
         </div>
@@ -71,7 +74,7 @@ export function Navbar() {
         <button
           className={cn(
             "md:hidden p-2 rounded-xl transition-colors",
-            scrolled || isOpen ? "text-foreground bg-secondary/50" : "text-white bg-white/10 backdrop-blur-md"
+            scrolled || isOpen ? "text-foreground bg-secondary/80 backdrop-blur-md" : "text-white bg-white/20 backdrop-blur-md"
           )}
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -86,23 +89,23 @@ export function Navbar() {
           isOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
         )}
       >
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-8">
           {navItems.map((item, idx) => (
             <Link
               key={item.name}
               href={item.href}
               onClick={() => setIsOpen(false)}
               className={cn(
-                "text-5xl font-headline font-bold text-foreground flex items-center justify-between group",
+                "text-4xl font-headline font-bold text-foreground flex items-center justify-between group",
                 isOpen ? "animate-in fade-in slide-in-from-right-10 duration-500" : ""
               )}
               style={{ animationDelay: `${idx * 100}ms` }}
             >
               {item.name}
-              <ChevronRight className="text-primary group-hover:translate-x-3 transition-transform duration-300 w-10 h-10" />
+              <ChevronRight className="text-primary group-hover:translate-x-3 transition-transform duration-300 w-8 h-8" />
             </Link>
           ))}
-          <Button asChild size="lg" className="w-full h-20 text-2xl mt-12 rounded-[2.5rem] shadow-2xl shadow-primary/20" onClick={() => setIsOpen(false)}>
+          <Button asChild size="lg" className="w-full h-16 text-xl mt-8 rounded-[2rem] shadow-2xl shadow-primary/30 font-bold" onClick={() => setIsOpen(false)}>
             <Link href="/quote">Get a Quote</Link>
           </Button>
         </div>
