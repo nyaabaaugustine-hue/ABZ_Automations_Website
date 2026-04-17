@@ -44,6 +44,12 @@
       "imageHint": "professional man"
     },
     {
+      "id": "brochure-bg",
+      "description": "ABZ Automations Technical Catalog Background",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422246/abz_3_hp78qi.jpg",
+      "imageHint": "technical documentation"
+    },
+    {
       "id": "product-autox-pro",
       "description": "AutoX Pro flagship water control device",
       "imageUrl": "https://picsum.photos/seed/autoxpro/600/600",

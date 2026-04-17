@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from "react";
@@ -5,8 +6,11 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { FileDown, Sparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export function Brochure() {
+  const brochureBg = PlaceHolderImages.find(img => img.id === "brochure-bg")?.imageUrl || "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422246/abz_3_hp78qi.jpg";
+
   return (
     <section className="py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
@@ -14,11 +18,11 @@ export function Brochure() {
           {/* Background Image with Overlay */}
           <div className="absolute inset-0 z-0">
             <Image 
-              src="https://picsum.photos/seed/engineering-docs/1200/800" 
+              src={brochureBg} 
               alt="Technical Documentation Background"
               fill
               className="object-cover transition-transform duration-[10000ms] group-hover:scale-110"
-              data-ai-hint="engineering blueprints"
+              data-ai-hint="technical documentation"
             />
             <div className="absolute inset-0 bg-primary/80 backdrop-blur-[2px] mix-blend-multiply"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
