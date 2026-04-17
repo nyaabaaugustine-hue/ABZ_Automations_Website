@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 /**
  * @fileOverview A premium WhatsApp floating button using a custom image.
  * Features a beautiful slide-in animation from the right on page load.
+ * Size increased by 50% from the previous version.
  */
 
 export function WhatsAppButton() {
@@ -24,14 +25,15 @@ export function WhatsAppButton() {
     >
       <div className="relative">
         {/* Subtle glow effect on hover */}
-        <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
         
-        {/* Main Image Container - Doubled size (w-32 h-32 / w-40 h-40) */}
-        <div className="relative w-32 h-32 md:w-40 md:h-40 transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3">
+        {/* Main Image Container - Increased by 50% (w-48/h-48 on mobile, w-60/h-60 on desktop) */}
+        <div className="relative w-48 h-48 md:w-60 md:h-60 transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3">
           <Image 
             src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776428931/SUP_k4f1ab.png"
             alt="ABZ Support"
             fill
+            priority
             className="object-contain"
           />
         </div>

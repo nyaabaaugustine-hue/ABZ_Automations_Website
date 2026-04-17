@@ -14,13 +14,13 @@ import { MessageSquare, Phone, Mail, User, Info } from "lucide-react";
 
 export default function QuotePage() {
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="min-h-screen flex flex-col bg-background overflow-x-hidden">
       <Navbar />
-      <main className="flex-grow pt-24 md:pt-32 pb-16 px-6">
+      <main className="flex-grow pt-24 md:pt-32 pb-16 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-12 text-center max-w-2xl mx-auto">
-            <h1 className="font-headline text-4xl md:text-6xl font-bold mb-4">Request a <span className="text-primary">Quote</span></h1>
-            <p className="text-muted-foreground text-base md:text-xl">
+          <div className="mb-12 text-center max-w-2xl mx-auto px-4">
+            <h1 className="font-headline text-3xl md:text-6xl font-bold mb-4">Request a <span className="text-primary">Quote</span></h1>
+            <p className="text-muted-foreground text-sm md:text-xl">
               Tell us about your project. Our experts will review your details and provide a comprehensive estimate within 24 hours.
             </p>
           </div>
@@ -33,17 +33,17 @@ export default function QuotePage() {
                   <MessageSquare className="w-6 h-6" />
                 </div>
                 <div>
-                  <h2 className="text-xl md:text-2xl font-headline font-bold">Structured Request</h2>
-                  <p className="text-xs md:text-sm text-muted-foreground">Quick and straightforward</p>
+                  <h2 className="text-lg md:text-2xl font-headline font-bold">Structured Request</h2>
+                  <p className="text-[10px] md:text-sm text-muted-foreground uppercase tracking-wider">Quick and straightforward</p>
                 </div>
               </div>
               
-              <Card className="border-none shadow-[0_32px_64px_-12px_rgba(0,0,0,0.08)] rounded-[6%] overflow-hidden bg-white">
-                <CardHeader className="p-6 md:p-8 pb-2">
+              <Card className="border-none shadow-[0_32px_64px_-12px_rgba(0,0,0,0.08)] rounded-[6%] overflow-hidden bg-white mx-2 sm:mx-0">
+                <CardHeader className="p-5 md:p-8 pb-2">
                   <CardTitle className="text-xl md:text-2xl font-headline font-bold">Project Details</CardTitle>
                   <CardDescription className="text-xs md:text-sm">We'll use these details to prepare your custom estimate.</CardDescription>
                 </CardHeader>
-                <CardContent className="p-6 md:p-8 space-y-6 md:space-y-8">
+                <CardContent className="p-5 md:p-8 space-y-6 md:space-y-8">
                   <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="firstName" className="font-bold flex items-center gap-2 text-xs md:text-sm">
@@ -100,7 +100,7 @@ export default function QuotePage() {
                     <Textarea 
                       id="notes" 
                       placeholder="Describe your current setup or needs..." 
-                      className="rounded-[6%] min-h-[140px] border-border/50 focus:border-primary transition-all p-4 text-sm" 
+                      className="rounded-[6%] min-h-[120px] md:min-h-[140px] border-border/50 focus:border-primary transition-all p-4 text-sm" 
                     />
                   </div>
 
@@ -108,11 +108,11 @@ export default function QuotePage() {
                 </CardContent>
               </Card>
 
-              <div className="bg-secondary/30 border border-border/50 p-5 rounded-[6%] flex gap-4 items-start">
+              <div className="bg-secondary/30 border border-border/50 p-5 rounded-[6%] flex gap-4 items-start mx-2 sm:mx-0">
                  <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm">
                     <Info className="w-4 h-4 text-primary" />
                  </div>
-                 <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                 <p className="text-[11px] md:text-sm text-muted-foreground leading-relaxed">
                    Our engineers are available for site visits across Kumasi and the Ashanti region. For immediate technical questions, use the floating assistant.
                  </p>
               </div>

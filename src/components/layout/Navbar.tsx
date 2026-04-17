@@ -41,24 +41,25 @@ export function Navbar() {
     <>
       <nav
         className={cn(
-          "fixed top-0 left-0 right-0 z-[60] transition-all duration-500 px-6 py-4",
+          "fixed top-0 left-0 right-0 z-[60] transition-all duration-500 px-4 md:px-6 py-4",
           scrolled || isOpen
             ? "bg-white/95 backdrop-blur-2xl border-b border-border/50 shadow-sm py-3" 
             : "bg-transparent py-6"
         )}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 group" onClick={() => setIsOpen(false)}>
-            <div className="w-10 h-10 md:w-11 md:h-11 rounded-[6%] bg-white relative overflow-hidden shadow-xl shadow-primary/30 group-hover:scale-105 transition-transform duration-300">
+          <Link href="/" className="flex items-center gap-2 md:gap-3 group" onClick={() => setIsOpen(false)}>
+            <div className="w-9 h-9 md:w-11 md:h-11 rounded-[6%] bg-white relative overflow-hidden shadow-xl shadow-primary/30 group-hover:scale-105 transition-transform duration-300">
               <Image
                 src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776230467/image_j8ruov.webp"
                 alt="ABZ Automations Logo"
                 fill
+                priority
                 className="object-cover"
               />
             </div>
             <span className={cn(
-              "font-headline font-bold text-xl md:text-2xl tracking-tight transition-colors duration-300",
+              "font-headline font-bold text-lg md:text-2xl tracking-tight transition-colors duration-300",
               scrolled || isOpen ? "text-foreground" : "text-white"
             )}>
               ABZ<span className="text-primary">Automations</span>
@@ -114,7 +115,7 @@ export function Navbar() {
               href={item.href}
               onClick={() => setIsOpen(false)}
               className={cn(
-                "text-3xl font-headline font-bold text-foreground flex items-center justify-between group py-2 border-b border-border/50",
+                "text-2xl md:text-3xl font-headline font-bold text-foreground flex items-center justify-between group py-2 border-b border-border/50",
                 isOpen ? "animate-in fade-in slide-in-from-right-10" : ""
               )}
               style={{ animationDelay: `${idx * 100}ms` }}
@@ -128,10 +129,7 @@ export function Navbar() {
           </Button>
           
           <div className="mt-auto pb-10 flex flex-col items-center gap-4 text-center">
-            <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Follow Us</p>
-            <div className="flex gap-4">
-               {/* Placeholder for social icons if needed */}
-            </div>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Precision Engineering Ghana</p>
           </div>
         </div>
       </div>

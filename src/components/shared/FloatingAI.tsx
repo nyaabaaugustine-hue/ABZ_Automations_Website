@@ -50,9 +50,13 @@ export function FloatingAI() {
   };
 
   return (
-    <div className="fixed bottom-[160px] right-6 md:bottom-[210px] md:right-10 z-[100] flex flex-col items-end">
+    <div className={cn(
+      "fixed right-6 md:right-10 z-[100] flex flex-col items-end transition-all duration-500",
+      // Positioned higher to clear the new massive WhatsApp button
+      "bottom-[220px] md:bottom-[280px]"
+    )}>
       {isOpen && (
-        <Card className="mb-4 w-[calc(100vw-2.5rem)] sm:w-[400px] h-[550px] max-h-[calc(100vh-250px)] flex flex-col shadow-2xl border border-white/20 glass animate-in fade-in slide-in-from-bottom-8 duration-500 overflow-hidden rounded-[24px]">
+        <Card className="mb-4 w-[calc(100vw-3rem)] sm:w-[400px] h-[500px] max-h-[calc(100vh-350px)] flex flex-col shadow-2xl border border-white/20 glass animate-in fade-in slide-in-from-bottom-8 duration-500 overflow-hidden rounded-[24px]">
           <CardHeader className="bg-primary text-white p-4 flex flex-row items-center justify-between shrink-0">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-lg bg-white relative overflow-hidden shadow-lg border border-white/20">
