@@ -2,6 +2,7 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { FloatingAI } from '@/components/shared/FloatingAI';
+import { WhatsAppButton } from '@/components/shared/WhatsAppButton';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         {children}
+        <WhatsAppButton />
         <FloatingAI />
         <Toaster />
       </body>
