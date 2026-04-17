@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from "react";
@@ -10,25 +11,25 @@ const team = [
   {
     name: "Abdullah Mohammed Zainudeen",
     role: "CEO / Lead Engineer",
-    image: PlaceHolderImages.find(img => img.id === "team-member-1")?.imageUrl || "https://picsum.photos/seed/team-abz-1/600/800",
+    image: PlaceHolderImages.find(img => img.id === "team-member-1")?.imageUrl || "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776230143/1_4_sbjq8z.jpg",
     socials: { linkedin: "#", twitter: "#", mail: "info@abzautomations.com" }
   },
   {
     name: "Mohammed Hardi Abdul Baaki",
     role: "Chief Operations Officer (COO)",
-    image: PlaceHolderImages.find(img => img.id === "team-member-2")?.imageUrl || "https://picsum.photos/seed/team-abz-2/600/800",
+    image: PlaceHolderImages.find(img => img.id === "team-member-2")?.imageUrl || "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776230139/1_1_mkjpox.jpg",
     socials: { linkedin: "#", twitter: "#", mail: "info@abzautomations.com" }
   },
   {
     name: "Yakubu Bunyamin",
     role: "Chief Technology Officer (CTO)",
-    image: PlaceHolderImages.find(img => img.id === "team-member-3")?.imageUrl || "https://picsum.photos/seed/team-abz-3/600/800",
+    image: PlaceHolderImages.find(img => img.id === "team-member-3")?.imageUrl || "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776230139/1_2_jjlnjh.jpg",
     socials: { linkedin: "#", twitter: "#", mail: "info@abzautomations.com" }
   },
   {
     name: "Abdul Rahim Mettle Nii Okai",
     role: "Chief Marketing Officer (CMO)",
-    image: PlaceHolderImages.find(img => img.id === "team-member-4")?.imageUrl || "https://picsum.photos/seed/team-abz-4/600/800",
+    image: PlaceHolderImages.find(img => img.id === "team-member-4")?.imageUrl || "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776230139/1_3_cwsqrr.jpg",
     socials: { linkedin: "#", twitter: "#", mail: "info@abzautomations.com" }
   }
 ];

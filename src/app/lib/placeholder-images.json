@@ -20,6 +20,30 @@
       "imageHint": "industrial water"
     },
     {
+      "id": "team-member-1",
+      "description": "Abdullah Mohammed Zainudeen - CEO",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776230143/1_4_sbjq8z.jpg",
+      "imageHint": "professional man"
+    },
+    {
+      "id": "team-member-2",
+      "description": "Mohammed Hardi Abdul Baaki - COO",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776230139/1_1_mkjpox.jpg",
+      "imageHint": "professional man"
+    },
+    {
+      "id": "team-member-3",
+      "description": "Yakubu Bunyamin - CTO",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776230139/1_2_jjlnjh.jpg",
+      "imageHint": "professional man"
+    },
+    {
+      "id": "team-member-4",
+      "description": "Abdul Rahim Mettle Nii Okai - CMO",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776230139/1_3_cwsqrr.jpg",
+      "imageHint": "professional man"
+    },
+    {
       "id": "product-autox-pro",
       "description": "AutoX Pro flagship water control device",
       "imageUrl": "https://picsum.photos/seed/autoxpro/600/600",
@@ -78,30 +102,6 @@
       "description": "Custom engineering water solution",
       "imageUrl": "https://picsum.photos/seed/custom-water/800/600",
       "imageHint": "engineering water"
-    },
-    {
-      "id": "team-member-1",
-      "description": "Abdullah Mohammed Zainudeen - CEO",
-      "imageUrl": "https://picsum.photos/seed/team-abz-1/600/800",
-      "imageHint": "professional man"
-    },
-    {
-      "id": "team-member-2",
-      "description": "Mohammed Hardi Abdul Baaki - COO",
-      "imageUrl": "https://picsum.photos/seed/team-abz-2/600/800",
-      "imageHint": "professional man"
-    },
-    {
-      "id": "team-member-3",
-      "description": "Yakubu Bunyamin - CTO",
-      "imageUrl": "https://picsum.photos/seed/team-abz-3/600/800",
-      "imageHint": "professional man"
-    },
-    {
-      "id": "team-member-4",
-      "description": "Abdul Rahim Mettle Nii Okai - CMO",
-      "imageUrl": "https://picsum.photos/seed/team-abz-4/600/800",
-      "imageHint": "professional man"
     },
     {
       "id": "news-1",
