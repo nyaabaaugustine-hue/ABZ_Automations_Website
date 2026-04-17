@@ -3,7 +3,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { Star, Quote, CheckCircle2, Building2 } from "lucide-react";
+import { Star, Quote, CheckCircle2, Building2, Landmark, ShieldCheck, Waves } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -43,12 +43,17 @@ const reviews = [
 ];
 
 const partners = [
-  { name: "KNUST", logo: "KNUST" },
-  { name: "GWCL", logo: "GWCL" },
-  { name: "MOFA", logo: "MOFA" },
-  { name: "GSA", logo: "GSA" },
-  { name: "TIDD", logo: "TIDD" },
+  { name: "KNUST", icon: Landmark },
+  { name: "GWCL", icon: Waves },
+  { name: "MOFA", icon: Building2 },
+  { name: "GSA", icon: ShieldCheck },
+  { name: "TIDD", icon: Building2 },
+  { name: "ABZ CORP", icon: Landmark },
+  { name: "WATER GH", icon: Waves },
 ];
+
+// Duplicate partners for seamless scroll
+const scrollingPartners = [...partners, ...partners, ...partners];
 
 export function Reviews() {
   return (
@@ -130,30 +135,36 @@ export function Reviews() {
           </Carousel>
         </div>
 
-        {/* Premium Partner Section */}
+        {/* Premium Partner Scrolling Section */}
         <div className="mt-40">
           <div className="flex items-center gap-8 mb-16 overflow-hidden whitespace-nowrap">
             <div className="h-px flex-grow bg-gradient-to-r from-transparent to-border/50"></div>
             <p className="text-center text-xs font-bold uppercase tracking-[0.4em] text-muted-foreground/60">
-              In Partnership With & Trusted By
+              Institutional Partners & Affiliations
             </p>
             <div className="h-px flex-grow bg-gradient-to-l from-transparent to-border/50"></div>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 lg:gap-20 items-center justify-items-center opacity-40 hover:opacity-100 transition-opacity duration-700 grayscale hover:grayscale-0">
-            {partners.map((partner) => (
-              <div 
-                key={partner.name} 
-                className="group flex flex-col items-center gap-4 transition-all duration-500 hover:scale-110"
-              >
-                <div className="w-16 h-16 rounded-2xl bg-secondary/50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-500 shadow-sm border border-border/20">
-                  <Building2 className="w-8 h-8" />
-                </div>
-                <span className="text-2xl font-black tracking-tighter text-foreground/80 group-hover:text-primary transition-colors">
-                  {partner.name}
-                </span>
-              </div>
-            ))}
+          <div className="relative overflow-hidden w-full">
+             <div className="flex animate-ticker-ltr hover:[animation-play-state:paused] items-center gap-16 py-4">
+               {scrollingPartners.map((partner, idx) => (
+                 <div 
+                  key={`${partner.name}-${idx}`}
+                  className="group flex flex-col items-center gap-3 transition-all duration-500 hover:scale-110 min-w-[150px]"
+                 >
+                   <div className="w-16 h-16 rounded-3xl bg-white flex items-center justify-center text-muted-foreground group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm border border-border/20 group-hover:shadow-xl group-hover:shadow-primary/20">
+                     <partner.icon className="w-8 h-8" />
+                   </div>
+                   <span className="text-xl font-black tracking-tighter text-muted-foreground/60 group-hover:text-primary transition-colors uppercase">
+                     {partner.name}
+                   </span>
+                 </div>
+               ))}
+             </div>
+             
+             {/* Fade masks for smooth edges */}
+             <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-background to-transparent z-10"></div>
+             <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-background to-transparent z-10"></div>
           </div>
         </div>
       </div>
