@@ -2,16 +2,46 @@
 {
   "placeholderImages": [
     {
-      "id": "hero-water-automation",
+      "id": "hero-water-1",
       "description": "Smart water management system visualization",
-      "imageUrl": "https://picsum.photos/seed/abz-hero/1200/800",
+      "imageUrl": "https://picsum.photos/seed/abz-hero1/1200/800",
       "imageHint": "water automation"
     },
     {
-      "id": "product-autox",
-      "description": "AutoX flagship water control device",
-      "imageUrl": "https://picsum.photos/seed/autox/600/400",
+      "id": "hero-water-2",
+      "description": "Advanced irrigation controller in a farm",
+      "imageUrl": "https://picsum.photos/seed/abz-hero2/1200/800",
+      "imageHint": "smart irrigation"
+    },
+    {
+      "id": "hero-water-3",
+      "description": "Industrial water purification plant",
+      "imageUrl": "https://picsum.photos/seed/abz-hero3/1200/800",
+      "imageHint": "industrial water"
+    },
+    {
+      "id": "product-autox-pro",
+      "description": "AutoX Pro flagship water control device",
+      "imageUrl": "https://picsum.photos/seed/autoxpro/600/600",
       "imageHint": "tech device"
+    },
+    {
+      "id": "product-flow-sensor",
+      "description": "Smart ultrasonic flow sensor",
+      "imageUrl": "https://picsum.photos/seed/flow-sensor/600/600",
+      "imageHint": "water sensor"
+    },
+    {
+      "id": "product-pump-controller",
+      "description": "Smart pump variable frequency drive",
+      "imageUrl": "https://picsum.photos/seed/pump-ctrl/600/600",
+      "imageHint": "pump controller"
+    },
+    {
+      "id": "product-leak-detector",
+      "description": "Wireless leak detection node",
+      "imageUrl": "https://picsum.photos/seed/leak/600/600",
+      "imageHint": "leak detector"
     },
     {
       "id": "service-pump",

@@ -1,78 +1,145 @@
 
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ShieldCheck, Zap, Droplets } from "lucide-react";
+import { ArrowRight, ShieldCheck, Zap, Droplets, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { cn } from "@/lib/utils";
+
+const slides = [
+  {
+    image: PlaceHolderImages.find(img => img.id === "hero-water-1")?.imageUrl || "https://picsum.photos/seed/abz-hero1/1200/800",
+    title: "Automating Your <span class='text-primary'>Water Future</span> Today",
+    description: "Revolutionize how you manage water resources with our intelligent automation solutions. Efficiency, reliability, and precision at your fingertips.",
+    badge: "Next-Gen Water Systems"
+  },
+  {
+    image: PlaceHolderImages.find(img => img.id === "hero-water-2")?.imageUrl || "https://picsum.photos/seed/abz-hero2/1200/800",
+    title: "Smart <span class='text-accent'>Irrigation</span> for Modern Agriculture",
+    description: "Maximize crop yield while minimizing water waste. Our sensor-driven systems adapt to real-time weather and soil data.",
+    badge: "Sustainable Farming"
+  },
+  {
+    image: PlaceHolderImages.find(img => img.id === "hero-water-3")?.imageUrl || "https://picsum.photos/seed/abz-hero3/1200/800",
+    title: "Industrial Grade <span class='text-primary'>Water Control</span>",
+    description: "Reliable, scalable, and powerful solutions for factories and multi-story buildings. Monitor flow and prevent leaks remotely.",
+    badge: "Enterprise Solutions"
+  }
+];
 
 export function Hero() {
-  const heroImage = PlaceHolderImages.find(img => img.id === "hero-water-automation");
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-        <div className="z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-6">
-            <Zap className="w-3 h-3 fill-primary" />
-            Next-Gen Water Systems
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-background">
+      {/* Background Slides */}
+      <div className="absolute inset-0 z-0">
+        {slides.map((slide, index) => (
+          <div
+            key={index}
+            className={cn(
+              "absolute inset-0 transition-opacity duration-1000 ease-in-out",
+              index === currentSlide ? "opacity-100" : "opacity-0"
+            )}
+          >
+            <Image
+              src={slide.image}
+              alt="Hero background"
+              fill
+              className="object-cover brightness-[0.3] md:brightness-50"
+              priority={index === 0}
+            />
           </div>
-          <h1 className="font-headline text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 text-foreground">
-            Automating Your <span className="text-primary">Water Future</span> Today
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl leading-relaxed">
-            Revolutionize how you manage water resources with our intelligent automation solutions. Efficiency, reliability, and precision at your fingertips.
+        ))}
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10 w-full pt-20">
+        <div className="text-white">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider mb-6 border border-white/20">
+            <Zap className="w-3 h-3 text-accent fill-accent" />
+            {slides[currentSlide].badge}
+          </div>
+          
+          <h1 
+            className="font-headline text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 animate-in fade-in slide-in-from-left-8 duration-700"
+            dangerouslySetInnerHTML={{ __html: slides[currentSlide].title }}
+          />
+          
+          <p className="text-lg md:text-xl text-white/80 mb-10 max-w-xl leading-relaxed animate-in fade-in slide-in-from-left-12 duration-1000 delay-200">
+            {slides[currentSlide].description}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button asChild size="lg" className="h-14 px-8 text-lg font-bold group">
+          
+          <div className="flex flex-col sm:flex-row gap-4 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500">
+            <Button asChild size="lg" className="h-14 px-8 text-lg font-bold group bg-primary hover:bg-primary/90">
               <Link href="/quote" className="flex items-center gap-2">
                 Start Your Quote
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="h-14 px-8 text-lg font-bold">
-              <Link href="#products">Explore Products</Link>
+            <Button asChild variant="outline" size="lg" className="h-14 px-8 text-lg font-bold bg-white/10 backdrop-blur-sm text-white border-white/20 hover:bg-white/20">
+              <Link href="/products">Explore Shop</Link>
             </Button>
           </div>
           
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-6 opacity-80">
+          <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-6 opacity-60">
             <div className="flex items-center gap-2 text-sm font-medium">
               <ShieldCheck className="text-accent w-5 h-5" />
               <span>Certified Installations</span>
             </div>
             <div className="flex items-center gap-2 text-sm font-medium">
-              <Droplets className="text-primary w-5 h-5" />
+              <Droplets className="text-primary-foreground w-5 h-5" />
               <span>99% Efficiency</span>
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="relative">
-          <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-square lg:aspect-auto lg:h-[600px] group">
-            <Image
-              src={heroImage?.imageUrl || "https://picsum.photos/seed/abz-hero/1200/800"}
-              alt="ABZ Automations Water Systems"
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-700"
-              data-ai-hint="water automation"
-            />
-          </div>
-          <div className="absolute -top-6 -right-6 w-32 h-32 bg-accent/20 rounded-full blur-2xl z-0 animate-pulse"></div>
-          <div className="absolute -bottom-6 -left-6 w-48 h-48 bg-primary/20 rounded-full blur-3xl z-0"></div>
-          
-          {/* Floating Card UI Element */}
-          <div className="absolute bottom-10 -left-6 md:-left-12 bg-white p-4 rounded-2xl shadow-xl z-20 hidden sm:flex items-center gap-4 animate-bounce">
-            <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white">
-              <Zap className="w-6 h-6" />
-            </div>
-            <div>
-              <p className="text-xs text-muted-foreground font-bold uppercase tracking-tighter">Real-time status</p>
-              <p className="text-sm font-bold text-foreground">AutoX Optimized</p>
-            </div>
-          </div>
-        </div>
+      {/* Slider Controls */}
+      <div className="absolute bottom-10 right-10 z-20 flex gap-3">
+        <Button 
+          variant="outline" 
+          size="icon" 
+          onClick={prevSlide}
+          className="rounded-full bg-white/5 border-white/10 text-white hover:bg-white/20 h-12 w-12"
+        >
+          <ChevronLeft className="w-6 h-6" />
+        </Button>
+        <Button 
+          variant="outline" 
+          size="icon" 
+          onClick={nextSlide}
+          className="rounded-full bg-white/5 border-white/10 text-white hover:bg-white/20 h-12 w-12"
+        >
+          <ChevronRight className="w-6 h-6" />
+        </Button>
+      </div>
+
+      {/* Progress Indicators */}
+      <div className="absolute bottom-10 left-10 z-20 flex gap-2">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrentSlide(i)}
+            className={cn(
+              "h-1.5 rounded-full transition-all duration-300",
+              i === currentSlide ? "w-12 bg-primary" : "w-6 bg-white/20"
+            )}
+            aria-label={`Go to slide ${i + 1}`}
+          />
+        ))}
       </div>
     </section>
   );

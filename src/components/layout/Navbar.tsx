@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { name: "About", href: "/#about" },
-  { name: "Products", href: "/#products" },
+  { name: "Shop Products", href: "/products" },
   { name: "Services", href: "/#services" },
   { name: "Team", href: "/#team" },
   { name: "Contact", href: "/#contact" },
@@ -50,12 +50,15 @@ export function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className={cn(
+                "text-sm font-medium transition-colors",
+                scrolled ? "text-muted-foreground hover:text-primary" : "text-foreground/80 hover:text-primary"
+              )}
             >
               {item.name}
             </Link>
           ))}
-          <Button asChild variant="default" className="bg-primary hover:bg-primary/90 font-semibold shadow-md shadow-primary/10">
+          <Button asChild variant="default" className="bg-primary hover:bg-primary/90 font-semibold shadow-md shadow-primary/10 px-6 rounded-xl">
             <Link href="/quote">Get a Quote</Link>
           </Button>
         </div>
@@ -72,23 +75,23 @@ export function Navbar() {
       {/* Mobile Menu */}
       <div
         className={cn(
-          "fixed inset-0 top-[72px] bg-background z-40 md:hidden transition-all duration-300 ease-in-out px-6 pt-8",
-          isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
+          "fixed inset-0 top-0 h-screen bg-background z-40 md:hidden transition-all duration-500 ease-in-out px-8 pt-32",
+          isOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
         )}
       >
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-8">
           {navItems.map((item) => (
             <Link
               key={item.name}
               href={item.href}
               onClick={() => setIsOpen(false)}
-              className="text-2xl font-headline font-bold text-foreground flex items-center justify-between border-b pb-4"
+              className="text-4xl font-headline font-bold text-foreground flex items-center justify-between group"
             >
               {item.name}
-              <ChevronRight className="text-primary" />
+              <ChevronRight className="text-primary group-hover:translate-x-2 transition-transform" />
             </Link>
           ))}
-          <Button asChild size="lg" className="w-full text-lg mt-4" onClick={() => setIsOpen(false)}>
+          <Button asChild size="lg" className="w-full h-16 text-xl mt-8 rounded-2xl" onClick={() => setIsOpen(false)}>
             <Link href="/quote">Get a Quote</Link>
           </Button>
         </div>
