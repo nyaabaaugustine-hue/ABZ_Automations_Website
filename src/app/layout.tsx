@@ -4,6 +4,8 @@ import './globals.css';
 import { FloatingHub } from '@/components/shared/FloatingHub';
 import { WaterLoading } from '@/components/shared/WaterLoading';
 import { Toaster } from '@/components/ui/toaster';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   title: 'ABZ Automations | Precision Water Solutions',
@@ -66,6 +68,8 @@ export default function RootLayout({
         {children}
         <FloatingHub />
         <Toaster />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

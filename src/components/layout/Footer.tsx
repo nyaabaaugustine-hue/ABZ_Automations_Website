@@ -10,7 +10,7 @@ const socialLinks = [
   { icon: Twitter, href: '#', name: 'X', color: 'hover:bg-black' },
   { icon: Instagram, href: '#', name: 'Instagram', color: 'hover:bg-[#E4405F]' },
   { icon: Linkedin, href: '#', name: 'LinkedIn', color: 'hover:bg-[#0077B5]' },
-  { icon: MessageCircle, href: 'https://wa.me/233546101305', name: 'WhatsApp', color: 'hover:bg-[#25D366]' },
+  { icon: MessageCircle, href: 'https://wa.me/233541988383?text=Hi%20ABZ%20Automations%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20water%20automation%20solutions.', name: 'WhatsApp', color: 'hover:bg-[#25D366]' },
 ];
 
 const footerLinks = [

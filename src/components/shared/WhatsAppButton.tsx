@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 export function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/233541988383"
+      href="https://wa.me/233541988383?text=Hi%20ABZ%20Automations%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20water%20automation%20solutions."
       target="_blank"
       rel="noopener noreferrer"
       className={cn(

@@ -4,11 +4,18 @@ import React, { useState, useEffect } from "react";
 import { X, Play } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+const STORAGE_KEY = "abz_video_seen";
+
 export function VideoPopup() {
   const [visible, setVisible] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // If already dismissed once, never show again
+    try {
+      if (localStorage.getItem(STORAGE_KEY) === "1") return;
+    } catch {}
+
     const timer = setTimeout(() => {
       setVisible(true);
       requestAnimationFrame(() =>
@@ -20,10 +27,10 @@ export function VideoPopup() {
 
   const close = () => {
     setMounted(false);
+    try { localStorage.setItem(STORAGE_KEY, "1"); } catch {}
     setTimeout(() => setVisible(false), 380);
   };
 
-  // Close on Escape key
   useEffect(() => {
     if (!visible) return;
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") close(); };
@@ -37,32 +44,24 @@ export function VideoPopup() {
     <div
       className={cn(
         "fixed inset-0 z-[99999] flex items-center justify-center",
-        // Tight padding on mobile, more room on desktop
         "px-3 py-3 sm:px-6 sm:py-6",
         "transition-opacity duration-300 ease-out",
         mounted ? "opacity-100" : "opacity-0"
       )}
     >
-      {/* Backdrop */}
       <div
         className="absolute inset-0 bg-black/75 backdrop-blur-sm cursor-pointer"
         onClick={close}
       />
-
-      {/* Modal — fills nearly full screen on mobile, capped at 3xl on desktop */}
       <div
         className={cn(
           "relative z-10 w-full max-w-3xl rounded-2xl sm:rounded-3xl overflow-hidden",
-          "shadow-[0_24px_80px_rgba(0,0,0,0.7)] border border-white/10",
-          "flex flex-col",
+          "shadow-[0_24px_80px_rgba(0,0,0,0.7)] border border-white/10 flex flex-col",
           "transition-all duration-[380ms]",
-          mounted
-            ? "scale-100 translate-y-0 opacity-100"
-            : "scale-[0.88] translate-y-8 opacity-0"
+          mounted ? "scale-100 translate-y-0 opacity-100" : "scale-[0.88] translate-y-8 opacity-0"
         )}
         style={{ transitionTimingFunction: "cubic-bezier(0.34,1.52,0.64,1)" }}
       >
-        {/* ── Top bar ── */}
         <div className="flex items-center justify-between px-4 py-2.5 sm:px-5 sm:py-3 bg-[#020817] border-b border-white/10 shrink-0">
           <div className="flex items-center gap-2 min-w-0">
             <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-primary/20 flex items-center justify-center shrink-0">
@@ -72,22 +71,10 @@ export function VideoPopup() {
               ABZ Automations — See It In Action
             </span>
           </div>
-          <button
-            onClick={close}
-            className="ml-3 w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-white/10 hover:bg-white/25 flex items-center justify-center text-white transition-colors duration-200 shrink-0"
-            aria-label="Close video"
-          >
+          <button onClick={close} className="ml-3 w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-white/10 hover:bg-white/25 flex items-center justify-center text-white transition-colors duration-200 shrink-0" aria-label="Close video">
             <X className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </button>
         </div>
-
-        {/* ── 16:9 video ──
-            Key autoplay notes:
-            • autoplay=1  — request autoplay
-            • mute=1      — REQUIRED for autoplay on mobile (browsers block unmuted autoplay)
-            • playsinline=1 — prevent iOS fullscreen hijack; plays inline in modal
-            • enablejsapi=1 — allows programmatic control if needed later
-        */}
         <div className="relative w-full bg-black" style={{ paddingTop: "56.25%" }}>
           <iframe
             className="absolute inset-0 w-full h-full"
@@ -99,16 +86,11 @@ export function VideoPopup() {
             allowFullScreen
           />
         </div>
-
-        {/* ── Bottom strip ── */}
         <div className="bg-[#020817] px-4 py-2.5 sm:px-5 sm:py-3 flex items-center justify-between shrink-0">
-          <span className="text-white/40 text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] sm:tracking-[0.3em] truncate mr-4">
+          <span className="text-white/40 text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] truncate mr-4">
             Precision Water Solutions · Kumasi, Ghana
           </span>
-          <button
-            onClick={close}
-            className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-primary hover:text-accent transition-colors duration-200 shrink-0"
-          >
+          <button onClick={close} className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] text-primary hover:text-accent transition-colors duration-200 shrink-0">
             Dismiss
           </button>
         </div>
