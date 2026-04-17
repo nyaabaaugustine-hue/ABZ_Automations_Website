@@ -7,9 +7,8 @@ import { cn } from "@/lib/utils";
 
 /**
  * @fileOverview A massive, premium WhatsApp floating button using a custom image.
- * Anchored to the bottom right with a slide-in animation.
+ * Now relies on external container for fixed positioning.
  */
-
 export function WhatsAppButton() {
   return (
     <a
@@ -17,7 +16,7 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "fixed bottom-2 right-2 md:bottom-4 md:right-4 z-[100] group transition-all duration-500",
+        "block group transition-all duration-500",
         "animate-in fade-in slide-in-from-right-full duration-1000 ease-out"
       )}
       aria-label="Chat on WhatsApp"
@@ -26,8 +25,8 @@ export function WhatsAppButton() {
         {/* Subtle glow effect on hover */}
         <div className="absolute inset-0 bg-primary/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
         
-        {/* Massive Image Container - Responsive sizing to stay within page bounds */}
-        <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-[400px] md:h-[400px] transition-all duration-500 group-hover:scale-105 group-hover:-rotate-2">
+        {/* Massive Image Container - Responsive sizing */}
+        <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-[400px] md:h-[400px] transition-all duration-500 group-hover:scale-105 group-hover:-rotate-2">
           <Image 
             src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776428931/SUP_k4f1ab.png"
             alt="ABZ Support"

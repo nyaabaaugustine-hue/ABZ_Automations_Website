@@ -1,7 +1,7 @@
+
 import type {Metadata} from 'next';
 import './globals.css';
-import { FloatingAI } from '@/components/shared/FloatingAI';
-import { WhatsAppButton } from '@/components/shared/WhatsAppButton';
+import { FloatingHub } from '@/components/shared/FloatingHub';
 import { WaterLoading } from '@/components/shared/WaterLoading';
 import { Toaster } from '@/components/ui/toaster';
 
@@ -29,8 +29,7 @@ export default function RootLayout({
       >
         <WaterLoading />
         {children}
-        <WhatsAppButton />
-        <FloatingAI />
+        <FloatingHub />
         <Toaster />
       </body>
     </html>
