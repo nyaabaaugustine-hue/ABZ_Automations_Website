@@ -76,7 +76,7 @@ export function Services() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-24 space-y-6">
-          <Badge className="bg-primary/10 text-primary border-none px-6 py-2 font-bold uppercase tracking-[0.3em] text-[11px] rounded-full">
+          <Badge className="bg-primary/10 text-primary border-none px-6 py-2 font-bold uppercase tracking-[0.3em] text-[11px] rounded-[6%]">
             Technical Excellence
           </Badge>
           <h2 className="font-headline text-5xl md:text-6xl lg:text-7xl font-bold">
@@ -91,7 +91,7 @@ export function Services() {
           {services.map((service) => (
             <div 
               key={service.id} 
-              className="group bg-white rounded-[3.5rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_50px_80px_-20px_rgba(31,114,173,0.15)] transition-all duration-700 border border-white flex flex-col h-full hover:-translate-y-3"
+              className="group bg-white rounded-[6%] overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_50px_80px_-20px_rgba(31,114,173,0.15)] transition-all duration-700 border border-white flex flex-col h-full hover:-translate-y-3"
             >
               <div className="relative h-72 overflow-hidden">
                 <Image
@@ -101,7 +101,7 @@ export function Services() {
                   className="object-cover group-hover:scale-110 transition-transform duration-1000 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                <div className="absolute top-8 left-8 w-16 h-16 bg-white/95 backdrop-blur-xl rounded-[1.5rem] flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                <div className="absolute top-8 left-8 w-16 h-16 bg-white/95 backdrop-blur-xl rounded-[6%] flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500">
                   <service.icon className="w-8 h-8" />
                 </div>
               </div>
@@ -121,7 +121,7 @@ export function Services() {
                       <ArrowRight className="w-6 h-6 group-hover/btn:translate-x-3 transition-transform duration-300" />
                     </Link>
                   </Button>
-                  <div className="w-10 h-10 rounded-2xl bg-secondary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <div className="w-10 h-10 rounded-[6%] bg-secondary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
                     <Zap className="w-5 h-5 text-accent fill-accent" />
                   </div>
                 </div>
@@ -131,7 +131,7 @@ export function Services() {
         </div>
 
         {/* Bottom CTA Card */}
-        <div className="mt-32 bg-primary rounded-[4rem] p-12 md:p-20 text-white relative overflow-hidden shadow-2xl shadow-primary/30 group">
+        <div className="mt-32 bg-primary rounded-[6%] p-12 md:p-20 text-white relative overflow-hidden shadow-2xl shadow-primary/30 group">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/10 rounded-full blur-[150px] translate-x-1/3 -translate-y-1/3 group-hover:scale-125 transition-transform duration-[3000ms]"></div>
           
           <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
@@ -142,7 +142,7 @@ export function Services() {
               </p>
             </div>
             <div className="flex lg:justify-end">
-              <Button asChild size="lg" className="h-20 px-16 text-2xl font-bold bg-white text-primary hover:bg-accent hover:text-white rounded-[2.5rem] shadow-2xl transition-all duration-500">
+              <Button asChild size="lg" className="h-20 px-16 text-2xl font-bold bg-white text-primary hover:bg-accent hover:text-white rounded-[6%] shadow-2xl transition-all duration-500">
                 <Link href="/quote">Start Consultation</Link>
               </Button>
             </div>

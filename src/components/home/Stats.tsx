@@ -22,7 +22,7 @@ export function Stats() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
           {stats.map((stat, idx) => (
             <div key={idx} className="space-y-6 group transition-transform duration-500 hover:-translate-y-2">
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-[2rem] bg-white/10 mb-2 border border-white/10 shadow-2xl transition-all duration-500 group-hover:bg-accent group-hover:text-accent-foreground group-hover:border-accent">
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-[6%] bg-white/10 mb-2 border border-white/10 shadow-2xl transition-all duration-500 group-hover:bg-accent group-hover:text-accent-foreground group-hover:border-accent">
                 <stat.icon className="w-10 h-10 text-accent group-hover:text-current transition-colors duration-500" />
               </div>
               <div className="space-y-2">

@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -39,7 +38,7 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-11 h-11 rounded-2xl bg-white relative overflow-hidden shadow-xl shadow-primary/30 group-hover:scale-105 transition-transform duration-300">
+          <div className="w-11 h-11 rounded-[6%] bg-white relative overflow-hidden shadow-xl shadow-primary/30 group-hover:scale-105 transition-transform duration-300">
             <Image
               src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776230467/image_j8ruov.webp"
               alt="ABZ Automations Logo"
@@ -71,7 +70,7 @@ export function Navbar() {
               {item.name}
             </Link>
           ))}
-          <Button asChild className="bg-primary hover:bg-primary/90 font-bold shadow-lg shadow-primary/30 px-8 h-12 rounded-2xl transition-all hover:-translate-y-1">
+          <Button asChild className="bg-primary hover:bg-primary/90 font-bold shadow-lg shadow-primary/30 px-8 h-12 rounded-[6%] transition-all hover:-translate-y-1">
             <Link href="/quote">Get a Quote</Link>
           </Button>
         </div>
@@ -79,7 +78,7 @@ export function Navbar() {
         {/* Mobile Toggle */}
         <button
           className={cn(
-            "md:hidden p-2 rounded-xl transition-colors",
+            "md:hidden p-2 rounded-[6%] transition-colors",
             scrolled || isOpen ? "text-foreground bg-secondary/80 backdrop-blur-md" : "text-white bg-white/20 backdrop-blur-md"
           )}
           onClick={() => setIsOpen(!isOpen)}
@@ -111,7 +110,7 @@ export function Navbar() {
               <ChevronRight className="text-primary group-hover:translate-x-3 transition-transform duration-300 w-8 h-8" />
             </Link>
           ))}
-          <Button asChild size="lg" className="w-full h-16 text-xl mt-8 rounded-[2rem] shadow-2xl shadow-primary/30 font-bold" onClick={() => setIsOpen(false)}>
+          <Button asChild size="lg" className="w-full h-16 text-xl mt-8 rounded-[6%] shadow-2xl shadow-primary/30 font-bold" onClick={() => setIsOpen(false)}>
             <Link href="/quote">Get a Quote</Link>
           </Button>
         </div>

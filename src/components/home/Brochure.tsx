@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from "react";
@@ -11,7 +10,7 @@ export function Brochure() {
   return (
     <section className="py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="relative rounded-[3rem] p-10 md:p-20 border border-border/50 overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-12 group shadow-2xl">
+        <div className="relative rounded-[6%] p-10 md:p-20 border border-border/50 overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-12 group shadow-2xl">
           {/* Background Image with Overlay */}
           <div className="absolute inset-0 z-0">
             <Image 
@@ -27,7 +26,7 @@ export function Brochure() {
           
           <div className="max-w-2xl space-y-8 text-center lg:text-left relative z-10 text-white">
             <div className="space-y-4">
-              <Badge className="bg-accent text-accent-foreground border-none px-5 py-1.5 font-bold uppercase tracking-[0.2em] text-[10px] rounded-full">
+              <Badge className="bg-accent text-accent-foreground border-none px-5 py-1.5 font-bold uppercase tracking-[0.2em] text-[10px] rounded-[6%]">
                 Technical Documentation
               </Badge>
               <h2 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1]">
@@ -52,11 +51,11 @@ export function Brochure() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-5 shrink-0 relative z-10">
-            <Button size="lg" className="h-20 px-12 rounded-[2rem] font-bold text-xl gap-4 shadow-2xl shadow-black/40 group/btn bg-white text-primary hover:bg-accent hover:text-accent-foreground transition-all hover:-translate-y-1 border-none">
+            <Button size="lg" className="h-20 px-12 rounded-[6%] font-bold text-xl gap-4 shadow-2xl shadow-black/40 group/btn bg-white text-primary hover:bg-accent hover:text-accent-foreground transition-all hover:-translate-y-1 border-none">
               Download Brochure 
               <FileDown className="w-6 h-6 transition-transform group-hover/btn:translate-y-1" />
             </Button>
-            <Button variant="outline" size="lg" className="h-20 px-10 rounded-[2rem] font-bold text-lg border-white/30 text-white bg-white/10 backdrop-blur-md hover:bg-white hover:text-primary transition-all hover:-translate-y-1">
+            <Button variant="outline" size="lg" className="h-20 px-10 rounded-[6%] font-bold text-lg border-white/30 text-white bg-white/10 backdrop-blur-md hover:bg-white hover:text-primary transition-all hover:-translate-y-1">
               Request Print Copy
             </Button>
           </div>

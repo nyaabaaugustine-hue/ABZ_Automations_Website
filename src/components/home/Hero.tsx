@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -6,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ShieldCheck, Zap, Droplets, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { cn } from "@/lib/utils";
 
 const slides = [
@@ -74,7 +72,7 @@ export function Hero() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 w-full pt-32 md:pt-40">
         <div className="text-white text-center md:text-left max-w-4xl">
-          <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-2xl bg-white/10 backdrop-blur-xl text-white text-xs font-bold uppercase tracking-[0.3em] mb-10 border border-white/20 animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-[6%] bg-white/10 backdrop-blur-xl text-white text-xs font-bold uppercase tracking-[0.3em] mb-10 border border-white/20 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <Zap className="w-4 h-4 text-accent fill-accent" />
             {slides[currentSlide].badge}
           </div>
@@ -93,13 +91,13 @@ export function Hero() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center md:justify-start animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-500">
-            <Button asChild size="lg" className="h-20 px-14 text-xl font-bold group bg-primary hover:bg-primary/90 rounded-[2.5rem] shadow-2xl shadow-primary/40 transition-all hover:-translate-y-1">
+            <Button asChild size="lg" className="h-20 px-14 text-xl font-bold group bg-primary hover:bg-primary/90 rounded-[6%] shadow-2xl shadow-primary/40 transition-all hover:-translate-y-1">
               <Link href="/quote" className="flex items-center gap-4">
                 Start Your Quote
                 <ArrowRight className="w-7 h-7 group-hover:translate-x-3 transition-transform duration-300" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="h-20 px-14 text-xl font-bold bg-white/5 backdrop-blur-md text-white border-white/30 hover:bg-white hover:text-primary rounded-[2.5rem] transition-all duration-300 hover:-translate-y-1">
+            <Button asChild variant="outline" size="lg" className="h-20 px-14 text-xl font-bold bg-white/5 backdrop-blur-md text-white border-white/30 hover:bg-white hover:text-primary rounded-[6%] transition-all duration-300 hover:-translate-y-1">
               <Link href="/products">Explore Shop</Link>
             </Button>
           </div>
@@ -123,7 +121,7 @@ export function Hero() {
           variant="outline" 
           size="icon" 
           onClick={prevSlide}
-          className="rounded-full bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white hover:text-primary h-16 w-16 transition-all duration-300 shadow-xl"
+          className="rounded-[6%] bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white hover:text-primary h-16 w-16 transition-all duration-300 shadow-xl"
         >
           <ChevronLeft className="w-9 h-9" />
         </Button>
@@ -131,7 +129,7 @@ export function Hero() {
           variant="outline" 
           size="icon" 
           onClick={nextSlide}
-          className="rounded-full bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white hover:text-primary h-16 w-16 transition-all duration-300 shadow-xl"
+          className="rounded-[6%] bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white hover:text-primary h-16 w-16 transition-all duration-300 shadow-xl"
         >
           <ChevronRight className="w-9 h-9" />
         </Button>
@@ -144,7 +142,7 @@ export function Hero() {
             key={i}
             onClick={() => setCurrentSlide(i)}
             className={cn(
-              "h-2 rounded-full transition-all duration-500",
+              "h-2 transition-all duration-500 rounded-sm",
               i === currentSlide ? "w-20 bg-primary shadow-lg shadow-primary/50" : "w-10 bg-white/20 hover:bg-white/40"
             )}
             aria-label={`Go to slide ${i + 1}`}

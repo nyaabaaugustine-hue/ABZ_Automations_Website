@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from "react";
@@ -64,7 +63,7 @@ export function Reviews() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-24 space-y-6">
-          <Badge className="bg-primary/10 text-primary border-none px-5 py-2 font-bold uppercase tracking-[0.3em] text-[11px] rounded-full">
+          <Badge className="bg-primary/10 text-primary border-none px-5 py-2 font-bold uppercase tracking-[0.3em] text-[11px] rounded-[6%]">
             Social Proof
           </Badge>
           <h2 className="font-headline text-5xl md:text-6xl font-bold leading-tight">
@@ -86,7 +85,7 @@ export function Reviews() {
             <CarouselContent className="-ml-4">
               {reviews.map((review) => (
                 <CarouselItem key={review.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                  <Card className="h-full border-none shadow-[0_32px_64px_-12px_rgba(0,0,0,0.06)] rounded-[40px] overflow-hidden bg-white group hover:-translate-y-3 transition-all duration-700 hover:shadow-[0_48px_80px_-16px_rgba(31,114,173,0.12)]">
+                  <Card className="h-full border-none shadow-[0_32px_64px_-12px_rgba(0,0,0,0.06)] rounded-[6%] overflow-hidden bg-white group hover:-translate-y-3 transition-all duration-700 hover:shadow-[0_48px_80px_-16px_rgba(31,114,173,0.12)]">
                     <CardContent className="p-10 flex flex-col h-full">
                       <div className="flex items-center gap-1 mb-8">
                         {[...Array(review.rating)].map((_, i) => (
@@ -107,9 +106,9 @@ export function Reviews() {
                             src={review.avatar}
                             alt={review.name}
                             fill
-                            className="object-cover rounded-2xl"
+                            className="object-cover rounded-[6%]"
                           />
-                          <div className="absolute -bottom-2 -right-2 w-7 h-7 bg-accent rounded-full border-4 border-white flex items-center justify-center text-white shadow-lg">
+                          <div className="absolute -bottom-2 -right-2 w-7 h-7 bg-accent rounded-[6%] border-4 border-white flex items-center justify-center text-white shadow-lg">
                             <CheckCircle2 className="w-3.5 h-3.5" />
                           </div>
                         </div>
@@ -129,8 +128,8 @@ export function Reviews() {
             </CarouselContent>
             
             <div className="flex justify-center md:block mt-12 md:mt-0">
-              <CarouselPrevious className="static md:absolute h-14 w-14 rounded-2xl border-primary/20 text-primary hover:bg-primary hover:text-white transition-all md:-left-16 shadow-lg shadow-primary/5" />
-              <CarouselNext className="static md:absolute h-14 w-14 rounded-2xl border-primary/20 text-primary hover:bg-primary hover:text-white transition-all md:-right-16 ml-4 md:ml-0 shadow-lg shadow-primary/5" />
+              <CarouselPrevious className="static md:absolute h-14 w-14 rounded-[6%] border-primary/20 text-primary hover:bg-primary hover:text-white transition-all md:-left-16 shadow-lg shadow-primary/5" />
+              <CarouselNext className="static md:absolute h-14 w-14 rounded-[6%] border-primary/20 text-primary hover:bg-primary hover:text-white transition-all md:-right-16 ml-4 md:ml-0 shadow-lg shadow-primary/5" />
             </div>
           </Carousel>
         </div>
@@ -152,7 +151,7 @@ export function Reviews() {
                   key={`${partner.name}-${idx}`}
                   className="group flex flex-col items-center gap-3 transition-all duration-500 hover:scale-110 min-w-[150px]"
                  >
-                   <div className="w-16 h-16 rounded-3xl bg-white flex items-center justify-center text-muted-foreground group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm border border-border/20 group-hover:shadow-xl group-hover:shadow-primary/20">
+                   <div className="w-16 h-16 rounded-[6%] bg-white flex items-center justify-center text-muted-foreground group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm border border-border/20 group-hover:shadow-xl group-hover:shadow-primary/20">
                      <partner.icon className="w-8 h-8" />
                    </div>
                    <span className="text-xl font-black tracking-tighter text-muted-foreground/60 group-hover:text-primary transition-colors uppercase">
