@@ -10,7 +10,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription }
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { ShoppingCart, Heart, Search, Filter, ArrowRight, Zap, Droplets, ShieldCheck, Info, Cpu, Gauge, Globe } from "lucide-react";
+import { ShoppingCart, Heart, Search, Filter, ArrowRight, Zap, Droplets, ShieldCheck, Info, Cpu, Gauge, Globe, FileText, Download } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from "@/components/ui/dialog";
@@ -189,11 +189,16 @@ export default function ProductsPage() {
                               ))}
                             </div>
 
-                            <Button className="w-full h-14 rounded-2xl font-bold gap-3" asChild>
-                              <Link href={`/quote?product=${product.id}`}>
-                                Get Custom Quote <ArrowRight className="w-4 h-4" />
-                              </Link>
-                            </Button>
+                            <div className="grid grid-cols-2 gap-4">
+                               <Button variant="outline" className="h-14 rounded-2xl font-bold gap-2 text-xs">
+                                  <Download className="w-4 h-4" /> PDF Specs
+                               </Button>
+                               <Button className="h-14 rounded-2xl font-bold gap-3" asChild>
+                                  <Link href={`/quote?product=${product.id}`}>
+                                    Quote <ArrowRight className="w-4 h-4" />
+                                  </Link>
+                               </Button>
+                            </div>
                           </div>
                         </div>
                       </DialogContent>
@@ -211,13 +216,18 @@ export default function ProductsPage() {
                     ))}
                   </div>
                 </CardContent>
-                <CardFooter className="p-8 pt-0 flex items-center justify-between border-t border-border/50 mt-2 pt-6">
-                  <span className="font-headline font-bold text-lg text-primary">{product.price}</span>
-                  <Button asChild className="rounded-2xl font-bold gap-2 h-12 px-6 shadow-lg shadow-primary/10">
-                    <Link href={`/quote?product=${product.id}`}>
-                      Order <ShoppingCart className="w-4 h-4" />
-                    </Link>
-                  </Button>
+                <CardFooter className="p-8 pt-0 flex flex-col items-stretch border-t border-border/50 mt-2 pt-6 gap-4">
+                  <div className="flex items-center justify-between">
+                    <span className="font-headline font-bold text-lg text-primary">{product.price}</span>
+                    <Button asChild className="rounded-2xl font-bold gap-2 h-12 px-6 shadow-lg shadow-primary/10">
+                      <Link href={`/quote?product=${product.id}`}>
+                        Order <ShoppingCart className="w-4 h-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                  <button className="flex items-center justify-center gap-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors">
+                    <FileText className="w-3 h-3" /> View Data Sheet
+                  </button>
                 </CardFooter>
               </Card>
             ))}
