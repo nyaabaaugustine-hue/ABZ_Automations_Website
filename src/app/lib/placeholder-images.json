@@ -50,100 +50,76 @@
       "imageHint": "technical documentation"
     },
     {
-      "id": "product-autox-pro",
-      "description": "AutoX Pro flagship water control device",
-      "imageUrl": "https://picsum.photos/seed/autoxpro/600/600",
-      "imageHint": "tech device"
+      "id": "product-1",
+      "description": "Smart Control Hub Alpha",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422276/abz_50_ib7l6y.jpg",
+      "imageHint": "control hub"
     },
     {
-      "id": "product-flow-sensor",
-      "description": "Smart ultrasonic flow sensor",
-      "imageUrl": "https://picsum.photos/seed/flow-sensor/600/600",
-      "imageHint": "water sensor"
+      "id": "product-2",
+      "description": "Precision Flow Node",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422276/abz_47_g1c0ma.jpg",
+      "imageHint": "flow sensor"
     },
     {
-      "id": "product-pump-controller",
-      "description": "Smart pump variable frequency drive",
-      "imageUrl": "https://picsum.photos/seed/pump-ctrl/600/600",
-      "imageHint": "pump controller"
+      "id": "product-3",
+      "description": "Industrial Pump Logic",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776256939/abz_64_jw9ixn.jpg",
+      "imageHint": "pump logic"
     },
     {
-      "id": "product-leak-detector",
-      "description": "Wireless leak detection node",
-      "imageUrl": "https://picsum.photos/seed/leak/600/600",
-      "imageHint": "leak detector"
+      "id": "product-4",
+      "description": "Solar Integration Module",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776423520/bty_zkd3ww.jpg",
+      "imageHint": "solar module"
     },
     {
-      "id": "service-pump",
-      "description": "Industrial water pump installation",
-      "imageUrl": "https://picsum.photos/seed/pump-service/800/600",
-      "imageHint": "water pump"
+      "id": "product-5",
+      "description": "Telemetry Wireless Unit",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776423520/ttgy_qzwm7x.jpg",
+      "imageHint": "telemetry unit"
     },
     {
-      "id": "service-tank",
-      "description": "Professional water tank cleaning service",
-      "imageUrl": "https://picsum.photos/seed/tank-service/800/600",
-      "imageHint": "clean water"
+      "id": "product-6",
+      "description": "Smart Valve Actuator",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776423520/bvv_u2sx0a.jpg",
+      "imageHint": "valve actuator"
     },
     {
-      "id": "service-ro",
-      "description": "RO system automation unit",
-      "imageUrl": "https://picsum.photos/seed/ro-auto/800/600",
-      "imageHint": "water purification"
+      "id": "product-7",
+      "description": "Tank Level Sentinel",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776423521/iuu_pzqmba.jpg",
+      "imageHint": "tank sensor"
     },
     {
-      "id": "service-booster",
-      "description": "Pressure booster pump set",
-      "imageUrl": "https://picsum.photos/seed/booster/800/600",
-      "imageHint": "booster pump"
+      "id": "product-8",
+      "description": "Multi-Phase Filter Controller",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776423522/op_muzrhg.jpg",
+      "imageHint": "filter controller"
     },
     {
-      "id": "service-plumbing",
-      "description": "Professional plumbing work",
-      "imageUrl": "https://picsum.photos/seed/plumbing/800/600",
-      "imageHint": "plumbing pipes"
-    },
-    {
-      "id": "service-custom",
-      "description": "Custom engineering water solution",
-      "imageUrl": "https://picsum.photos/seed/custom-water/800/600",
-      "imageHint": "engineering water"
+      "id": "product-9",
+      "description": "Flagship AutoX Pro Controller",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776423527/124_ipyfnl.jpg",
+      "imageHint": "autox pro"
     },
     {
       "id": "news-1",
       "description": "Smart water project launch",
-      "imageUrl": "https://picsum.photos/seed/news-1/800/500",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422281/abz_76_eu0uyp.jpg",
       "imageHint": "water project"
     },
     {
       "id": "news-2",
       "description": "Technology summit award",
-      "imageUrl": "https://picsum.photos/seed/news-2/800/500",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422279/abz_68_i0ndl4.jpg",
       "imageHint": "tech award"
     },
     {
       "id": "news-3",
       "description": "Maintenance workshop",
-      "imageUrl": "https://picsum.photos/seed/news-3/800/500",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422275/abz_26_lvvz7f.jpg",
       "imageHint": "workshop engineering"
-    },
-    {
-      "id": "reviewer-1",
-      "description": "Kwabena Appiah - Agricultural Manager",
-      "imageUrl": "https://picsum.photos/seed/rev1/200/200",
-      "imageHint": "smiling man"
-    },
-    {
-      "id": "reviewer-2",
-      "description": "Sarah Edusei - Residential Owner",
-      "imageUrl": "https://picsum.photos/seed/rev2/200/200",
-      "imageHint": "smiling woman"
-    },
-    {
-      "id": "reviewer-3",
-      "description": "Isaac Tetteh - Factory Supervisor",
-      "imageUrl": "https://picsum.photos/seed/rev3/200/200",
-      "imageHint": "manager portait"
     }
   ]
 }

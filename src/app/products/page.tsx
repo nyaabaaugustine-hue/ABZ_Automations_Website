@@ -24,43 +24,83 @@ const productCategories = [
 const products = [
   {
     id: "autox-pro",
-    name: "AutoX Pro",
+    name: "AutoX Pro Elite",
     category: "controllers",
     price: "Custom",
-    description: "Our flagship smart controller with multi-tank management and solar integration.",
-    image: PlaceHolderImages.find(img => img.id === "product-autox-pro")?.imageUrl || "https://picsum.photos/seed/autoxpro/600/600",
+    description: "Our flagship industrial-grade smart controller with AI-driven tank management and multi-source switching.",
+    image: PlaceHolderImages.find(img => img.id === "product-9")?.imageUrl || "",
     isNew: true,
-    features: ["WiFi/GSM", "Solar Ready", "App Control"]
+    features: ["WiFi/GSM", "Solar Ready", "AI Flow Logic"]
   },
   {
     id: "flow-master-3000",
-    name: "Flow Master 3000",
+    name: "Flow Master Ultra",
     category: "sensors",
     price: "Custom",
-    description: "Ultrasonic precision flow meter for real-time tracking and leak detection alerts.",
-    image: PlaceHolderImages.find(img => img.id === "product-flow-sensor")?.imageUrl || "https://picsum.photos/seed/flow-sensor/600/600",
+    description: "Ultrasonic precision flow meter for real-time tracking and deep leak detection analytics.",
+    image: PlaceHolderImages.find(img => img.id === "product-2")?.imageUrl || "",
     isNew: false,
     features: ["Digital Display", "Remote Sync", "±0.5% Accuracy"]
   },
   {
-    id: "smart-vfd-pump",
-    name: "VFD Pump Controller",
+    id: "vfd-pump-logic",
+    name: "VFD Pump Logic X1",
     category: "hardware",
     price: "Custom",
-    description: "Variable frequency drive for industrial pumps, saving up to 45% in energy costs.",
-    image: PlaceHolderImages.find(img => img.id === "product-pump-controller")?.imageUrl || "https://picsum.photos/seed/pump-ctrl/600/600",
+    description: "Industrial variable frequency drive optimized for African power grid stability.",
+    image: PlaceHolderImages.find(img => img.id === "product-3")?.imageUrl || "",
     isNew: true,
-    features: ["Energy Saving", "Soft Start", "Overload Protection"]
+    features: ["Grid Protection", "Soft Start", "45% Energy Saving"]
   },
   {
-    id: "leak-sentinel",
-    name: "Leak Sentinel Node",
+    id: "tank-sentinel",
+    name: "Tank Sentinel Pro",
     category: "sensors",
     price: "Custom",
-    description: "Compact wireless sensor node that detects even micro-leaks in residential systems.",
-    image: PlaceHolderImages.find(img => img.id === "product-leak-detector")?.imageUrl || "https://picsum.photos/seed/leak/600/600",
+    description: "Multi-parameter tank monitoring system for level, temperature, and quality control.",
+    image: PlaceHolderImages.find(img => img.id === "product-7")?.imageUrl || "",
     isNew: false,
     features: ["Battery Powered", "IP68 Rated", "Instant Alerts"]
+  },
+  {
+    id: "smart-hub-alpha",
+    name: "Smart Hub Alpha",
+    category: "controllers",
+    price: "Custom",
+    description: "The gateway to your water automation ecosystem, connecting up to 50 sensors.",
+    image: PlaceHolderImages.find(img => img.id === "product-1")?.imageUrl || "",
+    isNew: true,
+    features: ["Mesh Network", "Cloud Sync", "Local Backup"]
+  },
+  {
+    id: "solar-module",
+    name: "Solar Integration Module",
+    category: "hardware",
+    price: "Custom",
+    description: "Plug-and-play solar power manager for remote agricultural water installations.",
+    image: PlaceHolderImages.find(img => img.id === "product-4")?.imageUrl || "",
+    isNew: false,
+    features: ["MPPT Logic", "High Efficiency", "Weather Proof"]
+  },
+  {
+    id: "telemetry-unit",
+    name: "Wireless Telemetry Unit",
+    category: "sensors",
+    price: "Custom",
+    description: "Long-range wireless transmitter for monitoring distant reservoirs and boreholes.",
+    image: PlaceHolderImages.find(img => img.id === "product-5")?.imageUrl || "",
+    isNew: false,
+    features: ["5km Range", "Ultra Low Power", "Secure Encrypted"]
+  },
+  {
+    id: "valve-actuator",
+    name: "Smart Valve Actuator",
+    category: "hardware",
+    price: "Custom",
+    description: "Precision motorized valve control for complex zone-based irrigation systems.",
+    image: PlaceHolderImages.find(img => img.id === "product-6")?.imageUrl || "",
+    isNew: false,
+    features: ["High Torque", "Feedback Loop", "Emergency Override"]
   }
 ];
 
@@ -95,12 +135,12 @@ export default function ProductsPage() {
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                   <Input 
                     placeholder="Search products..." 
-                    className="pl-10 h-12 rounded-xl"
+                    className="pl-10 h-12 rounded-[6%] transition-all focus:border-primary"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                   />
                </div>
-               <Button variant="outline" size="icon" className="h-12 w-12 rounded-xl shrink-0">
+               <Button variant="outline" size="icon" className="h-12 w-12 rounded-[6%] shrink-0">
                   <Filter className="w-5 h-5" />
                </Button>
             </div>
@@ -110,12 +150,12 @@ export default function ProductsPage() {
         {/* Product Grid */}
         <section className="max-w-7xl mx-auto px-6">
           <Tabs defaultValue="all" onValueChange={setActiveCategory} className="mb-12">
-            <TabsList className="bg-white p-1 rounded-2xl h-14 shadow-sm border border-border">
+            <TabsList className="bg-white p-1 rounded-[6%] h-14 shadow-sm border border-border">
               {productCategories.map(cat => (
                 <TabsTrigger 
                   key={cat.id} 
                   value={cat.id} 
-                  className="rounded-xl px-8 font-bold data-[state=active]:bg-primary data-[state=active]:text-white h-full"
+                  className="rounded-[6%] px-8 font-bold data-[state=active]:bg-primary data-[state=active]:text-white h-full"
                 >
                   {cat.name}
                 </TabsTrigger>
@@ -125,7 +165,7 @@ export default function ProductsPage() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {filteredProducts.map((product) => (
-              <Card key={product.id} className="group border-none shadow-lg rounded-[32px] overflow-hidden bg-white transition-all hover:shadow-2xl hover:-translate-y-2">
+              <Card key={product.id} className="group border-none shadow-lg rounded-[6%] overflow-hidden bg-white transition-all hover:shadow-2xl hover:-translate-y-2">
                 <CardHeader className="p-0 relative">
                   <div className="aspect-square relative overflow-hidden bg-muted">
                     <Image
@@ -135,9 +175,9 @@ export default function ProductsPage() {
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     {product.isNew && (
-                      <Badge className="absolute top-4 left-4 bg-accent text-white border-none px-3 py-1 font-bold">NEW</Badge>
+                      <Badge className="absolute top-4 left-4 bg-accent text-accent-foreground border-none px-3 py-1 font-bold rounded-[6%]">NEW</Badge>
                     )}
-                    <button className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-primary transition-colors">
+                    <button className="absolute top-4 right-4 w-10 h-10 rounded-[6%] bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-primary transition-colors">
                       <Heart className="w-5 h-5" />
                     </button>
                   </div>
@@ -147,7 +187,7 @@ export default function ProductsPage() {
                   <CardDescription className="line-clamp-2 text-sm mb-4">{product.description}</CardDescription>
                   <div className="flex flex-wrap gap-2">
                     {product.features.map((f, i) => (
-                      <span key={i} className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground bg-muted px-2 py-0.5 rounded-md">
+                      <span key={i} className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground bg-muted px-2 py-0.5 rounded-[6%]">
                         {f}
                       </span>
                     ))}
@@ -155,7 +195,7 @@ export default function ProductsPage() {
                 </CardContent>
                 <CardFooter className="p-6 pt-0 flex items-center justify-between border-t border-border mt-4 pt-4">
                   <span className="font-headline font-bold text-lg text-primary">{product.price}</span>
-                  <Button asChild className="rounded-xl font-bold gap-2">
+                  <Button asChild className="rounded-[6%] font-bold gap-2">
                     <Link href={`/quote?product=${product.id}`}>
                       Add to Quote <ShoppingCart className="w-4 h-4" />
                     </Link>
@@ -167,7 +207,7 @@ export default function ProductsPage() {
 
           {filteredProducts.length === 0 && (
             <div className="py-24 text-center">
-              <div className="w-20 h-20 rounded-3xl bg-muted flex items-center justify-center mx-auto mb-6 text-muted-foreground">
+              <div className="w-20 h-20 rounded-[6%] bg-muted flex items-center justify-center mx-auto mb-6 text-muted-foreground">
                 <Search className="w-10 h-10" />
               </div>
               <h3 className="text-2xl font-bold mb-2">No products found</h3>
@@ -178,11 +218,11 @@ export default function ProductsPage() {
 
         {/* Benefits Section */}
         <section className="max-w-7xl mx-auto px-6 mt-32">
-          <div className="bg-primary rounded-[48px] p-8 md:p-16 text-white grid md:grid-cols-3 gap-12 relative overflow-hidden shadow-2xl shadow-primary/20">
+          <div className="bg-primary rounded-[6%] p-8 md:p-16 text-white grid md:grid-cols-3 gap-12 relative overflow-hidden shadow-2xl shadow-primary/20">
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/10 rounded-full blur-[100px] translate-x-1/2 -translate-y-1/2"></div>
             
             <div className="space-y-6 relative z-10">
-              <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-accent">
+              <div className="w-14 h-14 rounded-[6%] bg-white/10 flex items-center justify-center text-accent">
                 <Zap className="w-8 h-8 fill-accent" />
               </div>
               <h4 className="text-2xl font-headline font-bold">Fast Installation</h4>
@@ -190,7 +230,7 @@ export default function ProductsPage() {
             </div>
 
             <div className="space-y-6 relative z-10">
-              <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-primary-foreground">
+              <div className="w-14 h-14 rounded-[6%] bg-white/10 flex items-center justify-center text-primary-foreground">
                 <ShieldCheck className="w-8 h-8" />
               </div>
               <h4 className="text-2xl font-headline font-bold">2-Year Warranty</h4>
@@ -198,7 +238,7 @@ export default function ProductsPage() {
             </div>
 
             <div className="space-y-6 relative z-10">
-              <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-accent">
+              <div className="w-14 h-14 rounded-[6%] bg-white/10 flex items-center justify-center text-accent">
                 <Droplets className="w-8 h-8" />
               </div>
               <h4 className="text-2xl font-headline font-bold">Certified Efficiency</h4>
@@ -212,7 +252,7 @@ export default function ProductsPage() {
           <div className="max-w-3xl mx-auto space-y-8">
             <h2 className="font-headline text-4xl md:text-5xl font-bold">Ready for a Custom Setup?</h2>
             <p className="text-xl text-muted-foreground">If you have specific requirements or an industrial project, our experts can design a custom automation architecture just for you.</p>
-            <Button asChild size="lg" className="h-16 px-12 text-xl font-bold rounded-2xl shadow-xl shadow-primary/10">
+            <Button asChild size="lg" className="h-16 px-12 text-xl font-bold rounded-[6%] shadow-xl shadow-primary/10">
               <Link href="/quote">Request a Consultation <ArrowRight className="ml-2 w-6 h-6" /></Link>
             </Button>
           </div>

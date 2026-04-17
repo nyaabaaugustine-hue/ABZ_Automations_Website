@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from "react";
@@ -10,11 +11,11 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 const productPreview = {
   id: "autox",
-  name: "AutoX Pro",
-  tagline: "Ultimate Automation Controller",
-  description: "The heartbeat of your water management. Smart sensors, remote control, and AI-driven efficiency for any system. Designed for both residential and industrial applications.",
-  features: ["Remote Smartphone Control", "Leak Detection Alerts", "Flow Analytics", "Solar Ready"],
-  image: PlaceHolderImages.find(img => img.id === "product-autox-pro")?.imageUrl || "https://picsum.photos/seed/autoxpro/600/600"
+  name: "AutoX Pro Elite",
+  tagline: "Ultimate Automation Architecture",
+  description: "The heartbeat of your water management ecosystem. Smart AI-driven sensors, real-time telemetry, and secure cloud control for the most demanding environments.",
+  features: ["Next-Gen Flow Analytics", "Industrial Grid Safety", "Real-time Telemetry", "Solar Energy Management"],
+  image: PlaceHolderImages.find(img => img.id === "product-9")?.imageUrl || ""
 };
 
 export function Products() {
@@ -26,11 +27,11 @@ export function Products() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div className="max-w-2xl">
             <h2 className="text-primary font-bold uppercase tracking-[0.3em] text-sm mb-6">Innovation Showcase</h2>
-            <h3 className="font-headline text-5xl md:text-6xl lg:text-7xl font-bold mb-0">Engineered for <span className="text-accent">Precision</span></h3>
+            <h3 className="font-headline text-5xl md:text-6xl lg:text-7xl font-bold mb-0">Engineered for <span className="text-accent">Ghana</span></h3>
           </div>
           <Button asChild variant="outline" size="lg" className="rounded-[6%] border-primary text-primary hover:bg-primary hover:text-white font-bold h-16 px-10 transition-all duration-300">
             <Link href="/products" className="flex items-center gap-3">
-              Browse Full Shop <ShoppingBag className="w-6 h-6" />
+              Explore Full Catalog <ShoppingBag className="w-6 h-6" />
             </Link>
           </Button>
         </div>
@@ -64,11 +65,11 @@ export function Products() {
                 
                 <div className="pt-8 flex flex-wrap gap-6">
                   <Button asChild size="lg" className="rounded-[6%] px-12 font-bold h-16 shadow-2xl shadow-primary/30 text-lg">
-                    <Link href="/quote">Request Custom Quote</Link>
+                    <Link href="/quote">Request Custom Setup</Link>
                   </Button>
                   <Button asChild variant="ghost" size="lg" className="rounded-[6%] px-10 font-bold group h-16 text-lg hover:bg-primary/5 transition-all">
                     <Link href="/products" className="flex items-center gap-3">
-                      Technical Specs
+                      View Components
                       <ArrowRight className="w-6 h-6 group-hover:translate-x-3 transition-transform duration-300" />
                     </Link>
                   </Button>
@@ -87,7 +88,7 @@ export function Products() {
                 {/* Floating Tech Stat */}
                 <div className="absolute bottom-12 left-12 right-12 p-8 rounded-[6%] bg-white/10 backdrop-blur-2xl border border-white/30 text-white animate-in fade-in slide-in-from-bottom-8">
                   <p className="text-xs font-bold uppercase tracking-[0.3em] text-accent mb-2">Performance Architecture</p>
-                  <p className="text-2xl font-bold">Optimized for 99.9% Sensor Accuracy</p>
+                  <p className="text-2xl font-bold">Tested at KNUST Engineering Labs</p>
                 </div>
               </div>
             </div>

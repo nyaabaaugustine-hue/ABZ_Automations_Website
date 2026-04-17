@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from "react";
@@ -9,35 +10,60 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 const products = [
   {
-    id: "autox-pro-ticker",
+    id: "product-1",
+    name: "Smart Hub Alpha",
+    image: PlaceHolderImages.find(img => img.id === "product-1")?.imageUrl || "",
+  },
+  {
+    id: "product-2",
+    name: "Flow Node Ultra",
+    image: PlaceHolderImages.find(img => img.id === "product-2")?.imageUrl || "",
+  },
+  {
+    id: "product-3",
+    name: "Industrial Logic",
+    image: PlaceHolderImages.find(img => img.id === "product-3")?.imageUrl || "",
+  },
+  {
+    id: "product-4",
+    name: "Solar Module",
+    image: PlaceHolderImages.find(img => img.id === "product-4")?.imageUrl || "",
+  },
+  {
+    id: "product-5",
+    name: "Telemetry Unit",
+    image: PlaceHolderImages.find(img => img.id === "product-5")?.imageUrl || "",
+  },
+  {
+    id: "product-6",
+    name: "Smart Valve",
+    image: PlaceHolderImages.find(img => img.id === "product-6")?.imageUrl || "",
+  },
+  {
+    id: "product-7",
+    name: "Sentinel Pro",
+    image: PlaceHolderImages.find(img => img.id === "product-7")?.imageUrl || "",
+  },
+  {
+    id: "product-8",
+    name: "Filter Control",
+    image: PlaceHolderImages.find(img => img.id === "product-8")?.imageUrl || "",
+  },
+  {
+    id: "product-9",
     name: "AutoX Pro",
-    image: PlaceHolderImages.find(img => img.id === "product-autox-pro")?.imageUrl || "https://picsum.photos/seed/autoxpro/600/600",
-  },
-  {
-    id: "flow-master-ticker",
-    name: "Flow Master 3000",
-    image: PlaceHolderImages.find(img => img.id === "product-flow-sensor")?.imageUrl || "https://picsum.photos/seed/flow-sensor/600/600",
-  },
-  {
-    id: "vfd-ticker",
-    name: "VFD Pump Controller",
-    image: PlaceHolderImages.find(img => img.id === "product-pump-controller")?.imageUrl || "https://picsum.photos/seed/pump-ctrl/600/600",
-  },
-  {
-    id: "leak-sentinel-ticker",
-    name: "Leak Sentinel Node",
-    image: PlaceHolderImages.find(img => img.id === "product-leak-detector")?.imageUrl || "https://picsum.photos/seed/leak/600/600",
+    image: PlaceHolderImages.find(img => img.id === "product-9")?.imageUrl || "",
   },
 ];
 
 // Duplicate list for seamless loop
-const tickerProducts = [...products, ...products, ...products, ...products];
+const tickerProducts = [...products, ...products, ...products];
 
 export function ProductTicker() {
   return (
     <section className="py-12 bg-white overflow-hidden border-y border-border/50">
       <div className="max-w-7xl mx-auto px-6 mb-8 flex items-center justify-between">
-         <h2 className="font-headline text-sm font-bold uppercase tracking-[0.2em] text-muted-foreground">Featured Hardware</h2>
+         <h2 className="font-headline text-sm font-bold uppercase tracking-[0.2em] text-muted-foreground">Flagship Hardware Lineup</h2>
          <div className="h-px flex-grow mx-8 bg-border/50 hidden md:block"></div>
       </div>
       
@@ -60,8 +86,8 @@ export function ProductTicker() {
               
               <div className="p-6 flex flex-col justify-between flex-grow">
                 <h4 className="font-headline font-bold text-lg line-clamp-1">{product.name}</h4>
-                <Button asChild size="sm" className="w-full rounded-xl font-bold bg-primary hover:bg-primary/90 mt-4 group/btn">
-                  <Link href={`/quote?product=${product.id.replace('-ticker', '')}`}>
+                <Button asChild size="sm" className="w-full rounded-[6%] font-bold bg-primary hover:bg-primary/90 mt-4 group/btn">
+                  <Link href={`/quote?product=${product.id}`}>
                     Order Now 
                     <ShoppingCart className="ml-2 w-4 h-4 transition-transform group-hover/btn:scale-110" />
                   </Link>
