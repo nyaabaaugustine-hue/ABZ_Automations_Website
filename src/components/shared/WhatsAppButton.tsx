@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from "react";
@@ -16,7 +17,7 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "fixed bottom-[110px] right-6 md:bottom-[130px] md:right-10 z-[100] group transition-all duration-500",
+        "fixed bottom-6 right-6 md:bottom-8 md:right-10 z-[100] group transition-all duration-500",
         "animate-in fade-in slide-in-from-bottom-10"
       )}
       aria-label="Chat on WhatsApp"

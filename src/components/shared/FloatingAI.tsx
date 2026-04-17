@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState } from "react";
@@ -49,9 +50,9 @@ export function FloatingAI() {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-[100] flex flex-col items-end">
+    <div className="fixed bottom-[85px] right-4 md:bottom-[105px] md:right-8 z-[100] flex flex-col items-end">
       {isOpen && (
-        <Card className="mb-4 w-[calc(100vw-2.5rem)] sm:w-[400px] h-[550px] max-h-[calc(100vh-140px)] flex flex-col shadow-2xl border border-white/20 glass animate-in fade-in slide-in-from-bottom-8 duration-500 overflow-hidden rounded-[24px]">
+        <Card className="mb-4 w-[calc(100vw-2.5rem)] sm:w-[400px] h-[550px] max-h-[calc(100vh-200px)] flex flex-col shadow-2xl border border-white/20 glass animate-in fade-in slide-in-from-bottom-8 duration-500 overflow-hidden rounded-[24px]">
           <CardHeader className="bg-primary text-white p-4 flex flex-row items-center justify-between shrink-0">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-lg bg-white relative overflow-hidden shadow-lg border border-white/20">
