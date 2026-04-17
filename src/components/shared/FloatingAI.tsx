@@ -2,7 +2,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { Sparkles, X, MessageSquare, Bot, Send, Loader2 } from "lucide-react";
+import Image from "next/image";
+import { Sparkles, X, Bot, Send, Loader2, MessageCircle, Linkedin, Facebook, Instagram, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -14,6 +15,14 @@ type Message = {
   role: "user" | "assistant";
   text: string;
 };
+
+const socials = [
+  { name: 'WhatsApp', icon: MessageCircle, href: 'https://wa.me/233546101305', color: 'bg-[#25D366]' },
+  { name: 'LinkedIn', icon: Linkedin, href: '#', color: 'bg-[#0077B5]' },
+  { name: 'Facebook', icon: Facebook, href: '#', color: 'bg-[#1877F2]' },
+  { name: 'Instagram', icon: Instagram, href: '#', color: 'bg-[#E4405F]' },
+  { name: 'X', icon: Twitter, href: '#', color: 'bg-black' },
+];
 
 export function FloatingAI() {
   const [isOpen, setIsOpen] = useState(false);
@@ -51,18 +60,36 @@ export function FloatingAI() {
   return (
     <div className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-[100] flex flex-col items-end">
       {isOpen && (
-        <Card className="mb-4 w-[calc(100vw-2.5rem)] sm:w-[400px] h-[500px] max-h-[calc(100vh-140px)] flex flex-col shadow-2xl border border-white/20 glass animate-in fade-in slide-in-from-bottom-8 duration-500 overflow-hidden rounded-[24px]">
+        <Card className="mb-4 w-[calc(100vw-2.5rem)] sm:w-[400px] h-[550px] max-h-[calc(100vh-140px)] flex flex-col shadow-2xl border border-white/20 glass animate-in fade-in slide-in-from-bottom-8 duration-500 overflow-hidden rounded-[24px]">
           <CardHeader className="bg-primary text-white p-4 flex flex-row items-center justify-between shrink-0">
             <div className="flex items-center gap-2">
               <Sparkles className="w-5 h-5 text-accent" />
-              <CardTitle className="text-sm font-headline">ABZ Tech Assistant</CardTitle>
+              <CardTitle className="text-sm font-headline">ABZ Tech Hub</CardTitle>
             </div>
             <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/10" onClick={() => setIsOpen(false)}>
               <X className="w-4 h-4" />
             </Button>
           </CardHeader>
           
-          <CardContent className="flex-1 p-0 flex flex-col overflow-hidden bg-background/50">
+          <div className="bg-white/50 border-b border-border/50 p-3 flex items-center justify-center gap-3 shrink-0">
+            {socials.map((social) => (
+              <a 
+                key={social.name}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  "w-8 h-8 rounded-lg flex items-center justify-center text-white transition-transform hover:scale-110 shadow-md",
+                  social.color
+                )}
+                title={social.name}
+              >
+                <social.icon className="w-4 h-4" />
+              </a>
+            ))}
+          </div>
+          
+          <CardContent className="flex-1 p-0 flex flex-col overflow-hidden bg-background/30">
             <ScrollArea className="flex-1 p-4">
               <div className="space-y-4">
                 {messages.map((m, i) => (
@@ -104,21 +131,35 @@ export function FloatingAI() {
         </Card>
       )}
       
-      <Button 
+      <button 
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          "w-14 h-14 md:w-16 md:h-16 rounded-[6%] shadow-2xl transition-all duration-500 flex items-center justify-center group",
-          isOpen ? "bg-accent text-accent-foreground rotate-90" : "bg-primary text-white hover:scale-110"
+          "relative w-16 h-16 md:w-20 md:h-20 transition-all duration-500 flex items-center justify-center group outline-none",
+          !isOpen && "animate-bounce hover:animate-none"
         )}
       >
-        {isOpen ? <X className="w-7 h-7 md:w-8 md:h-8" /> : <MessageSquare className="w-7 h-7 md:w-8 md:h-8 group-hover:scale-110 transition-transform" />}
+        <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl transition-transform group-hover:scale-110 ring-2 ring-primary/20 bg-white">
+          <Image 
+            src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776259783/aiman_yeztcl.png"
+            alt="AI Assistant"
+            fill
+            className="object-cover"
+          />
+        </div>
+        
+        {isOpen && (
+          <div className="absolute -top-2 -right-2 w-6 h-6 bg-accent rounded-full flex items-center justify-center text-white shadow-lg border-2 border-white animate-in zoom-in duration-300">
+            <X className="w-3 h-3" />
+          </div>
+        )}
+
         {!isOpen && (
-          <span className="absolute -top-1 -left-1 flex h-4 w-4 md:h-5 md:w-5">
+          <span className="absolute -top-1 -right-1 flex h-4 w-4 md:h-5 md:w-5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-4 w-4 md:h-5 md:w-5 bg-accent items-center justify-center text-[9px] md:text-[10px] font-bold text-accent-foreground">1</span>
+            <span className="relative inline-flex rounded-full h-4 w-4 md:h-5 md:w-5 bg-accent items-center justify-center text-[9px] md:text-[10px] font-bold text-accent-foreground">!</span>
           </span>
         )}
-      </Button>
+      </button>
     </div>
   );
 }
