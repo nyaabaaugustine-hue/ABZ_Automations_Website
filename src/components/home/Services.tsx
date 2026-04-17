@@ -132,30 +132,6 @@ export function Services() {
             </div>
           ))}
         </div>
-
-        <div className="mt-32 glass rounded-[6%] p-12 md:p-20 relative overflow-hidden shadow-2xl group border border-white/20">
-          <div className="absolute inset-0 bg-primary/80 mix-blend-multiply"></div>
-          <Image 
-            src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422246/abz_3_hp78qi.jpg"
-            alt="Technical Background"
-            fill
-            className="object-cover -z-10 group-hover:scale-105 transition-transform duration-[10000ms]"
-          />
-          
-          <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10 text-white">
-            <div className="space-y-8">
-              <h3 className="text-4xl md:text-5xl lg:text-6xl font-headline font-bold leading-tight">Complex Project?</h3>
-              <p className="text-white/80 text-xl max-w-xl leading-relaxed">
-                Our R&D team develops custom hardware and software integrations for the most demanding water challenges.
-              </p>
-            </div>
-            <div className="flex lg:justify-end">
-              <Button asChild size="lg" className="h-20 px-16 text-2xl font-bold bg-white text-primary hover:bg-accent hover:text-white rounded-[6%] shadow-2xl transition-all duration-500">
-                <Link href="/quote">Consult Engineers</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
