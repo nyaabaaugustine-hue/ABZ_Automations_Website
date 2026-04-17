@@ -26,8 +26,8 @@ export function WhatsAppButton() {
         {/* Subtle glow effect on hover */}
         <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
         
-        {/* Main Image Container - Matched size to FloatingAI (w-16 h-16 / w-20 h-20) */}
-        <div className="relative w-16 h-16 md:w-20 md:h-20 transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3">
+        {/* Main Image Container - Doubled size (w-32 h-32 / w-40 h-40) */}
+        <div className="relative w-32 h-32 md:w-40 md:h-40 transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3">
           <Image 
             src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776428931/SUP_k4f1ab.png"
             alt="ABZ Support"
