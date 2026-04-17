@@ -1,15 +1,14 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    /* Primary brand color: Technological Blue #1F72AD -> HSL(205, 70%, 40%) */
+    /* Primary brand color: Technological Blue */
     --primary: 205 75% 42%;
     --primary-foreground: 0 0% 100%;
     
-    /* Background color: Subtle Grey-Blue #F8FAFB -> HSL(200, 20%, 98%) */
+    /* Background color: Subtle Grey-Blue */
     --background: 200 25% 98%;
     --foreground: 205 60% 10%;
 
@@ -25,9 +24,9 @@
     --muted: 204 20% 92%;
     --muted-foreground: 205 20% 40%;
 
-    /* Accent color: Fresh Green #2EAB5C -> HSL(142, 58%, 42%) */
-    --accent: 145 60% 45%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent color: Updated to Premium Yellow/Gold HSL(48, 96%, 53%) */
+    --accent: 48 96% 53%;
+    --accent-foreground: 205 60% 10%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
@@ -61,8 +60,8 @@
     --secondary-foreground: 205 80% 80%;
     --muted: 205 45% 10%;
     --muted-foreground: 205 20% 70%;
-    --accent: 145 65% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 48 96% 60%;
+    --accent-foreground: 205 60% 10%;
     --border: 205 45% 15%;
     --input: 205 45% 15%;
     --ring: 205 80% 55%;
