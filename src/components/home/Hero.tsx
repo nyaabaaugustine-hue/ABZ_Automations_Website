@@ -92,13 +92,13 @@ export function Hero() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center md:justify-start animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-500">
-            <Button asChild size="lg" className="h-14 md:h-20 px-8 md:px-14 text-base md:text-xl font-bold group bg-primary hover:bg-primary/90 rounded-[6%] shadow-2xl shadow-primary/40 transition-all hover:-translate-y-1">
-              <Link href="/quote" className="flex items-center gap-3 md:gap-4">
+            <Button asChild size="lg" className="h-10 md:h-12 px-6 md:px-8 text-sm md:text-base font-bold group bg-primary hover:bg-primary/90 rounded-[6%] shadow-2xl shadow-primary/40 transition-all hover:-translate-y-1">
+              <Link href="/quote" className="flex items-center gap-2 md:gap-3">
                 Start Your Quote
-                <ArrowRight className="w-5 h-5 md:w-7 md:h-7 group-hover:translate-x-3 transition-transform duration-300" />
+                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-2 transition-transform duration-300" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="h-14 md:h-20 px-8 md:px-14 text-base md:text-xl font-bold bg-white/5 backdrop-blur-md text-white border-white/30 hover:bg-white hover:text-primary rounded-[6%] transition-all duration-300 hover:-translate-y-1">
+            <Button asChild variant="outline" size="lg" className="h-10 md:h-12 px-6 md:px-8 text-sm md:text-base font-bold bg-white/5 backdrop-blur-md text-white border-white/30 hover:bg-white hover:text-primary rounded-[6%] transition-all duration-300 hover:-translate-y-1">
               <Link href="/products">Explore Shop</Link>
             </Button>
           </div>
