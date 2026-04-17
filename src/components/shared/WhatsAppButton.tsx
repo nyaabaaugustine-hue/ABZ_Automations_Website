@@ -23,21 +23,21 @@ export function WhatsAppButton() {
       aria-label="Chat on WhatsApp"
     >
       <div className="relative">
-        {/* Subtle glow effect */}
-        <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        {/* Subtle glow effect on hover */}
+        <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
         
-        {/* Main Image Container */}
-        <div className="relative w-14 h-14 md:w-16 md:h-16 rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3 border border-white/20 bg-white">
+        {/* Main Image Container - Removed background and borders */}
+        <div className="relative w-14 h-14 md:w-20 md:h-20 transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3">
           <Image 
             src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776428931/SUP_k4f1ab.png"
             alt="ABZ Support"
             fill
-            className="object-cover"
+            className="object-contain"
           />
         </div>
         
         {/* Premium Tooltip Label */}
-        <span className="absolute right-full mr-4 top-1/2 -translate-y-1/2 px-4 py-2 bg-white text-primary text-[10px] font-bold uppercase tracking-[0.2em] rounded-xl shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-4 group-hover:translate-x-0 pointer-events-none whitespace-nowrap border border-primary/10">
+        <span className="absolute right-full mr-4 top-1/2 -translate-y-1/2 px-4 py-2 bg-white/90 backdrop-blur-md text-primary text-[10px] font-bold uppercase tracking-[0.2em] rounded-xl shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-4 group-hover:translate-x-0 pointer-events-none whitespace-nowrap border border-primary/10">
           Direct <span className="text-primary">Support</span>
         </span>
       </div>
