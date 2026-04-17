@@ -2,12 +2,12 @@
 "use client";
 
 import React from "react";
-import { MessageCircle } from "lucide-react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 /**
- * @fileOverview A premium, "calm" WhatsApp floating button.
- * Features subtle animations and professional brand-aligned styling.
+ * @fileOverview A premium WhatsApp floating button using a custom image.
+ * Features a beautiful slide-in animation from the right on page load.
  */
 
 export function WhatsAppButton() {
@@ -18,27 +18,27 @@ export function WhatsAppButton() {
       rel="noopener noreferrer"
       className={cn(
         "fixed bottom-6 right-6 md:bottom-8 md:right-10 z-[100] group transition-all duration-500",
-        "animate-in fade-in slide-in-from-bottom-10"
+        "animate-in fade-in slide-in-from-right-full duration-1000 ease-out"
       )}
       aria-label="Chat on WhatsApp"
     >
       <div className="relative">
-        {/* Calm ambient glow */}
-        <div className="absolute inset-0 bg-[#25D366] rounded-2xl blur-xl opacity-10 group-hover:opacity-30 transition-opacity animate-pulse"></div>
+        {/* Subtle glow effect */}
+        <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
         
-        {/* Main Button Container */}
-        <div className="relative w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-[#25D366] flex items-center justify-center text-white shadow-[0_20px_40px_-12px_rgba(37,211,102,0.4)] transition-all duration-500 group-hover:scale-110 group-hover:-rotate-6 border border-white/20">
-          <MessageCircle className="w-6 h-6 md:w-7 md:h-7 fill-white/10" />
-          
-          {/* Subtle "Online" indicator */}
-          <div className="absolute -top-1 -right-1 w-4 h-4 bg-white rounded-full flex items-center justify-center shadow-md">
-             <div className="w-2 h-2 bg-[#25D366] rounded-full animate-pulse"></div>
-          </div>
+        {/* Main Image Container */}
+        <div className="relative w-14 h-14 md:w-16 md:h-16 rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3 border border-white/20 bg-white">
+          <Image 
+            src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776428931/SUP_k4f1ab.png"
+            alt="ABZ Support"
+            fill
+            className="object-cover"
+          />
         </div>
         
         {/* Premium Tooltip Label */}
-        <span className="absolute right-full mr-4 top-1/2 -translate-y-1/2 px-4 py-2 bg-white text-[#075E54] text-[10px] font-bold uppercase tracking-[0.2em] rounded-xl shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-4 group-hover:translate-x-0 pointer-events-none whitespace-nowrap border border-[#25D366]/10">
-          Direct <span className="text-[#25D366]">WhatsApp</span>
+        <span className="absolute right-full mr-4 top-1/2 -translate-y-1/2 px-4 py-2 bg-white text-primary text-[10px] font-bold uppercase tracking-[0.2em] rounded-xl shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-4 group-hover:translate-x-0 pointer-events-none whitespace-nowrap border border-primary/10">
+          Direct <span className="text-primary">Support</span>
         </span>
       </div>
     </a>
