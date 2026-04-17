@@ -116,23 +116,23 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Slider Controls */}
-      <div className="absolute bottom-10 md:bottom-20 right-6 md:right-12 z-20 flex md:flex gap-3 md:gap-5">
+      {/* Slider Controls - Reduced by 50% visually */}
+      <div className="absolute bottom-10 md:bottom-20 right-6 md:right-12 z-20 flex md:flex gap-2 md:gap-3">
         <Button 
           variant="outline" 
           size="icon" 
           onClick={prevSlide}
-          className="rounded-[6%] bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white hover:text-primary h-12 w-12 md:h-16 md:w-16 transition-all duration-300 shadow-xl"
+          className="rounded-[6%] bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white hover:text-primary h-6 w-6 md:h-8 md:w-8 transition-all duration-300 shadow-xl"
         >
-          <ChevronLeft className="w-6 h-6 md:w-9 md:h-9" />
+          <ChevronLeft className="w-3 h-3 md:w-4 md:h-4" />
         </Button>
         <Button 
           variant="outline" 
           size="icon" 
           onClick={nextSlide}
-          className="rounded-[6%] bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white hover:text-primary h-12 w-12 md:h-16 md:w-16 transition-all duration-300 shadow-xl"
+          className="rounded-[6%] bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white hover:text-primary h-6 w-6 md:h-8 md:w-8 transition-all duration-300 shadow-xl"
         >
-          <ChevronRight className="w-6 h-6 md:w-9 md:h-9" />
+          <ChevronRight className="w-3 h-3 md:w-4 md:h-4" />
         </Button>
       </div>
 
