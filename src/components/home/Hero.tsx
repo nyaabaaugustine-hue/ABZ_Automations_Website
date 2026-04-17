@@ -45,7 +45,7 @@ export function Hero() {
 
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-background">
-      {/* Background Slides - All containerized to identical dimensions via absolute positioning and object-cover */}
+      {/* Background Slides */}
       <div className="absolute inset-0 z-0">
         {slides.map((slide, index) => (
           <div
@@ -59,7 +59,10 @@ export function Hero() {
               src={slide.image}
               alt="Hero background"
               fill
-              className="object-cover brightness-[0.35] md:brightness-50"
+              className={cn(
+                "object-cover brightness-[0.35] md:brightness-50 transition-transform duration-[10000ms]",
+                index === currentSlide ? "scale-110" : "scale-100"
+              )}
               priority={index === 0}
             />
           </div>
@@ -74,11 +77,15 @@ export function Hero() {
           </div>
           
           <h1 
+            key={`title-${currentSlide}`}
             className="font-headline text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 animate-in fade-in slide-in-from-left-8 duration-700"
             dangerouslySetInnerHTML={{ __html: slides[currentSlide].title }}
           />
           
-          <p className="text-lg md:text-xl text-white/80 mb-10 max-w-xl leading-relaxed animate-in fade-in slide-in-from-left-12 duration-1000 delay-200">
+          <p 
+            key={`desc-${currentSlide}`}
+            className="text-lg md:text-xl text-white/80 mb-10 max-w-xl leading-relaxed animate-in fade-in slide-in-from-left-12 duration-1000 delay-200"
+          >
             {slides[currentSlide].description}
           </p>
           

@@ -9,7 +9,6 @@ import {
   Droplets, 
   Settings, 
   Zap, 
-  ShieldCheck, 
   Wrench, 
   FlaskConical, 
   ArrowRight,
@@ -93,7 +92,7 @@ export function Services() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-          {services.map((service, idx) => (
+          {services.map((service) => (
             <div 
               key={service.id} 
               className="group bg-white rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-border/50 flex flex-col h-full"
