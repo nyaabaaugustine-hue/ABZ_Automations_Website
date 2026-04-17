@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { name: "About", href: "/#about" },
-  { name: "Shop Products", href: "/products" },
+  { name: "Shop", href: "/products" },
   { name: "Services", href: "/#services" },
   { name: "Team", href: "/#team" },
   { name: "Contact", href: "/#contact" },
@@ -29,17 +29,17 @@ export function Navbar() {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4",
-        scrolled ? "bg-background/80 backdrop-blur-md border-b shadow-sm" : "bg-transparent"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-6 py-4",
+        scrolled ? "bg-white/80 backdrop-blur-xl border-b shadow-sm py-3" : "bg-transparent py-6"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/20 group-hover:scale-105 transition-transform">
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="w-11 h-11 rounded-2xl bg-primary flex items-center justify-center text-white shadow-xl shadow-primary/20 group-hover:scale-105 transition-transform duration-300">
             <Droplets className="w-6 h-6" />
           </div>
           <span className={cn(
-            "font-headline font-bold text-xl tracking-tight transition-colors",
+            "font-headline font-bold text-2xl tracking-tight transition-colors duration-300",
             scrolled ? "text-foreground" : "text-white"
           )}>
             ABZ<span className="text-primary">Automations</span>
@@ -47,22 +47,22 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-10">
           {navItems.map((item) => (
             <Link
               key={item.name}
               href={item.href}
               className={cn(
-                "text-sm font-medium transition-colors",
+                "text-sm font-semibold transition-all duration-300 hover:scale-105",
                 scrolled 
                   ? "text-muted-foreground hover:text-primary" 
-                  : "text-white/90 hover:text-white"
+                  : "text-white/80 hover:text-white"
               )}
             >
               {item.name}
             </Link>
           ))}
-          <Button asChild variant="default" className="bg-primary hover:bg-primary/90 font-semibold shadow-md shadow-primary/10 px-6 rounded-xl">
+          <Button asChild className="bg-primary hover:bg-primary/90 font-bold shadow-lg shadow-primary/20 px-8 h-12 rounded-2xl">
             <Link href="/quote">Get a Quote</Link>
           </Button>
         </div>
@@ -70,8 +70,8 @@ export function Navbar() {
         {/* Mobile Toggle */}
         <button
           className={cn(
-            "md:hidden p-2 transition-colors",
-            scrolled || isOpen ? "text-foreground" : "text-white"
+            "md:hidden p-2 rounded-xl transition-colors",
+            scrolled || isOpen ? "text-foreground bg-secondary/50" : "text-white bg-white/10 backdrop-blur-md"
           )}
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -82,23 +82,27 @@ export function Navbar() {
       {/* Mobile Menu */}
       <div
         className={cn(
-          "fixed inset-0 top-0 h-screen bg-background z-40 md:hidden transition-all duration-500 ease-in-out px-8 pt-32",
+          "fixed inset-0 top-0 h-screen bg-background z-40 md:hidden transition-all duration-700 cubic-bezier(0.4, 0, 0.2, 1) px-10 pt-32",
           isOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
         )}
       >
-        <div className="flex flex-col gap-8">
-          {navItems.map((item) => (
+        <div className="flex flex-col gap-10">
+          {navItems.map((item, idx) => (
             <Link
               key={item.name}
               href={item.href}
               onClick={() => setIsOpen(false)}
-              className="text-4xl font-headline font-bold text-foreground flex items-center justify-between group"
+              className={cn(
+                "text-5xl font-headline font-bold text-foreground flex items-center justify-between group",
+                isOpen ? "animate-in fade-in slide-in-from-right-10 duration-500" : ""
+              )}
+              style={{ animationDelay: `${idx * 100}ms` }}
             >
               {item.name}
-              <ChevronRight className="text-primary group-hover:translate-x-2 transition-transform" />
+              <ChevronRight className="text-primary group-hover:translate-x-3 transition-transform duration-300 w-10 h-10" />
             </Link>
           ))}
-          <Button asChild size="lg" className="w-full h-16 text-xl mt-8 rounded-2xl" onClick={() => setIsOpen(false)}>
+          <Button asChild size="lg" className="w-full h-20 text-2xl mt-12 rounded-[2.5rem] shadow-2xl shadow-primary/20" onClick={() => setIsOpen(false)}>
             <Link href="/quote">Get a Quote</Link>
           </Button>
         </div>

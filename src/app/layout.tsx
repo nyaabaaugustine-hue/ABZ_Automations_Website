@@ -2,8 +2,8 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'ABZ Automations | Water Automation Solutions',
-  description: 'ABZ Automations provides world-class water automation solutions including AutoX, pump installations, and tank cleaning services.',
+  title: 'ABZ Automations | Precision Water Solutions',
+  description: 'Pioneering smart water automation and sustainable engineering solutions in Ghana.',
 };
 
 export default function RootLayout({
