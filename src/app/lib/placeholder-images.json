@@ -56,6 +56,30 @@
       "imageHint": "clean water"
     },
     {
+      "id": "service-ro",
+      "description": "RO system automation unit",
+      "imageUrl": "https://picsum.photos/seed/ro-auto/600/400",
+      "imageHint": "water purification"
+    },
+    {
+      "id": "service-booster",
+      "description": "Pressure booster pump set",
+      "imageUrl": "https://picsum.photos/seed/booster/600/400",
+      "imageHint": "booster pump"
+    },
+    {
+      "id": "service-plumbing",
+      "description": "Professional plumbing work",
+      "imageUrl": "https://picsum.photos/seed/plumbing/600/400",
+      "imageHint": "plumbing pipes"
+    },
+    {
+      "id": "service-custom",
+      "description": "Custom engineering water solution",
+      "imageUrl": "https://picsum.photos/seed/custom-water/600/400",
+      "imageHint": "engineering water"
+    },
+    {
       "id": "team-member-1",
       "description": "ABZ Automations Founder",
       "imageUrl": "https://picsum.photos/seed/team1/400/400",
