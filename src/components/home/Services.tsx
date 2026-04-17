@@ -23,7 +23,7 @@ const services = [
     title: "Pump Installation",
     description: "Industrial-grade programmable controllers that eliminate tank overflow and dry-run hazards.",
     icon: Settings,
-    image: PlaceHolderImages.find(img => img.id === "service-pump")?.imageUrl || "",
+    image: PlaceHolderImages.find(img => img.id === "service-pump")?.imageUrl || "https://picsum.photos/seed/service-pump/800/600",
     stat: "99% Efficiency"
   },
   {
@@ -31,7 +31,7 @@ const services = [
     title: "Sanitization",
     description: "Advanced chemical-free filtration and cleaning to ensure hospital-grade water quality.",
     icon: Droplets,
-    image: PlaceHolderImages.find(img => img.id === "service-tank")?.imageUrl || "",
+    image: PlaceHolderImages.find(img => img.id === "service-tank")?.imageUrl || "https://picsum.photos/seed/service-tank/800/600",
     stat: "Zero Algae"
   },
   {
@@ -39,7 +39,7 @@ const services = [
     title: "R/O Automation",
     description: "Smart feedback loops for reverse osmosis systems to prevent membrane rupture.",
     icon: FlaskConical,
-    image: PlaceHolderImages.find(img => img.id === "service-ro")?.imageUrl || "",
+    image: PlaceHolderImages.find(img => img.id === "service-ro")?.imageUrl || "https://picsum.photos/seed/service-ro/800/600",
     stat: "Smart Monitoring"
   },
   {
@@ -47,7 +47,7 @@ const services = [
     title: "Pressure Logic",
     description: "VFD-driven booster systems that maintain precise pressure across multi-story buildings.",
     icon: Activity,
-    image: PlaceHolderImages.find(img => img.id === "service-pressure")?.imageUrl || "",
+    image: PlaceHolderImages.find(img => img.id === "service-pressure")?.imageUrl || "https://picsum.photos/seed/service-pressure/800/600",
     stat: "Constant Flow"
   },
   {
@@ -55,7 +55,7 @@ const services = [
     title: "Technical Support",
     description: "Certified engineering support for complex residential and industrial plumbing architectures.",
     icon: Wrench,
-    image: PlaceHolderImages.find(img => img.id === "service-support")?.imageUrl || "",
+    image: PlaceHolderImages.find(img => img.id === "service-support")?.imageUrl || "https://picsum.photos/seed/service-support/800/600",
     stat: "24/7 Response"
   },
   {
@@ -63,7 +63,7 @@ const services = [
     title: "Bespoke R&D",
     description: "Custom hardware and software development for unique agricultural or industrial challenges.",
     icon: Waves,
-    image: PlaceHolderImages.find(img => img.id === "service-rd")?.imageUrl || "",
+    image: PlaceHolderImages.find(img => img.id === "service-rd")?.imageUrl || "https://picsum.photos/seed/service-rd/800/600",
     stat: "Custom Logic"
   }
 ];

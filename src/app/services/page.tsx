@@ -29,7 +29,7 @@ const services = [
     title: "Smart Pump Installation",
     fullDescription: "Our industrial-grade programmable controllers eliminate tank overflow and dry-run hazards by using advanced ultrasonic sensors and real-time telemetry. We ensure your pumps operate at peak efficiency, protecting your hardware and reducing energy costs.",
     icon: Settings,
-    image: PlaceHolderImages.find(img => img.id === "service-pump")?.imageUrl || "",
+    image: PlaceHolderImages.find(img => img.id === "service-pump")?.imageUrl || "https://picsum.photos/seed/service-pump/800/600",
     features: ["WiFi/GSM Monitoring", "Auto-Shutoff Logic", "Surge Protection"]
   },
   {
@@ -37,7 +37,7 @@ const services = [
     title: "Sanitization & Cleaning",
     fullDescription: "We provide hospital-grade water quality through advanced chemical-free filtration and high-pressure sanitization. Our automated tank sentinel keeps track of algae growth and sediment levels, alerting you before quality drops.",
     icon: Droplets,
-    image: PlaceHolderImages.find(img => img.id === "service-tank")?.imageUrl || "",
+    image: PlaceHolderImages.find(img => img.id === "service-tank")?.imageUrl || "https://picsum.photos/seed/service-tank/800/600",
     features: ["UV Sterilization", "Sediment Removal", "Quality Reports"]
   },
   {
@@ -45,7 +45,7 @@ const services = [
     title: "R/O System Automation",
     fullDescription: "Reverse Osmosis systems are sensitive. Our automation layer adds smart feedback loops that monitor pressure differentials and TDS levels in real-time to prevent membrane rupture and ensure consistent purity.",
     icon: FlaskConical,
-    image: PlaceHolderImages.find(img => img.id === "service-ro")?.imageUrl || "",
+    image: PlaceHolderImages.find(img => img.id === "service-ro")?.imageUrl || "https://picsum.photos/seed/service-ro/800/600",
     features: ["TDS Tracking", "Auto-Backwash", "Leak Detection"]
   },
   {
@@ -53,7 +53,7 @@ const services = [
     title: "Pressure Management",
     fullDescription: "Maintain precise water pressure across multi-story buildings or large agricultural plots with our VFD (Variable Frequency Drive) solutions. We eliminate the 'hammer effect' and ensure constant flow regardless of demand.",
     icon: Activity,
-    image: PlaceHolderImages.find(img => img.id === "service-pressure")?.imageUrl || "",
+    image: PlaceHolderImages.find(img => img.id === "service-pressure")?.imageUrl || "https://picsum.photos/seed/service-pressure/800/600",
     features: ["VFD Integration", "Energy Savings", "Soft-Start Tech"]
   },
   {
@@ -61,7 +61,7 @@ const services = [
     title: "Engineering Support",
     fullDescription: "Get access to certified technical support for complex residential, commercial, and industrial plumbing architectures. We provide detailed schematics, stress-testing, and 24/7 remote diagnostic support.",
     icon: Wrench,
-    image: PlaceHolderImages.find(img => img.id === "service-support")?.imageUrl || "",
+    image: PlaceHolderImages.find(img => img.id === "service-support")?.imageUrl || "https://picsum.photos/seed/service-support/800/600",
     features: ["Technical Audit", "Remote Diagnostics", "CAD Schematics"]
   },
   {
@@ -69,7 +69,7 @@ const services = [
     title: "Bespoke R&D",
     fullDescription: "When off-the-shelf solutions fail, our KNUST-incubated engineering team develops custom hardware and software integrations for the most demanding water challenges in agriculture and industry.",
     icon: Waves,
-    image: PlaceHolderImages.find(img => img.id === "service-rd")?.imageUrl || "",
+    image: PlaceHolderImages.find(img => img.id === "service-rd")?.imageUrl || "https://picsum.photos/seed/service-rd/800/600",
     features: ["Prototyping", "Custom Firmware", "Lab Testing"]
   }
 ];
