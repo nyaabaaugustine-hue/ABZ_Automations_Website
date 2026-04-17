@@ -1,9 +1,8 @@
-
 "use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Sparkles, X, Bot, Send, Loader2, MessageCircle, Linkedin, Facebook, Instagram, Twitter } from "lucide-react";
+import { X, Bot, Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -15,14 +14,6 @@ type Message = {
   role: "user" | "assistant";
   text: string;
 };
-
-const socials = [
-  { name: 'WhatsApp', icon: MessageCircle, href: 'https://wa.me/233546101305', color: 'bg-[#25D366]' },
-  { name: 'LinkedIn', icon: Linkedin, href: '#', color: 'bg-[#0077B5]' },
-  { name: 'Facebook', icon: Facebook, href: '#', color: 'bg-[#1877F2]' },
-  { name: 'Instagram', icon: Instagram, href: '#', color: 'bg-[#E4405F]' },
-  { name: 'X', icon: Twitter, href: '#', color: 'bg-black' },
-];
 
 export function FloatingAI() {
   const [isOpen, setIsOpen] = useState(false);
@@ -62,32 +53,21 @@ export function FloatingAI() {
       {isOpen && (
         <Card className="mb-4 w-[calc(100vw-2.5rem)] sm:w-[400px] h-[550px] max-h-[calc(100vh-140px)] flex flex-col shadow-2xl border border-white/20 glass animate-in fade-in slide-in-from-bottom-8 duration-500 overflow-hidden rounded-[24px]">
           <CardHeader className="bg-primary text-white p-4 flex flex-row items-center justify-between shrink-0">
-            <div className="flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-accent" />
-              <CardTitle className="text-sm font-headline">ABZ Tech Hub</CardTitle>
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-white relative overflow-hidden shadow-lg border border-white/20">
+                <Image 
+                  src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776230467/image_j8ruov.webp"
+                  alt="ABZ Logo"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <CardTitle className="text-sm font-headline tracking-tight">ABZ Tech Hub</CardTitle>
             </div>
             <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/10" onClick={() => setIsOpen(false)}>
               <X className="w-4 h-4" />
             </Button>
           </CardHeader>
-          
-          <div className="bg-white/50 border-b border-border/50 p-3 flex items-center justify-center gap-3 shrink-0">
-            {socials.map((social) => (
-              <a 
-                key={social.name}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={cn(
-                  "w-8 h-8 rounded-lg flex items-center justify-center text-white transition-transform hover:scale-110 shadow-md",
-                  social.color
-                )}
-                title={social.name}
-              >
-                <social.icon className="w-4 h-4" />
-              </a>
-            ))}
-          </div>
           
           <CardContent className="flex-1 p-0 flex flex-col overflow-hidden bg-background/30">
             <ScrollArea className="flex-1 p-4">
