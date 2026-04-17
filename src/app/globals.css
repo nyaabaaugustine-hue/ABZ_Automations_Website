@@ -89,7 +89,8 @@
   }
 
   .animate-ticker-ltr {
-    animation: ticker-ltr 40s linear infinite;
+    /* Recalibrated for slow premium crawl */
+    animation: ticker-ltr 80s linear infinite;
   }
   
   .glass {
