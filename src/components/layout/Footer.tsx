@@ -1,8 +1,10 @@
+
 "use client";
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Droplets, Instagram, Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
+import Image from "next/image";
+import { Instagram, Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
 
 const socialLinks = [
   { icon: Facebook, href: "#", name: "Facebook" },
@@ -57,8 +59,13 @@ export function Footer() {
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 mb-24">
           <div className="lg:col-span-4 space-y-10">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center text-primary shadow-2xl group-hover:scale-110 transition-transform duration-300">
-                <Droplets className="w-7 h-7" />
+              <div className="w-12 h-12 rounded-2xl bg-white relative overflow-hidden flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
+                <Image
+                  src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776230467/image_j8ruov.webp"
+                  alt="ABZ Automations Logo"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <span className="font-headline font-bold text-3xl tracking-tight">
                 ABZ<span className="text-accent">Automations</span>

@@ -3,7 +3,8 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Droplets, ChevronRight } from "lucide-react";
+import Image from "next/image";
+import { Menu, X, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -38,8 +39,13 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-11 h-11 rounded-2xl bg-primary flex items-center justify-center text-white shadow-xl shadow-primary/30 group-hover:scale-105 transition-transform duration-300">
-            <Droplets className="w-6 h-6" />
+          <div className="w-11 h-11 rounded-2xl bg-white relative overflow-hidden shadow-xl shadow-primary/30 group-hover:scale-105 transition-transform duration-300">
+            <Image
+              src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776230467/image_j8ruov.webp"
+              alt="ABZ Automations Logo"
+              fill
+              className="object-cover"
+            />
           </div>
           <span className={cn(
             "font-headline font-bold text-2xl tracking-tight transition-colors duration-300",
