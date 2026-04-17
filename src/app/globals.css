@@ -89,7 +89,6 @@
   }
 
   .animate-ticker-ltr {
-    /* Recalibrated for slow premium crawl */
     animation: ticker-ltr 80s linear infinite;
   }
   
@@ -103,5 +102,23 @@
 
   .text-glow {
     text-shadow: 0 0 20px rgba(31, 114, 173, 0.3);
+  }
+
+  @keyframes water-fill {
+    0% { height: 0%; }
+    100% { height: 100%; }
+  }
+
+  .animate-water-fill {
+    animation: water-fill 2.5s ease-out forwards;
+  }
+
+  @keyframes wave {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-5px) rotate(2deg); }
+  }
+
+  .animate-wave {
+    animation: wave 3s ease-in-out infinite;
   }
 }

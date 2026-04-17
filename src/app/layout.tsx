@@ -1,8 +1,8 @@
-
 import type {Metadata} from 'next';
 import './globals.css';
 import { FloatingAI } from '@/components/shared/FloatingAI';
 import { WhatsAppButton } from '@/components/shared/WhatsAppButton';
+import { WaterLoading } from '@/components/shared/WaterLoading';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
@@ -27,6 +27,7 @@ export default function RootLayout({
         className="font-body antialiased selection:bg-primary selection:text-primary-foreground" 
         suppressHydrationWarning
       >
+        <WaterLoading />
         {children}
         <WhatsAppButton />
         <FloatingAI />
