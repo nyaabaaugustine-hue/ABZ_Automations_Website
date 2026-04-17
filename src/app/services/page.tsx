@@ -1,14 +1,16 @@
 
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { 
   Droplets, 
   Settings, 
@@ -19,7 +21,9 @@ import {
   Waves,
   ShieldCheck,
   Zap,
-  Globe
+  Globe,
+  Calculator,
+  TrendingDown
 } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 
@@ -47,34 +51,17 @@ const services = [
     icon: FlaskConical,
     image: PlaceHolderImages.find(img => img.id === "service-ro")?.imageUrl || "https://picsum.photos/seed/service-ro/800/600",
     features: ["TDS Tracking", "Auto-Backwash", "Leak Detection"]
-  },
-  {
-    id: "booster",
-    title: "Pressure Management",
-    fullDescription: "Maintain precise water pressure across multi-story buildings or large agricultural plots with our VFD (Variable Frequency Drive) solutions. We eliminate the 'hammer effect' and ensure constant flow regardless of demand.",
-    icon: Activity,
-    image: PlaceHolderImages.find(img => img.id === "service-pressure")?.imageUrl || "https://picsum.photos/seed/service-pressure/800/600",
-    features: ["VFD Integration", "Energy Savings", "Soft-Start Tech"]
-  },
-  {
-    id: "plumbing",
-    title: "Engineering Support",
-    fullDescription: "Get access to certified technical support for complex residential, commercial, and industrial plumbing architectures. We provide detailed schematics, stress-testing, and 24/7 remote diagnostic support.",
-    icon: Wrench,
-    image: PlaceHolderImages.find(img => img.id === "service-support")?.imageUrl || "https://picsum.photos/seed/service-support/800/600",
-    features: ["Technical Audit", "Remote Diagnostics", "CAD Schematics"]
-  },
-  {
-    id: "custom",
-    title: "Bespoke R&D",
-    fullDescription: "When off-the-shelf solutions fail, our KNUST-incubated engineering team develops custom hardware and software integrations for the most demanding water challenges in agriculture and industry.",
-    icon: Waves,
-    image: PlaceHolderImages.find(img => img.id === "service-rd")?.imageUrl || "https://picsum.photos/seed/service-rd/800/600",
-    features: ["Prototyping", "Custom Firmware", "Lab Testing"]
   }
 ];
 
 export default function ServicesPage() {
+  const [tankSize, setTankSize] = useState(2000); // Gallons
+  const [dailyPumps, setDailyPumps] = useState(3);
+  
+  // Basic ROI Logic
+  const overflowWaste = (tankSize * 0.05) * dailyPumps * 30; // 5% overflow waste monthly
+  const annualSavings = (overflowWaste * 12) * 0.015; // GH₵ calculation per gallon saved (est)
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
@@ -95,11 +82,81 @@ export default function ServicesPage() {
           </div>
         </section>
 
+        {/* ROI CALCULATOR SECTION */}
+        <section className="max-w-7xl mx-auto px-6 mb-24">
+          <Card className="rounded-[40px] overflow-hidden border-none premium-shadow bg-white">
+            <div className="grid lg:grid-cols-2">
+              <div className="p-8 md:p-16 bg-[#020817] text-white space-y-8">
+                <div className="space-y-4">
+                  <div className="w-12 h-12 rounded-2xl bg-primary/20 flex items-center justify-center text-primary">
+                    <Calculator className="w-6 h-6" />
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-headline font-bold">ABZ Savings <span className="text-primary">Estimator</span></h2>
+                  <p className="text-white/60 text-sm md:text-base">Calculate the environmental and financial impact of switching to ABZ Automation hardware.</p>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="space-y-3">
+                    <Label className="text-white/80 font-bold uppercase tracking-widest text-[10px]">Tank Capacity (Gallons)</Label>
+                    <Input 
+                      type="number" 
+                      value={tankSize} 
+                      onChange={(e) => setTankSize(Number(e.target.value))}
+                      className="bg-white/5 border-white/10 h-14 rounded-2xl text-xl text-primary font-bold focus:ring-primary"
+                    />
+                  </div>
+                  <div className="space-y-3">
+                    <Label className="text-white/80 font-bold uppercase tracking-widest text-[10px]">Daily Pump Cycles</Label>
+                    <Input 
+                      type="number" 
+                      value={dailyPumps} 
+                      onChange={(e) => setDailyPumps(Number(e.target.value))}
+                      className="bg-white/5 border-white/10 h-14 rounded-2xl text-xl text-primary font-bold focus:ring-primary"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-8 md:p-16 flex flex-col justify-center space-y-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-2">
+                    <p className="text-muted-foreground text-[10px] font-bold uppercase tracking-widest">Monthly Water Saved</p>
+                    <div className="flex items-end gap-2">
+                       <span className="text-4xl font-headline font-extrabold text-primary">{Math.round(overflowWaste).toLocaleString()}</span>
+                       <span className="text-sm font-bold pb-1">Gallons</span>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-muted-foreground text-[10px] font-bold uppercase tracking-widest">Est. Annual ROI</p>
+                    <div className="flex items-end gap-2">
+                       <span className="text-4xl font-headline font-extrabold text-accent">₵{Math.round(annualSavings).toLocaleString()}</span>
+                       <span className="text-sm font-bold pb-1">GH₵</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-primary/5 p-6 rounded-3xl flex items-center gap-4 border border-primary/10">
+                  <div className="w-12 h-12 rounded-2xl bg-primary text-white flex items-center justify-center shrink-0">
+                    <TrendingDown className="w-6 h-6" />
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    <strong className="text-primary">Engineering Insight:</strong> By eliminating overflow and optimizing pump intervals, an average Ghanaian residential unit recovers installation costs in under <span className="text-foreground font-bold">14 months</span>.
+                  </p>
+                </div>
+
+                <Button className="w-full h-16 rounded-2xl font-bold text-lg shadow-2xl shadow-primary/20" asChild>
+                  <Link href="/quote">Get This Solution Now</Link>
+                </Button>
+              </div>
+            </div>
+          </Card>
+        </section>
+
         {/* Services List */}
         <section className="max-w-7xl mx-auto px-6 space-y-12 md:space-y-20">
           {services.map((service, idx) => (
             <div key={service.id} className={`grid lg:grid-cols-2 gap-10 md:gap-16 items-center ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-              <div className={`relative h-[350px] md:h-[500px] rounded-[6%] overflow-hidden shadow-2xl group ${idx % 2 === 1 ? 'lg:order-last' : ''}`}>
+              <div className={`relative h-[350px] md:h-[500px] rounded-[40px] overflow-hidden shadow-2xl group ${idx % 2 === 1 ? 'lg:order-last' : ''}`}>
                 <Image
                   src={service.image}
                   alt={service.title}
@@ -111,7 +168,7 @@ export default function ServicesPage() {
 
               <div className="space-y-6 md:space-y-8">
                 <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-[6%] bg-primary/10 flex items-center justify-center text-primary">
+                  <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
                     <service.icon className="w-6 h-6" />
                   </div>
                   <h2 className="font-headline text-3xl md:text-4xl font-bold">{service.title}</h2>
@@ -129,7 +186,7 @@ export default function ServicesPage() {
                   ))}
                 </div>
 
-                <Button asChild className="rounded-[6%] h-12 px-8 font-bold gap-2">
+                <Button asChild className="rounded-2xl h-14 px-8 font-bold gap-2 text-base">
                   <Link href={`/quote?service=${service.id}`}>
                     Request Estimate <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -141,7 +198,7 @@ export default function ServicesPage() {
 
         {/* Why Choose Us */}
         <section className="max-w-7xl mx-auto px-6 mt-24 md:mt-32">
-          <div className="bg-[#020817] rounded-[6%] p-8 md:p-16 text-white relative overflow-hidden shadow-2xl">
+          <div className="bg-[#020817] rounded-[40px] p-8 md:p-16 text-white relative overflow-hidden shadow-2xl">
             <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-[100px] translate-x-1/2 -translate-y-1/2"></div>
             
             <div className="relative z-10 grid md:grid-cols-3 gap-12 text-center md:text-left">
@@ -151,7 +208,7 @@ export default function ServicesPage() {
                 { icon: Globe, title: "Eco Conscious", desc: "We help you reduce water waste by up to 45% through precision logic." }
               ].map((item, i) => (
                 <div key={i} className="space-y-4">
-                  <div className="w-12 h-12 rounded-[6%] bg-white/10 flex items-center justify-center text-accent mx-auto md:mx-0">
+                  <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-accent mx-auto md:mx-0">
                     <item.icon className="w-6 h-6" />
                   </div>
                   <h3 className="text-xl font-headline font-bold">{item.title}</h3>
@@ -167,7 +224,7 @@ export default function ServicesPage() {
           <div className="max-w-2xl mx-auto space-y-6">
             <h2 className="font-headline text-3xl md:text-5xl font-bold">Ready to Automate?</h2>
             <p className="text-muted-foreground">Join 500+ businesses and homeowners who have optimized their water future.</p>
-            <Button asChild size="lg" className="h-14 px-10 rounded-[6%] font-bold text-lg shadow-xl shadow-primary/20">
+            <Button asChild size="lg" className="h-16 px-12 rounded-2xl font-bold text-lg shadow-xl shadow-primary/20">
               <Link href="/quote">Start Your Quote</Link>
             </Button>
           </div>
