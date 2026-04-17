@@ -103,6 +103,12 @@
       "imageHint": "autox pro"
     },
     {
+      "id": "about-main",
+      "description": "ABZ Automations core technology",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776424323/mn1_toifu3.jpg",
+      "imageHint": "water technology"
+    },
+    {
       "id": "news-1",
       "description": "Smart water project launch",
       "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422281/abz_76_eu0uyp.jpg",

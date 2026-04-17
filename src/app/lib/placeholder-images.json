@@ -51,7 +51,7 @@
     },
     {
       "id": "product-1",
-      "description": "Smart Control Hub Alpha",
+      "description": "Smart Hub Alpha",
       "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422276/abz_50_ib7l6y.jpg",
       "imageHint": "control hub"
     },
@@ -102,6 +102,12 @@
       "description": "Flagship AutoX Pro Controller",
       "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776423527/124_ipyfnl.jpg",
       "imageHint": "autox pro"
+    },
+    {
+      "id": "about-main",
+      "description": "ABZ Automations core technology",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776424323/mn1_toifu3.jpg",
+      "imageHint": "water technology"
     },
     {
       "id": "news-1",

@@ -2,7 +2,9 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Check } from "lucide-react";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 const values = [
   "Commitment to Sustainability",
@@ -12,17 +14,20 @@ const values = [
 ];
 
 export function About() {
+  const aboutImg = PlaceHolderImages.find(img => img.id === "about-main")?.imageUrl || "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776424323/mn1_toifu3.jpg";
+
   return (
     <section id="about" className="py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div className="relative">
             <div className="relative rounded-[40px] overflow-hidden aspect-[4/5] shadow-2xl border-[12px] border-background">
-               <img 
-                src="https://picsum.photos/seed/about-img/800/1000" 
-                alt="Water Automation" 
-                className="w-full h-full object-cover"
-                data-ai-hint="water automation"
+               <Image 
+                src={aboutImg} 
+                alt="Water Automation Technology" 
+                fill
+                className="object-cover"
+                data-ai-hint="water technology"
                />
             </div>
             <div className="absolute -bottom-10 -right-10 bg-primary p-10 rounded-[40px] shadow-2xl hidden md:block max-w-[280px]">
