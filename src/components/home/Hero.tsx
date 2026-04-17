@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -70,7 +71,7 @@ export function Hero() {
         ))}
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full pt-32 md:pt-48">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full pt-40 md:pt-64">
         <div className="text-white text-center md:text-left max-w-4xl">
           <div className="inline-flex items-center gap-3 px-4 py-2 rounded-[6%] bg-white/10 backdrop-blur-xl text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] mb-8 md:mb-12 border border-white/20 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <Zap className="w-3 h-3 md:w-4 md:h-4 text-accent fill-accent" />

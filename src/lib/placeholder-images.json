@@ -1,3 +1,124 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-water-1",
+      "description": "Premium water management system visualization",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776257017/vvv_jxssbr.jpg",
+      "imageHint": "water automation"
+    },
+    {
+      "id": "hero-water-2",
+      "description": "Advanced irrigation controller in a farm",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776230139/1_2_l2sh9g.jpg",
+      "imageHint": "smart irrigation"
+    },
+    {
+      "id": "hero-water-3",
+      "description": "Industrial water purification plant",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776230139/1_1_trzrxy.jpg",
+      "imageHint": "industrial water"
+    },
+    {
+      "id": "team-member-1",
+      "description": "Abdullah Mohammed Zainudeen - CEO",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776230143/1_4_sbjq8z.jpg",
+      "imageHint": "professional man"
+    },
+    {
+      "id": "team-member-2",
+      "description": "Mohammed Hardi Abdul Baaki - COO",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776230139/1_1_mkjpox.jpg",
+      "imageHint": "professional man"
+    },
+    {
+      "id": "team-member-3",
+      "description": "Yakubu Bunyamin - CTO",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776230139/1_2_jjlnjh.jpg",
+      "imageHint": "professional man"
+    },
+    {
+      "id": "team-member-4",
+      "description": "Abdul Rahim Mettle Nii Okai - CMO",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776230139/1_3_cwsqrr.jpg",
+      "imageHint": "professional man"
+    },
+    {
+      "id": "brochure-bg",
+      "description": "ABZ Automations Technical Catalog Background",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422246/abz_3_hp78qi.jpg",
+      "imageHint": "technical documentation"
+    },
+    {
+      "id": "product-1",
+      "description": "Smart Hub Alpha",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422276/abz_50_ib7l6y.jpg",
+      "imageHint": "control hub"
+    },
+    {
+      "id": "product-2",
+      "description": "Precision Flow Node",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422276/abz_47_g1c0ma.jpg",
+      "imageHint": "flow sensor"
+    },
+    {
+      "id": "product-3",
+      "description": "Industrial Pump Logic",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776256939/abz_64_jw9ixn.jpg",
+      "imageHint": "pump logic"
+    },
+    {
+      "id": "product-4",
+      "description": "Solar Integration Module",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776423520/bty_zkd3ww.jpg",
+      "imageHint": "solar module"
+    },
+    {
+      "id": "product-5",
+      "description": "Telemetry Wireless Unit",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776423520/ttgy_qzwm7x.jpg",
+      "imageHint": "telemetry unit"
+    },
+    {
+      "id": "product-6",
+      "description": "Smart Valve Actuator",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776423520/bvv_u2sx0a.jpg",
+      "imageHint": "valve actuator"
+    },
+    {
+      "id": "product-7",
+      "description": "Tank Level Sentinel",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776423521/iuu_pzqmba.jpg",
+      "imageHint": "tank sensor"
+    },
+    {
+      "id": "product-8",
+      "description": "Multi-Phase Filter Controller",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776423522/op_muzrhg.jpg",
+      "imageHint": "filter controller"
+    },
+    {
+      "id": "product-9",
+      "description": "Flagship AutoX Pro Controller",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776423527/124_ipyfnl.jpg",
+      "imageHint": "autox pro"
+    },
+    {
+      "id": "news-1",
+      "description": "Smart water project launch",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422281/abz_76_eu0uyp.jpg",
+      "imageHint": "water project"
+    },
+    {
+      "id": "news-2",
+      "description": "Technology summit award",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422279/abz_68_i0ndl4.jpg",
+      "imageHint": "tech award"
+    },
+    {
+      "id": "news-3",
+      "description": "Maintenance workshop",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422275/abz_26_lvvz7f.jpg",
+      "imageHint": "workshop engineering"
+    }
+  ]
 }
