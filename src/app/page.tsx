@@ -1,7 +1,7 @@
-
 import { Navbar } from "@/components/layout/Navbar";
 import { Hero } from "@/components/home/Hero";
 import { Stats } from "@/components/home/Stats";
+import { ProductTicker } from "@/components/home/ProductTicker";
 import { About } from "@/components/home/About";
 import { Products } from "@/components/home/Products";
 import { Services } from "@/components/home/Services";
@@ -17,6 +17,7 @@ export default function Home() {
       <main className="flex-grow">
         <Hero />
         <Stats />
+        <ProductTicker />
         <About />
         <Products />
         <Services />
