@@ -20,8 +20,10 @@ const productPreview = {
 
 export function Products() {
   return (
-    <section id="products" className="py-32 bg-white relative overflow-hidden">
+    <section id="products" className="py-32 bg-background relative overflow-hidden">
+      {/* Dynamic Background Elements */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px] translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[150px] -translate-x-1/2 translate-y-1/2"></div>
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
@@ -36,7 +38,7 @@ export function Products() {
           </Button>
         </div>
 
-        <Card className="overflow-hidden border-none shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)] rounded-[6%] bg-background group">
+        <Card className="overflow-hidden border-none shadow-2xl rounded-[6%] bg-white/40 backdrop-blur-xl border border-white/20 group premium-shadow">
           <CardContent className="p-0">
             <div className="grid lg:grid-cols-2 items-stretch">
               <div className="p-10 md:p-16 lg:p-24 space-y-12">
@@ -55,7 +57,7 @@ export function Products() {
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                   {productPreview.features.map((feature, i) => (
                     <li key={i} className="flex items-center gap-4 text-base font-bold text-foreground/80">
-                      <div className="w-8 h-8 rounded-[6%] bg-accent/10 flex items-center justify-center text-accent shrink-0">
+                      <div className="w-8 h-8 rounded-[6%] bg-primary/10 flex items-center justify-center text-primary shrink-0 group-hover:scale-110 transition-transform">
                         <Check className="w-5 h-5" />
                       </div>
                       {feature}
@@ -76,17 +78,16 @@ export function Products() {
                 </div>
               </div>
               
-              <div className="relative min-h-[500px] lg:min-h-full overflow-hidden">
+              <div className="relative min-h-[500px] lg:min-h-full overflow-hidden bg-primary/5">
                 <Image
                   src={productPreview.image}
                   alt={productPreview.name}
                   fill
-                  className="object-cover transition-transform duration-[2000ms] group-hover:scale-110"
+                  className="object-cover transition-transform duration-[3000ms] group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent lg:bg-gradient-to-l opacity-40"></div>
                 
-                {/* Floating Tech Stat */}
-                <div className="absolute bottom-12 left-12 right-12 p-8 rounded-[6%] bg-white/10 backdrop-blur-2xl border border-white/30 text-white animate-in fade-in slide-in-from-bottom-8">
+                <div className="absolute bottom-12 left-12 right-12 p-8 rounded-[6%] bg-white/10 backdrop-blur-2xl border border-white/20 text-white animate-in fade-in slide-in-from-bottom-8">
                   <p className="text-xs font-bold uppercase tracking-[0.3em] text-accent mb-2">Performance Architecture</p>
                   <p className="text-2xl font-bold">Tested at KNUST Engineering Labs</p>
                 </div>

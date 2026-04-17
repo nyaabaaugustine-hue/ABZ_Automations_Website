@@ -1,5 +1,8 @@
+
 import type {Metadata} from 'next';
 import './globals.css';
+import { FloatingAI } from '@/components/shared/FloatingAI';
+import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
   title: 'ABZ Automations | Precision Water Solutions',
@@ -24,6 +27,8 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         {children}
+        <FloatingAI />
+        <Toaster />
       </body>
     </html>
   );

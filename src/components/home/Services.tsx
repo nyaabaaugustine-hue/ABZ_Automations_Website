@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from "react";
@@ -7,12 +8,12 @@ import { Button } from "@/components/ui/button";
 import { 
   Droplets, 
   Settings, 
-  Zap, 
   Wrench, 
   FlaskConical, 
   ArrowRight,
   Activity,
-  Waves
+  Waves,
+  Zap
 } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Badge } from "@/components/ui/badge";
@@ -20,57 +21,57 @@ import { Badge } from "@/components/ui/badge";
 const services = [
   {
     id: "pump",
-    title: "Water Pump Installation",
-    description: "Experience a trouble-free operation with our flagship programmable controllers. Never worry about overflowing tanks or running dry in the middle of a task again.",
+    title: "Pump Installation",
+    description: "Industrial-grade programmable controllers that eliminate tank overflow and dry-run hazards.",
     icon: Settings,
     image: PlaceHolderImages.find(img => img.id === "service-pump")?.imageUrl || "https://picsum.photos/seed/pump/600/400",
-    accent: "text-primary"
+    stat: "99% Efficiency"
   },
   {
     id: "tank",
-    title: "Professional Tank Cleaning",
-    description: "Hygienic water is the lifeblood of your home. We use advanced techniques to flush sediment, algae, and contaminants, ensuring your water remains safe and healthy.",
+    title: "Sanitization",
+    description: "Advanced chemical-free filtration and cleaning to ensure hospital-grade water quality.",
     icon: Droplets,
     image: PlaceHolderImages.find(img => img.id === "service-tank")?.imageUrl || "https://picsum.photos/seed/tank/600/400",
-    accent: "text-accent"
+    stat: "Zero Algae"
   },
   {
     id: "ro",
-    title: "R/O System Automation",
-    description: "Improve efficiency and reduce downtime. Our automation prevents tank ruptures and ensures fresh water is always available without manual operation.",
+    title: "R/O Automation",
+    description: "Smart feedback loops for reverse osmosis systems to prevent membrane rupture.",
     icon: FlaskConical,
     image: PlaceHolderImages.find(img => img.id === "service-ro")?.imageUrl || "https://picsum.photos/seed/ro-auto/600/400",
-    accent: "text-primary"
+    stat: "Smart Monitoring"
   },
   {
     id: "booster",
-    title: "Pressure Booster Systems",
-    description: "Enjoy consistent and optimal water pressure throughout your property. Our boosters increase flow precisely where it is needed, when it is needed.",
+    title: "Pressure Logic",
+    description: "VFD-driven booster systems that maintain precise pressure across multi-story buildings.",
     icon: Activity,
     image: PlaceHolderImages.find(img => img.id === "service-booster")?.imageUrl || "https://picsum.photos/seed/booster/600/400",
-    accent: "text-accent"
+    stat: "Constant Flow"
   },
   {
     id: "plumbing",
-    title: "General Plumbing Services",
-    description: "From regular maintenance to complex industrial installations. Our certified plumbers provide high-quality service that promises efficiency and reliability.",
+    title: "Technical Support",
+    description: "Certified engineering support for complex residential and industrial plumbing architectures.",
     icon: Wrench,
     image: PlaceHolderImages.find(img => img.id === "service-plumbing")?.imageUrl || "https://picsum.photos/seed/plumbing/600/400",
-    accent: "text-primary"
+    stat: "24/7 Response"
   },
   {
     id: "custom",
-    title: "Custom Water Solutions",
-    description: "Bespoke engineering for unique challenges. We design and implement tailored automation architectures for residential, agricultural, and industrial needs.",
+    title: "Bespoke R&D",
+    description: "Custom hardware and software development for unique agricultural or industrial challenges.",
     icon: Waves,
     image: PlaceHolderImages.find(img => img.id === "service-custom")?.imageUrl || "https://picsum.photos/seed/custom-water/600/400",
-    accent: "text-accent"
+    stat: "Custom Logic"
   }
 ];
 
 export function Services() {
   return (
-    <section id="services" className="py-32 bg-background relative overflow-hidden">
+    <section id="services" className="py-32 bg-white relative overflow-hidden">
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px] -translate-x-1/2"></div>
       <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-accent/10 rounded-full blur-[120px] translate-x-1/2"></div>
 
@@ -80,70 +81,77 @@ export function Services() {
             Technical Excellence
           </Badge>
           <h2 className="font-headline text-5xl md:text-6xl lg:text-7xl font-bold">
-            Expert <span className="text-primary">Water Services</span>
+            Engineering <span className="text-primary">Capabilities</span>
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Engineered solutions for residential, commercial, and industrial plumbing systems.
+            Professional water services backed by advanced Ghanaian automation hardware.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
             <div 
               key={service.id} 
-              className="group bg-white rounded-[6%] overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_50px_80px_-20px_rgba(31,114,173,0.15)] transition-all duration-700 border border-white flex flex-col h-full hover:-translate-y-3"
+              className="group bg-background rounded-[6%] overflow-hidden border border-border/50 hover:border-primary/30 hover:shadow-2xl transition-all duration-700 flex flex-col h-full hover:-translate-y-3"
             >
-              <div className="relative h-72 overflow-hidden">
+              <div className="relative h-64 overflow-hidden">
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-1000 ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                <div className="absolute top-8 left-8 w-16 h-16 bg-white/95 backdrop-blur-xl rounded-[6%] flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                  <service.icon className="w-8 h-8" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div className="absolute bottom-6 left-6 text-white z-10">
+                  <Badge className="bg-accent text-accent-foreground border-none px-3 py-1 font-bold text-[10px] rounded-[6%]">
+                    {service.stat}
+                  </Badge>
+                </div>
+                <div className="absolute top-6 right-6 w-12 h-12 bg-white/90 backdrop-blur-xl rounded-[6%] flex items-center justify-center shadow-2xl group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                  <service.icon className="w-6 h-6" />
                 </div>
               </div>
               
-              <div className="p-10 flex-grow flex flex-col">
-                <h4 className="text-3xl font-headline font-bold mb-6 group-hover:text-primary transition-colors duration-300">
+              <div className="p-8 flex-grow flex flex-col">
+                <h4 className="text-2xl font-headline font-bold mb-4 group-hover:text-primary transition-colors duration-300">
                   {service.title}
                 </h4>
-                <p className="text-muted-foreground mb-10 text-lg leading-relaxed flex-grow">
+                <p className="text-muted-foreground mb-8 text-sm leading-relaxed flex-grow">
                   {service.description}
                 </p>
                 
-                <div className="pt-8 border-t border-secondary flex items-center justify-between">
-                  <Button asChild variant="ghost" className="p-0 h-auto font-bold text-primary hover:bg-transparent group/btn text-lg">
-                    <Link href="/quote" className="flex items-center gap-3">
-                      Get a Quote 
-                      <ArrowRight className="w-6 h-6 group-hover/btn:translate-x-3 transition-transform duration-300" />
+                <div className="pt-6 border-t border-border/50 flex items-center justify-between">
+                  <Button asChild variant="ghost" className="p-0 h-auto font-bold text-primary hover:bg-transparent group/btn text-base">
+                    <Link href="/quote" className="flex items-center gap-2">
+                      Request Design 
+                      <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-2 transition-transform duration-300" />
                     </Link>
                   </Button>
-                  <div className="w-10 h-10 rounded-[6%] bg-secondary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-                    <Zap className="w-5 h-5 text-accent fill-accent" />
-                  </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Bottom CTA Card */}
-        <div className="mt-32 bg-primary rounded-[6%] p-12 md:p-20 text-white relative overflow-hidden shadow-2xl shadow-primary/30 group">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/10 rounded-full blur-[150px] translate-x-1/3 -translate-y-1/3 group-hover:scale-125 transition-transform duration-[3000ms]"></div>
+        <div className="mt-32 glass rounded-[6%] p-12 md:p-20 relative overflow-hidden shadow-2xl group border border-white/20">
+          <div className="absolute inset-0 bg-primary/80 mix-blend-multiply"></div>
+          <Image 
+            src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422246/abz_3_hp78qi.jpg"
+            alt="Technical Background"
+            fill
+            className="object-cover -z-10 group-hover:scale-105 transition-transform duration-[10000ms]"
+          />
           
-          <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10 text-white">
             <div className="space-y-8">
-              <h3 className="text-4xl md:text-5xl lg:text-6xl font-headline font-bold leading-tight">Looking for something custom?</h3>
-              <p className="text-white/70 text-xl max-w-xl leading-relaxed">
-                Our engineers tackle your most complex water automation challenges. Let's build a sustainable future together.
+              <h3 className="text-4xl md:text-5xl lg:text-6xl font-headline font-bold leading-tight">Complex Project?</h3>
+              <p className="text-white/80 text-xl max-w-xl leading-relaxed">
+                Our R&D team develops custom hardware and software integrations for the most demanding water challenges.
               </p>
             </div>
             <div className="flex lg:justify-end">
               <Button asChild size="lg" className="h-20 px-16 text-2xl font-bold bg-white text-primary hover:bg-accent hover:text-white rounded-[6%] shadow-2xl transition-all duration-500">
-                <Link href="/quote">Start Consultation</Link>
+                <Link href="/quote">Consult Engineers</Link>
               </Button>
             </div>
           </div>

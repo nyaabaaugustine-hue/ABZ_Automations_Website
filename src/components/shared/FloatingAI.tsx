@@ -1,0 +1,124 @@
+
+"use client";
+
+import React, { useState } from "react";
+import { Sparkles, X, MessageSquare, Bot, Send, Loader2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { aiQuoteAssistant } from "@/ai/flows/ai-quote-assistant";
+import { cn } from "@/lib/utils";
+
+type Message = {
+  role: "user" | "assistant";
+  text: string;
+};
+
+export function FloatingAI() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [messages, setMessages] = useState<Message[]>([
+    { role: "assistant", text: "Hi! I'm the ABZ Tech Assistant. How can I help you with your water automation project today?" }
+  ]);
+  const [input, setInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!input.trim() || isLoading) return;
+
+    const userMessage = input.trim();
+    const newMessages: Message[] = [...messages, { role: "user", text: userMessage }];
+    
+    setMessages(newMessages);
+    setInput("");
+    setIsLoading(true);
+
+    try {
+      const response = await aiQuoteAssistant({
+        conversationHistory: messages,
+        currentMessage: userMessage,
+      });
+
+      setMessages(prev => [...prev, { role: "assistant", text: response.responseMessage }]);
+    } catch (error) {
+      setMessages(prev => [...prev, { role: "assistant", text: "I'm having trouble connecting. Please try again or visit our Quote page for full assistance." }]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <div className="fixed bottom-8 right-8 z-[100] flex flex-col items-end">
+      {isOpen && (
+        <Card className="mb-4 w-[350px] sm:w-[400px] h-[500px] flex flex-col shadow-2xl border border-white/20 glass animate-in fade-in slide-in-from-bottom-8 duration-500 overflow-hidden rounded-[24px]">
+          <CardHeader className="bg-primary text-white p-4 flex flex-row items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Sparkles className="w-5 h-5 text-accent" />
+              <CardTitle className="text-sm font-headline">ABZ Tech Assistant</CardTitle>
+            </div>
+            <Button variant="ghost" size="icon" className="h-8 w-8 text-white hover:bg-white/10" onClick={() => setIsOpen(false)}>
+              <X className="w-4 h-4" />
+            </Button>
+          </CardHeader>
+          
+          <CardContent className="flex-1 p-0 flex flex-col overflow-hidden">
+            <ScrollArea className="flex-1 p-4">
+              <div className="space-y-4">
+                {messages.map((m, i) => (
+                  <div key={i} className={cn("flex gap-2", m.role === "user" ? "flex-row-reverse" : "flex-row")}>
+                    <div className={cn("w-6 h-6 rounded-full flex items-center justify-center shrink-0 text-[10px]", m.role === "user" ? "bg-accent" : "bg-primary")}>
+                      {m.role === "user" ? "U" : <Bot className="w-3 h-3 text-white" />}
+                    </div>
+                    <div className={cn("p-3 rounded-2xl text-xs shadow-sm", m.role === "user" ? "bg-primary text-white rounded-tr-none" : "bg-white text-foreground rounded-tl-none border border-border")}>
+                      {m.text}
+                    </div>
+                  </div>
+                ))}
+                {isLoading && (
+                  <div className="flex gap-2">
+                    <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-white shrink-0">
+                      <Bot className="w-3 h-3" />
+                    </div>
+                    <div className="bg-white p-3 rounded-2xl shadow-sm border border-border">
+                      <Loader2 className="w-3 h-3 animate-spin text-primary" />
+                    </div>
+                  </div>
+                )}
+              </div>
+            </ScrollArea>
+            
+            <form onSubmit={handleSubmit} className="p-4 bg-white border-t border-border flex gap-2">
+              <Input
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="Ask about water automation..."
+                className="flex-1 h-10 rounded-xl text-xs"
+                disabled={isLoading}
+              />
+              <Button type="submit" size="icon" className="h-10 w-10 rounded-xl" disabled={isLoading || !input.trim()}>
+                <Send className="w-4 h-4" />
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
+      )}
+      
+      <Button 
+        onClick={() => setIsOpen(!isOpen)}
+        className={cn(
+          "w-16 h-16 rounded-[6%] shadow-2xl transition-all duration-500 flex items-center justify-center group",
+          isOpen ? "bg-accent text-accent-foreground rotate-90" : "bg-primary text-white hover:scale-110"
+        )}
+      >
+        {isOpen ? <X className="w-8 h-8" /> : <MessageSquare className="w-8 h-8 group-hover:scale-110 transition-transform" />}
+        {!isOpen && (
+          <span className="absolute -top-2 -left-2 flex h-5 w-5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-5 w-5 bg-accent items-center justify-center text-[10px] font-bold text-accent-foreground">1</span>
+          </span>
+        )}
+      </Button>
+    </div>
+  );
+}
