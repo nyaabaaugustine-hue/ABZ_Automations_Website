@@ -1,11 +1,12 @@
 'use server';
 /**
  * @fileOverview An elite AI technical consultant for ABZ Automations.
- * Specialized in Ghanaian plumbing infrastructure, smart water hardware, and professional engineering audits.
+ * Powered by xAI Grok via direct REST API — no additional packages required.
  */
 
-import {ai} from '@/ai/genkit';
-import {z} from 'genkit';
+import { z } from 'genkit';
+
+// ── Schemas (kept identical so callers don't change) ─────────────────────────
 
 const AiQuoteAssistantInputSchema = z.object({
   conversationHistory: z.array(
@@ -14,26 +15,20 @@ const AiQuoteAssistantInputSchema = z.object({
       text: z.string(),
     })
   ).describe('The history of the conversation so far.'),
-  currentMessage: z.string().describe('The user\'s latest technical inquiry.'),
+  currentMessage: z.string().describe("The user's latest technical inquiry."),
 });
 export type AiQuoteAssistantInput = z.infer<typeof AiQuoteAssistantInputSchema>;
 
 const AiQuoteAssistantOutputSchema = z.object({
-  responseMessage: z.string().describe('An eloquent, intelligent response providing technical expertise and asking clarifying questions.'),
-  isRequestComplete: z.boolean().describe('True if sufficient technical specifications are gathered.'),
-  gatheredDetails: z.string().describe('A high-fidelity technical summary for the engineering team.'),
+  responseMessage: z.string(),
+  isRequestComplete: z.boolean(),
+  gatheredDetails: z.string(),
 });
 export type AiQuoteAssistantOutput = z.infer<typeof AiQuoteAssistantOutputSchema>;
 
-export async function aiQuoteAssistant(input: AiQuoteAssistantInput): Promise<AiQuoteAssistantOutput> {
-  return aiQuoteAssistantFlow(input);
-}
+// ── System prompt (unchanged from original) ──────────────────────────────────
 
-const aiQuoteAssistantPrompt = ai.definePrompt({
-  name: 'aiQuoteAssistantPrompt',
-  input: {schema: AiQuoteAssistantInputSchema},
-  output: {schema: AiQuoteAssistantOutputSchema},
-  system: `You are the Lead AI Technical Consultant for ABZ Automations (Precision Water Solutions). 
+const SYSTEM_PROMPT = `You are the Lead AI Technical Consultant for ABZ Automations (Precision Water Solutions).
 Your persona is Eloquent, Intelligent, and Highly Specialized in both global automation and Ghanaian plumbing environments.
 
 CORE EXPERTISE:
@@ -42,34 +37,86 @@ CORE EXPERTISE:
 3. **Smart Solutions**: You promote AutoX Pro for leak detection, automated tank switching, and solar-integrated irrigation.
 
 CONVERSATIONAL PROTOCOL:
-- Be eloquent and professional. Avoid generic bot responses. 
-- Show "intelligence" by identifying technical gaps in the user's description (e.g., if they mention a pump, ask about the HP rating or if they have a VFD).
+- Be eloquent and professional. Avoid generic bot responses.
+- Show "intelligence" by identifying technical gaps in the user's description.
 - Ask exactly ONE deep, clarifying question at a time.
 - Gather: Project Goal, Application (Residential/Industrial), Scale, Power Source (Grid/Solar), and Timeline.
 
 EVALUATION:
 If you have gathered enough technical data to form a professional site-visit brief:
-- Set 'isRequestComplete' to true.
-- Provide a detailed 'gatheredDetails' summary including recommended ABZ hardware (e.g., "Recommend AutoX Pro with ultrasonic Sentinel sensors").
-- Set 'responseMessage' to a concluding professional statement.`,
-  prompt: `{{#each conversationHistory}}
-{{#if (eq this.role "user")}}User: {{{this.text}}}
-{{else}}Assistant: {{{this.text}}}
-{{/if}}
-{{/each}}
-User: {{{currentMessage}}}
-Assistant: `,
-});
+- Set isRequestComplete to true.
+- Provide a detailed gatheredDetails summary including recommended ABZ hardware.
+- Set responseMessage to a concluding professional statement.
 
-const aiQuoteAssistantFlow = ai.defineFlow(
-  {
-    name: 'aiQuoteAssistantFlow',
-    inputSchema: AiQuoteAssistantInputSchema,
-    outputSchema: AiQuoteAssistantOutputSchema,
-  },
-  async (input) => {
-    const {output} = await aiQuoteAssistantPrompt(input);
-    if (!output) throw new Error('Technical consultant timeout.');
-    return output;
+IMPORTANT — RESPONSE FORMAT:
+You MUST respond with ONLY a raw JSON object. No markdown, no backticks, no preamble.
+The JSON must have exactly these three keys:
+{
+  "responseMessage": "string — your reply to the user",
+  "isRequestComplete": false,
+  "gatheredDetails": "string — running summary of technical specs gathered so far (empty string if none yet)"
+}`;
+
+// ── xAI Grok direct call ──────────────────────────────────────────────────────
+
+async function callGrok(messages: { role: string; content: string }[]): Promise<AiQuoteAssistantOutput> {
+  const apiKey = process.env.XAI_API_KEY;
+  if (!apiKey) {
+    throw new Error('XAI_API_KEY environment variable is not set.');
   }
-);
+
+  const response = await fetch('https://api.x.ai/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      model: 'grok-3',
+      messages,
+      temperature: 0.7,
+      max_tokens: 1024,
+    }),
+  });
+
+  if (!response.ok) {
+    const err = await response.text();
+    throw new Error(`xAI API error ${response.status}: ${err}`);
+  }
+
+  const data = await response.json();
+  const raw: string = data.choices?.[0]?.message?.content ?? '';
+
+  // Strip any accidental markdown fences before parsing
+  const clean = raw.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/, '').trim();
+
+  let parsed: AiQuoteAssistantOutput;
+  try {
+    parsed = JSON.parse(clean);
+  } catch {
+    // Graceful fallback — surface the raw text as the response
+    parsed = {
+      responseMessage: raw || 'I encountered an issue processing your request. Please try again.',
+      isRequestComplete: false,
+      gatheredDetails: '',
+    };
+  }
+
+  return AiQuoteAssistantOutputSchema.parse(parsed);
+}
+
+// ── Public function (same signature as before) ───────────────────────────────
+
+export async function aiQuoteAssistant(input: AiQuoteAssistantInput): Promise<AiQuoteAssistantOutput> {
+  // Build the OpenAI-style messages array
+  const messages: { role: string; content: string }[] = [
+    { role: 'system', content: SYSTEM_PROMPT },
+    ...input.conversationHistory.map((m) => ({
+      role: m.role === 'assistant' ? 'assistant' : 'user',
+      content: m.text,
+    })),
+    { role: 'user', content: input.currentMessage },
+  ];
+
+  return callGrok(messages);
+}

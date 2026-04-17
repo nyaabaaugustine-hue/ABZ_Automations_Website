@@ -29,7 +29,7 @@ const products = [
     category: "controllers",
     price: "Custom",
     description: "Our flagship industrial-grade smart controller with AI-driven tank management and multi-source switching.",
-    image: PlaceHolderImages.find(img => img.id === "product-9")?.imageUrl || "",
+    image: PlaceHolderImages.find(img => img.id === "product-9")?.imageUrl ?? "https://placehold.co/600x750/020817/ffffff?text=ABZ",
     isNew: true,
     features: ["WiFi/GSM", "Solar Ready", "AI Flow Logic"],
     specs: {
@@ -45,7 +45,7 @@ const products = [
     category: "sensors",
     price: "Custom",
     description: "Ultrasonic precision flow meter for real-time tracking and deep leak detection analytics.",
-    image: PlaceHolderImages.find(img => img.id === "product-2")?.imageUrl || "",
+    image: PlaceHolderImages.find(img => img.id === "product-2")?.imageUrl ?? "https://placehold.co/600x750/020817/ffffff?text=ABZ",
     isNew: false,
     features: ["Digital Display", "Remote Sync", "±0.5% Accuracy"],
     specs: {
@@ -61,7 +61,7 @@ const products = [
     category: "hardware",
     price: "Custom",
     description: "Industrial variable frequency drive optimized for African power grid stability.",
-    image: PlaceHolderImages.find(img => img.id === "product-3")?.imageUrl || "",
+    image: PlaceHolderImages.find(img => img.id === "product-3")?.imageUrl ?? "https://placehold.co/600x750/020817/ffffff?text=ABZ",
     isNew: true,
     features: ["Grid Protection", "Soft Start", "45% Energy Saving"],
     specs: {
@@ -77,7 +77,7 @@ const products = [
     category: "sensors",
     price: "Custom",
     description: "Multi-parameter tank monitoring system for level, temperature, and quality control.",
-    image: PlaceHolderImages.find(img => img.id === "product-7")?.imageUrl || "",
+    image: PlaceHolderImages.find(img => img.id === "product-7")?.imageUrl ?? "https://placehold.co/600x750/020817/ffffff?text=ABZ",
     isNew: false,
     features: ["Battery Powered", "IP68 Rated", "Instant Alerts"],
     specs: {

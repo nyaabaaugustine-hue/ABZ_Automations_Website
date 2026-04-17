@@ -1,5 +1,6 @@
 
 import { Navbar } from "@/components/layout/Navbar";
+import { VideoPopup } from "@/components/shared/VideoPopup";
 import { Hero } from "@/components/home/Hero";
 import { Stats } from "@/components/home/Stats";
 import { ProductTicker } from "@/components/home/ProductTicker";
@@ -17,6 +18,7 @@ import { Footer } from "@/components/layout/Footer";
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
+      <VideoPopup />
       <Navbar />
       <main className="flex-grow">
         <Hero />

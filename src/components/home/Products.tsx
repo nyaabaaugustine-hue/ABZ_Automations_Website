@@ -15,7 +15,7 @@ const productPreview = {
   tagline: "Ultimate Automation Architecture",
   description: "The heartbeat of your water management ecosystem. Smart AI-driven sensors, real-time telemetry, and secure cloud control for the most demanding environments.",
   features: ["Next-Gen Flow Analytics", "Industrial Grid Safety", "Real-time Telemetry", "Solar Energy Management"],
-  image: PlaceHolderImages.find(img => img.id === "product-9")?.imageUrl || ""
+  image: PlaceHolderImages.find(img => img.id === "product-9")?.imageUrl ?? "https://placehold.co/600x750/020817/ffffff?text=ABZ"
 };
 
 export function Products() {
