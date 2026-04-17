@@ -118,22 +118,18 @@ export function Hero() {
 
       {/* Slider Controls */}
       <div className="absolute bottom-8 md:bottom-12 right-6 md:right-12 z-20 flex gap-2">
-        <Button 
-          variant="outline" 
-          size="icon" 
+        <button 
           onClick={prevSlide}
-          className="rounded-[6%] bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white hover:text-primary h-8 w-8 transition-all duration-300 shadow-xl"
+          className="rounded-[6%] bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white hover:text-primary h-10 w-10 flex items-center justify-center transition-all duration-300 shadow-xl"
         >
-          <ChevronLeft className="w-4 h-4" />
-        </Button>
-        <Button 
-          variant="outline" 
-          size="icon" 
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+        <button 
           onClick={nextSlide}
-          className="rounded-[6%] bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white hover:text-primary h-8 w-8 transition-all duration-300 shadow-xl"
+          className="rounded-[6%] bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white hover:text-primary h-10 w-10 flex items-center justify-center transition-all duration-300 shadow-xl"
         >
-          <ChevronRight className="w-4 h-4" />
-        </Button>
+          <ChevronRight className="w-5 h-5" />
+        </button>
       </div>
 
       {/* Progress Indicators */}
