@@ -13,7 +13,7 @@ const stats = [
 
 export function Stats() {
   return (
-    <section className="py-12 bg-primary text-primary-foreground relative overflow-hidden">
+    <section className="py-10 bg-primary text-primary-foreground relative overflow-hidden">
       {/* Subtle decorative background pattern */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--accent)_1px,_transparent_1px)] bg-[size:40px_40px]"></div>
