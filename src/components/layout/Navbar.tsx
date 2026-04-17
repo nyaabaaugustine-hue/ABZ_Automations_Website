@@ -27,94 +27,115 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isOpen]);
+
   return (
-    <nav
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-6 py-4",
-        scrolled 
-          ? "bg-white/90 backdrop-blur-2xl border-b border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.1)] py-3" 
-          : "bg-transparent py-6"
-      )}
-    >
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-11 h-11 rounded-[6%] bg-white relative overflow-hidden shadow-xl shadow-primary/30 group-hover:scale-105 transition-transform duration-300">
-            <Image
-              src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776230467/image_j8ruov.webp"
-              alt="ABZ Automations Logo"
-              fill
-              className="object-cover"
-            />
+    <>
+      <nav
+        className={cn(
+          "fixed top-0 left-0 right-0 z-[60] transition-all duration-500 px-6 py-4",
+          scrolled || isOpen
+            ? "bg-white/95 backdrop-blur-2xl border-b border-border/50 shadow-sm py-3" 
+            : "bg-transparent py-6"
+        )}
+      >
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-3 group" onClick={() => setIsOpen(false)}>
+            <div className="w-10 h-10 md:w-11 md:h-11 rounded-[6%] bg-white relative overflow-hidden shadow-xl shadow-primary/30 group-hover:scale-105 transition-transform duration-300">
+              <Image
+                src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776230467/image_j8ruov.webp"
+                alt="ABZ Automations Logo"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <span className={cn(
+              "font-headline font-bold text-xl md:text-2xl tracking-tight transition-colors duration-300",
+              scrolled || isOpen ? "text-foreground" : "text-white"
+            )}>
+              ABZ<span className="text-primary">Automations</span>
+            </span>
+          </Link>
+
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center gap-10">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={cn(
+                  "text-sm font-bold transition-all duration-300 hover:scale-105",
+                  scrolled 
+                    ? "text-muted-foreground hover:text-primary" 
+                    : "text-white/90 hover:text-white"
+                )}
+              >
+                {item.name}
+              </Link>
+            ))}
+            <Button asChild className="bg-primary hover:bg-primary/90 font-bold shadow-lg shadow-primary/30 px-8 h-12 rounded-[6%] transition-all hover:-translate-y-1">
+              <Link href="/quote">Get a Quote</Link>
+            </Button>
           </div>
-          <span className={cn(
-            "font-headline font-bold text-2xl tracking-tight transition-colors duration-300",
-            scrolled ? "text-foreground" : "text-white"
-          )}>
-            ABZ<span className="text-primary">Automations</span>
-          </span>
-        </Link>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-10">
-          {navItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className={cn(
-                "text-sm font-bold transition-all duration-300 hover:scale-105",
-                scrolled 
-                  ? "text-muted-foreground hover:text-primary" 
-                  : "text-white/90 hover:text-white"
-              )}
-            >
-              {item.name}
-            </Link>
-          ))}
-          <Button asChild className="bg-primary hover:bg-primary/90 font-bold shadow-lg shadow-primary/30 px-8 h-12 rounded-[6%] transition-all hover:-translate-y-1">
-            <Link href="/quote">Get a Quote</Link>
-          </Button>
+          {/* Mobile Toggle */}
+          <button
+            className={cn(
+              "md:hidden p-2 rounded-[6%] transition-all duration-300",
+              scrolled || isOpen ? "text-foreground bg-secondary/80" : "text-white bg-white/10"
+            )}
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
+      </nav>
 
-        {/* Mobile Toggle */}
-        <button
-          className={cn(
-            "md:hidden p-2 rounded-[6%] transition-colors",
-            scrolled || isOpen ? "text-foreground bg-secondary/80 backdrop-blur-md" : "text-white bg-white/20 backdrop-blur-md"
-          )}
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       <div
         className={cn(
-          "fixed inset-0 top-0 h-screen bg-background z-40 md:hidden transition-all duration-700 cubic-bezier(0.4, 0, 0.2, 1) px-10 pt-32",
+          "fixed inset-0 h-screen bg-background z-[55] md:hidden transition-all duration-500 ease-in-out px-8 pt-28",
           isOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
         )}
       >
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-6">
           {navItems.map((item, idx) => (
             <Link
               key={item.name}
               href={item.href}
               onClick={() => setIsOpen(false)}
               className={cn(
-                "text-4xl font-headline font-bold text-foreground flex items-center justify-between group",
-                isOpen ? "animate-in fade-in slide-in-from-right-10 duration-500" : ""
+                "text-3xl font-headline font-bold text-foreground flex items-center justify-between group py-2 border-b border-border/50",
+                isOpen ? "animate-in fade-in slide-in-from-right-10" : ""
               )}
               style={{ animationDelay: `${idx * 100}ms` }}
             >
               {item.name}
-              <ChevronRight className="text-primary group-hover:translate-x-3 transition-transform duration-300 w-8 h-8" />
+              <ChevronRight className="text-primary group-hover:translate-x-3 transition-transform duration-300 w-6 h-6" />
             </Link>
           ))}
-          <Button asChild size="lg" className="w-full h-16 text-xl mt-8 rounded-[6%] shadow-2xl shadow-primary/30 font-bold" onClick={() => setIsOpen(false)}>
+          <Button asChild size="lg" className="w-full h-14 text-lg mt-6 rounded-[6%] shadow-xl shadow-primary/20 font-bold" onClick={() => setIsOpen(false)}>
             <Link href="/quote">Get a Quote</Link>
           </Button>
+          
+          <div className="mt-auto pb-10 flex flex-col items-center gap-4 text-center">
+            <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Follow Us</p>
+            <div className="flex gap-4">
+              <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center"><Menu className="w-4 h-4" /></div>
+              <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center"><Menu className="w-4 h-4" /></div>
+              <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center"><Menu className="w-4 h-4" /></div>
+            </div>
+          </div>
         </div>
       </div>
-    </nav>
+    </>
   );
 }
