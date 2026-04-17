@@ -3,7 +3,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { Star, Quote, CheckCircle2, Building2, Landmark, ShieldCheck, Waves } from "lucide-react";
+import { Star, Quote, CheckCircle2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -42,13 +42,15 @@ const reviews = [
 ];
 
 const partners = [
-  { name: "KNUST", icon: Landmark },
-  { name: "GWCL", icon: Waves },
-  { name: "MOFA", icon: Building2 },
-  { name: "GSA", icon: ShieldCheck },
-  { name: "TIDD", icon: Building2 },
-  { name: "ABZ CORP", icon: Landmark },
-  { name: "WATER GH", icon: Waves },
+  { name: "Partner 1", logo: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422217/ng_v7gyhr.png" },
+  { name: "Partner 2", logo: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422217/tyyt_lx0pok.jpg" },
+  { name: "Partner 3", logo: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422217/tyy_mgv3ds.png" },
+  { name: "Partner 4", logo: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422216/fh_vaeadd.png" },
+  { name: "Partner 5", logo: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422216/ff_mn8fpt.png" },
+  { name: "Partner 6", logo: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422216/k7k_wvwvgq.png" },
+  { name: "Partner 7", logo: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422216/ju_ot7atb.png" },
+  { name: "Partner 8", logo: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422216/aaa_xidnvf.jpg" },
+  { name: "Partner 9", logo: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422216/c22_l8hcmz.png" },
 ];
 
 const scrollingPartners = [...partners, ...partners, ...partners];
@@ -143,18 +145,20 @@ export function Reviews() {
           </div>
           
           <div className="relative overflow-hidden w-full">
-             <div className="flex animate-ticker-ltr hover:[animation-play-state:paused] items-center gap-12 py-2">
+             <div className="flex animate-ticker-ltr hover:[animation-play-state:paused] items-center gap-16 py-4">
                {scrollingPartners.map((partner, idx) => (
                  <div 
                   key={`${partner.name}-${idx}`}
-                  className="group flex flex-col items-center gap-2 min-w-[120px]"
+                  className="group flex flex-col items-center justify-center min-w-[140px]"
                  >
-                   <div className="w-12 h-12 rounded-[6%] bg-white flex items-center justify-center text-muted-foreground group-hover:bg-primary group-hover:text-white transition-all border border-border/20">
-                     <partner.icon className="w-6 h-6" />
+                   <div className="relative w-28 h-16 grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
+                     <Image
+                        src={partner.logo}
+                        alt={partner.name}
+                        fill
+                        className="object-contain"
+                     />
                    </div>
-                   <span className="text-sm font-black tracking-tighter text-muted-foreground/40 group-hover:text-primary transition-colors uppercase">
-                     {partner.name}
-                   </span>
                  </div>
                ))}
              </div>
