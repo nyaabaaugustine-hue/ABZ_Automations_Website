@@ -19,13 +19,13 @@ const slides = [
   {
     image: PlaceHolderImages.find(img => img.id === "hero-water-2")?.imageUrl || "https://picsum.photos/seed/abz-hero2/1200/800",
     title: "Smart <span class='text-accent'>Irrigation</span> for Modern Agriculture",
-    description: "Maximize crop yield while minimizing water waste. Our sensor-driven systems adapt to real-time weather and soil data.",
+    description: "Maximize crop yield while minimizing water waste. Our sensor-driven systems adapt to real-time weather and soil data automatically.",
     badge: "Sustainable Farming"
   },
   {
     image: PlaceHolderImages.find(img => img.id === "hero-water-3")?.imageUrl || "https://picsum.photos/seed/abz-hero3/1200/800",
     title: "Industrial Grade <span class='text-primary'>Water Control</span>",
-    description: "Reliable, scalable, and powerful solutions for factories and multi-story buildings. Monitor flow and prevent leaks remotely.",
+    description: "Reliable, scalable, and powerful solutions for factories and multi-story buildings. Monitor flow and prevent leaks remotely from anywhere.",
     badge: "Enterprise Solutions"
   }
 ];
@@ -45,7 +45,7 @@ export function Hero() {
 
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-background">
-      {/* Background Slides */}
+      {/* Background Slides - All containerized to identical dimensions via absolute positioning and object-cover */}
       <div className="absolute inset-0 z-0">
         {slides.map((slide, index) => (
           <div
@@ -59,7 +59,7 @@ export function Hero() {
               src={slide.image}
               alt="Hero background"
               fill
-              className="object-cover brightness-[0.3] md:brightness-50"
+              className="object-cover brightness-[0.35] md:brightness-50"
               priority={index === 0}
             />
           </div>
@@ -67,7 +67,7 @@ export function Hero() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10 w-full pt-20">
-        <div className="text-white">
+        <div className="text-white text-left">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider mb-6 border border-white/20">
             <Zap className="w-3 h-3 text-accent fill-accent" />
             {slides[currentSlide].badge}
@@ -83,25 +83,25 @@ export function Hero() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500">
-            <Button asChild size="lg" className="h-14 px-8 text-lg font-bold group bg-primary hover:bg-primary/90">
+            <Button asChild size="lg" className="h-14 px-8 text-lg font-bold group bg-primary hover:bg-primary/90 rounded-xl">
               <Link href="/quote" className="flex items-center gap-2">
                 Start Your Quote
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="h-14 px-8 text-lg font-bold bg-white/10 backdrop-blur-sm text-white border-white/20 hover:bg-white/20">
+            <Button asChild variant="outline" size="lg" className="h-14 px-8 text-lg font-bold bg-white/10 backdrop-blur-sm text-white border-white/20 hover:bg-white/20 rounded-xl">
               <Link href="/products">Explore Shop</Link>
             </Button>
           </div>
           
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-6 opacity-60">
+          <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-6 opacity-80">
             <div className="flex items-center gap-2 text-sm font-medium">
               <ShieldCheck className="text-accent w-5 h-5" />
               <span>Certified Installations</span>
             </div>
             <div className="flex items-center gap-2 text-sm font-medium">
               <Droplets className="text-primary-foreground w-5 h-5" />
-              <span>99% Efficiency</span>
+              <span>99% Efficiency Rate</span>
             </div>
           </div>
         </div>

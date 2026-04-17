@@ -46,37 +46,37 @@
     {
       "id": "service-pump",
       "description": "Industrial water pump installation",
-      "imageUrl": "https://picsum.photos/seed/pump-service/600/400",
+      "imageUrl": "https://picsum.photos/seed/pump-service/800/600",
       "imageHint": "water pump"
     },
     {
       "id": "service-tank",
       "description": "Professional water tank cleaning service",
-      "imageUrl": "https://picsum.photos/seed/tank-service/600/400",
+      "imageUrl": "https://picsum.photos/seed/tank-service/800/600",
       "imageHint": "clean water"
     },
     {
       "id": "service-ro",
       "description": "RO system automation unit",
-      "imageUrl": "https://picsum.photos/seed/ro-auto/600/400",
+      "imageUrl": "https://picsum.photos/seed/ro-auto/800/600",
       "imageHint": "water purification"
     },
     {
       "id": "service-booster",
       "description": "Pressure booster pump set",
-      "imageUrl": "https://picsum.photos/seed/booster/600/400",
+      "imageUrl": "https://picsum.photos/seed/booster/800/600",
       "imageHint": "booster pump"
     },
     {
       "id": "service-plumbing",
       "description": "Professional plumbing work",
-      "imageUrl": "https://picsum.photos/seed/plumbing/600/400",
+      "imageUrl": "https://picsum.photos/seed/plumbing/800/600",
       "imageHint": "plumbing pipes"
     },
     {
       "id": "service-custom",
       "description": "Custom engineering water solution",
-      "imageUrl": "https://picsum.photos/seed/custom-water/600/400",
+      "imageUrl": "https://picsum.photos/seed/custom-water/800/600",
       "imageHint": "engineering water"
     },
     {
@@ -96,6 +96,24 @@
       "description": "Operations Manager",
       "imageUrl": "https://picsum.photos/seed/team3/400/400",
       "imageHint": "business professional"
+    },
+    {
+      "id": "news-1",
+      "description": "Smart water project launch",
+      "imageUrl": "https://picsum.photos/seed/news-1/800/500",
+      "imageHint": "water project"
+    },
+    {
+      "id": "news-2",
+      "description": "Technology summit award",
+      "imageUrl": "https://picsum.photos/seed/news-2/800/500",
+      "imageHint": "tech award"
+    },
+    {
+      "id": "news-3",
+      "description": "Maintenance workshop",
+      "imageUrl": "https://picsum.photos/seed/news-3/800/500",
+      "imageHint": "workshop engineering"
     }
   ]
 }
