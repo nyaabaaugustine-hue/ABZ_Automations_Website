@@ -1,45 +1,44 @@
+'use client';
 
-"use client";
-
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { Instagram, Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Instagram, Facebook, Twitter, Linkedin, Youtube } from 'lucide-react';
 
 const socialLinks = [
-  { icon: Facebook, href: "#", name: "Facebook" },
-  { icon: Twitter, href: "#", name: "X" },
-  { icon: Instagram, href: "#", name: "Instagram" },
-  { icon: Linkedin, href: "#", name: "LinkedIn" },
-  { icon: Youtube, href: "#", name: "TikTok" } 
+  { icon: Facebook, href: '#', name: 'Facebook' },
+  { icon: Twitter, href: '#', name: 'X' },
+  { icon: Instagram, href: '#', name: 'Instagram' },
+  { icon: Linkedin, href: '#', name: 'LinkedIn' },
+  { icon: Youtube, href: '#', name: 'TikTok' },
 ];
 
 const footerLinks = [
   {
-    title: "Company",
+    title: 'Company',
     links: [
-      { name: "About Us", href: "/#about" },
-      { name: "Our Team", href: "/#team" },
-      { name: "Careers", href: "#" },
-      { name: "News", href: "#" },
+      { name: 'About Us', href: '/#about' },
+      { name: 'Our Team', href: '/#team' },
+      { name: 'Careers', href: '#' },
+      { name: 'News', href: '#' },
     ],
   },
   {
-    title: "Solutions",
+    title: 'Solutions',
     links: [
-      { name: "AutoX Controller", href: "/#products" },
-      { name: "Water Pump Installation", href: "/#services" },
-      { name: "Tank Cleaning", href: "/#services" },
-      { name: "Custom Automation", href: "/#services" },
+      { name: 'AutoX Controller', href: '/#products' },
+      { name: 'Water Pump Installation', href: '/#services' },
+      { name: 'Tank Cleaning', href: '/#services' },
+      { name: 'Custom Automation', href: '/#services' },
     ],
   },
   {
-    title: "Support",
+    title: 'Support',
     links: [
-      { name: "Contact Us", href: "/#contact" },
-      { name: "Help Center", href: "#" },
-      { name: "Privacy Policy", href: "#" },
-      { name: "Terms of Service", href: "#" },
+      { name: 'Contact Us', href: '/#contact' },
+      { name: 'Help Center', href: '#' },
+      { name: 'Privacy Policy', href: '#' },
+      { name: 'Terms of Service', href: '#' },
     ],
   },
 ];
@@ -54,7 +53,7 @@ export function Footer() {
   return (
     <footer className="bg-primary text-white pt-32 pb-16 overflow-hidden relative">
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2"></div>
-      
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 mb-24">
           <div className="lg:col-span-4 space-y-10">
@@ -109,9 +108,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-16 flex flex-col md:flex-row items-center justify-between gap-8 text-white/40 text-sm font-medium tracking-widest uppercase">
-          <p>© {year || '2025'} ABZ Automations Limited. All rights reserved.</p>
-          <p>Designed for excellence in Kumasi, Ghana.</p>
+        <div className="border-t border-white/10 pt-16 flex flex-col md:flex-row items-center justify-center text-white text-sm font-medium tracking-widest uppercase">
+          <p>© {year || '2026'} ABZ Automations Limited. All rights reserved.</p>
         </div>
       </div>
     </footer>
