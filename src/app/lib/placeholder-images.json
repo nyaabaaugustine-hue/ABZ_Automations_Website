@@ -126,6 +126,42 @@
       "description": "Maintenance workshop",
       "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422275/abz_26_lvvz7f.jpg",
       "imageHint": "workshop engineering"
+    },
+    {
+      "id": "service-pump",
+      "description": "Professional Pump Installation",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422275/abz_42_v8oxdy.jpg",
+      "imageHint": "pump installation"
+    },
+    {
+      "id": "service-tank",
+      "description": "Hospital Grade Sanitization",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776424323/mn1_toifu3.jpg",
+      "imageHint": "tank cleaning"
+    },
+    {
+      "id": "service-ro",
+      "description": "Reverse Osmosis Automation",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422279/abz_68_i0ndl4.jpg",
+      "imageHint": "ro automation"
+    },
+    {
+      "id": "service-pressure",
+      "description": "VFD Pressure Logic",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422275/abz_35_fxfkg4.jpg",
+      "imageHint": "pressure logic"
+    },
+    {
+      "id": "service-support",
+      "description": "Certified Engineering Support",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776425339/erq_ksrxax.jpg",
+      "imageHint": "engineering support"
+    },
+    {
+      "id": "service-rd",
+      "description": "Bespoke R&D Solutions",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776256939/abz_64_jw9ixn.jpg",
+      "imageHint": "bespoke rd"
     }
   ]
 }

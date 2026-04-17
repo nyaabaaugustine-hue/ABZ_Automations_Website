@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from "react";
@@ -14,6 +15,7 @@ import {
   Waves
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 const services = [
   {
@@ -21,7 +23,7 @@ const services = [
     title: "Pump Installation",
     description: "Industrial-grade programmable controllers that eliminate tank overflow and dry-run hazards.",
     icon: Settings,
-    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422275/abz_42_v8oxdy.jpg",
+    image: PlaceHolderImages.find(img => img.id === "service-pump")?.imageUrl || "",
     stat: "99% Efficiency"
   },
   {
@@ -29,7 +31,7 @@ const services = [
     title: "Sanitization",
     description: "Advanced chemical-free filtration and cleaning to ensure hospital-grade water quality.",
     icon: Droplets,
-    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776424323/mn1_toifu3.jpg",
+    image: PlaceHolderImages.find(img => img.id === "service-tank")?.imageUrl || "",
     stat: "Zero Algae"
   },
   {
@@ -37,7 +39,7 @@ const services = [
     title: "R/O Automation",
     description: "Smart feedback loops for reverse osmosis systems to prevent membrane rupture.",
     icon: FlaskConical,
-    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422279/abz_68_i0ndl4.jpg",
+    image: PlaceHolderImages.find(img => img.id === "service-ro")?.imageUrl || "",
     stat: "Smart Monitoring"
   },
   {
@@ -45,7 +47,7 @@ const services = [
     title: "Pressure Logic",
     description: "VFD-driven booster systems that maintain precise pressure across multi-story buildings.",
     icon: Activity,
-    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422275/abz_35_fxfkg4.jpg",
+    image: PlaceHolderImages.find(img => img.id === "service-pressure")?.imageUrl || "",
     stat: "Constant Flow"
   },
   {
@@ -53,7 +55,7 @@ const services = [
     title: "Technical Support",
     description: "Certified engineering support for complex residential and industrial plumbing architectures.",
     icon: Wrench,
-    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776425339/erq_ksrxax.jpg",
+    image: PlaceHolderImages.find(img => img.id === "service-support")?.imageUrl || "",
     stat: "24/7 Response"
   },
   {
@@ -61,7 +63,7 @@ const services = [
     title: "Bespoke R&D",
     description: "Custom hardware and software development for unique agricultural or industrial challenges.",
     icon: Waves,
-    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776256939/abz_64_jw9ixn.jpg",
+    image: PlaceHolderImages.find(img => img.id === "service-rd")?.imageUrl || "",
     stat: "Custom Logic"
   }
 ];
@@ -119,7 +121,7 @@ export function Services() {
                 
                 <div className="pt-4 border-t border-border/50 flex items-center justify-between">
                   <Button asChild variant="ghost" className="p-0 h-auto font-bold text-primary hover:bg-transparent group/btn text-sm">
-                    <Link href="/quote" className="flex items-center gap-2">
+                    <Link href="/services" className="flex items-center gap-2">
                       Request Design 
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                     </Link>

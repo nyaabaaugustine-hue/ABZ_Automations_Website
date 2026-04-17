@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -10,7 +11,7 @@ import { cn } from "@/lib/utils";
 const navItems = [
   { name: "About", href: "/#about" },
   { name: "Shop", href: "/products" },
-  { name: "Services", href: "/#services" },
+  { name: "Services", href: "/services" },
   { name: "Team", href: "/#team" },
   { name: "Contact", href: "/#contact" },
 ];
@@ -129,9 +130,7 @@ export function Navbar() {
           <div className="mt-auto pb-10 flex flex-col items-center gap-4 text-center">
             <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Follow Us</p>
             <div className="flex gap-4">
-              <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center"><Menu className="w-4 h-4" /></div>
-              <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center"><Menu className="w-4 h-4" /></div>
-              <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center"><Menu className="w-4 h-4" /></div>
+               {/* Placeholder for social icons if needed */}
             </div>
           </div>
         </div>
