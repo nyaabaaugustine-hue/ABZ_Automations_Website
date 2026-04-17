@@ -6,6 +6,7 @@ import { ProductTicker } from "@/components/home/ProductTicker";
 import { About } from "@/components/home/About";
 import { Products } from "@/components/home/Products";
 import { Services } from "@/components/home/Services";
+import { Brochure } from "@/components/home/Brochure";
 import { News } from "@/components/home/News";
 import { Team } from "@/components/home/Team";
 import { Reviews } from "@/components/home/Reviews";
@@ -23,6 +24,7 @@ export default function Home() {
         <About />
         <Products />
         <Services />
+        <Brochure />
         <News />
         <Team />
         <Reviews />
