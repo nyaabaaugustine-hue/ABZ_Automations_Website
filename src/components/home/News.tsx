@@ -7,7 +7,6 @@ import Link from "next/link";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, User, ArrowRight } from "lucide-react";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Badge } from "@/components/ui/badge";
 
 const newsItems = [
@@ -17,7 +16,7 @@ const newsItems = [
     excerpt: "How ABZ Automations is partnering with local communities to provide smarter, sensor-driven water solutions for everyday life.",
     date: "May 15, 2024",
     author: "Samuel Amankwah",
-    image: PlaceHolderImages.find(img => img.id === "news-1")?.imageUrl || "https://picsum.photos/seed/news1/800/500",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422281/abz_76_eu0uyp.jpg",
     category: "Community"
   },
   {
@@ -26,7 +25,7 @@ const newsItems = [
     excerpt: "Recognized for excellence in sustainable engineering and resource management at the annual Ghana Tech Summit held in Accra.",
     date: "June 02, 2024",
     author: "Operations Team",
-    image: PlaceHolderImages.find(img => img.id === "news-2")?.imageUrl || "https://picsum.photos/seed/news2/800/500",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422279/abz_68_i0ndl4.jpg",
     category: "Award"
   },
   {
@@ -35,7 +34,7 @@ const newsItems = [
     excerpt: "Ensure your water system lasts for decades with these simple maintenance steps for your AutoX Pro unit and sensors.",
     date: "July 12, 2024",
     author: "Akua Owusu",
-    image: PlaceHolderImages.find(img => img.id === "news-3")?.imageUrl || "https://picsum.photos/seed/news3/800/500",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422275/abz_26_lvvz7f.jpg",
     category: "Guide"
   }
 ];
@@ -49,14 +48,14 @@ export function News() {
             <h2 className="text-primary font-bold uppercase tracking-widest text-sm mb-4">Our News</h2>
             <h3 className="font-headline text-4xl md:text-5xl font-bold mb-0">Insights & <span className="text-accent">Updates</span></h3>
           </div>
-          <Button variant="outline" className="rounded-xl border-primary text-primary hover:bg-primary/5 font-bold h-12">
+          <Button variant="outline" className="rounded-[6%] border-primary text-primary hover:bg-primary/5 font-bold h-12">
             View All Articles
           </Button>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {newsItems.map((item) => (
-            <Card key={item.id} className="group border-none shadow-lg rounded-[40px] overflow-hidden bg-background transition-all hover:shadow-2xl hover:-translate-y-1">
+            <Card key={item.id} className="group border-none shadow-lg rounded-[6%] overflow-hidden bg-background transition-all hover:shadow-2xl hover:-translate-y-1">
               <CardHeader className="p-0 relative h-64 overflow-hidden">
                 <Image
                   src={item.image}
@@ -64,7 +63,7 @@ export function News() {
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <Badge className="absolute top-6 left-6 bg-white/90 backdrop-blur-md text-primary hover:bg-white border-none font-bold px-4 py-1.5 rounded-full shadow-sm">
+                <Badge className="absolute top-6 left-6 bg-white/90 backdrop-blur-md text-primary hover:bg-white border-none font-bold px-4 py-1.5 rounded-[6%] shadow-sm">
                   {item.category}
                 </Badge>
               </CardHeader>
