@@ -11,25 +11,25 @@ const team = [
     name: "Abdullah Mohammed Zainudeen",
     role: "CEO / Lead Engineer",
     image: PlaceHolderImages.find(img => img.id === "team-member-1")?.imageUrl || "https://picsum.photos/seed/team-abz-1/600/800",
-    socials: { linkedin: "#", twitter: "#", mail: "abdullah@abzautomations.com" }
+    socials: { linkedin: "#", twitter: "#", mail: "info@abzautomations.com" }
   },
   {
     name: "Mohammed Hardi Abdul Baaki",
     role: "Chief Operations Officer (COO)",
     image: PlaceHolderImages.find(img => img.id === "team-member-2")?.imageUrl || "https://picsum.photos/seed/team-abz-2/600/800",
-    socials: { linkedin: "#", twitter: "#", mail: "hardi@abzautomations.com" }
+    socials: { linkedin: "#", twitter: "#", mail: "info@abzautomations.com" }
   },
   {
     name: "Yakubu Bunyamin",
     role: "Chief Technology Officer (CTO)",
     image: PlaceHolderImages.find(img => img.id === "team-member-3")?.imageUrl || "https://picsum.photos/seed/team-abz-3/600/800",
-    socials: { linkedin: "#", twitter: "#", mail: "yakubu@abzautomations.com" }
+    socials: { linkedin: "#", twitter: "#", mail: "info@abzautomations.com" }
   },
   {
     name: "Abdul Rahim Mettle Nii Okai",
     role: "Chief Marketing Officer (CMO)",
     image: PlaceHolderImages.find(img => img.id === "team-member-4")?.imageUrl || "https://picsum.photos/seed/team-abz-4/600/800",
-    socials: { linkedin: "#", twitter: "#", mail: "rahim@abzautomations.com" }
+    socials: { linkedin: "#", twitter: "#", mail: "info@abzautomations.com" }
   }
 ];
 

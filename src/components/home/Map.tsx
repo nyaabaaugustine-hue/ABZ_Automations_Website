@@ -21,14 +21,11 @@ export function Map() {
 
   return (
     <section id="contact" className="py-24 bg-background relative overflow-hidden">
-      {/* Abstract Background Shapes */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] -translate-x-1/2 translate-y-1/2"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-12 gap-16 items-start">
-          
-          {/* Contact Content */}
           <div className="lg:col-span-5 space-y-12">
             <div>
               <Badge className="bg-primary/10 text-primary border-none px-4 py-1 font-bold uppercase tracking-widest text-[10px] mb-6">
@@ -43,7 +40,6 @@ export function Map() {
             </div>
 
             <div className="grid gap-6">
-              {/* Address Card */}
               <div className="group bg-white p-6 rounded-[32px] border border-border/50 shadow-sm hover:shadow-xl transition-all duration-500 flex items-start gap-5">
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0 transition-transform group-hover:scale-110">
                   <MapPin className="w-7 h-7" />
@@ -54,9 +50,9 @@ export function Map() {
                     Kumasi Business Incubator, KNUST, Kumasi, Ghana
                   </p>
                   <div className="inline-flex items-center gap-2 bg-accent/5 px-3 py-1.5 rounded-xl border border-accent/10">
-                    <span className="font-mono text-xs font-bold text-accent">AK-039-5028</span>
+                    <span className="font-mono text-xs font-bold text-accent">AK-315-2929</span>
                     <button 
-                      onClick={() => copyToClipboard("AK-039-5028", "GPS Address")}
+                      onClick={() => copyToClipboard("AK-315-2929", "GPS Address")}
                       className="text-accent hover:text-accent/70 transition-colors"
                     >
                       {copiedField === "GPS Address" ? <CheckCircle2 className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
@@ -65,7 +61,6 @@ export function Map() {
                 </div>
               </div>
 
-              {/* Phone Card */}
               <div className="group bg-white p-6 rounded-[32px] border border-border/50 shadow-sm hover:shadow-xl transition-all duration-500 flex items-start gap-5">
                 <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent shrink-0 transition-transform group-hover:scale-110">
                   <Phone className="w-7 h-7" />
@@ -74,22 +69,15 @@ export function Map() {
                   <h4 className="font-bold text-lg mb-1">Call Our Experts</h4>
                   <div className="space-y-1">
                     <button 
-                      onClick={() => copyToClipboard("+233241234567", "Primary Phone")}
+                      onClick={() => copyToClipboard("+233 546 101 305", "Primary Phone")}
                       className="text-muted-foreground text-sm hover:text-primary transition-colors flex items-center gap-2"
                     >
-                      +233 (0) 24 123 4567 {copiedField === "Primary Phone" && <CheckCircle2 className="w-3 h-3" />}
-                    </button>
-                    <button 
-                      onClick={() => copyToClipboard("+233509876543", "Secondary Phone")}
-                      className="text-muted-foreground text-sm hover:text-primary transition-colors flex items-center gap-2"
-                    >
-                      +233 (0) 50 987 6543 {copiedField === "Secondary Phone" && <CheckCircle2 className="w-3 h-3" />}
+                      +233 (0) 54 610 1305 {copiedField === "Primary Phone" && <CheckCircle2 className="w-3 h-3" />}
                     </button>
                   </div>
                 </div>
               </div>
 
-              {/* Email Card */}
               <div className="group bg-white p-6 rounded-[32px] border border-border/50 shadow-sm hover:shadow-xl transition-all duration-500 flex items-start gap-5">
                 <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center text-primary shrink-0 transition-transform group-hover:scale-110">
                   <Mail className="w-7 h-7" />
@@ -97,24 +85,21 @@ export function Map() {
                 <div className="flex-grow">
                   <h4 className="font-bold text-lg mb-1">Email Inquiries</h4>
                   <div className="space-y-1">
-                    <p className="text-muted-foreground text-sm">hello@abzautomations.com</p>
-                    <p className="text-muted-foreground text-sm">support@abzautomations.com</p>
+                    <p className="text-muted-foreground text-sm">info@abzautomations.com</p>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="pt-4 flex flex-wrap gap-4">
-              <Button size="lg" className="rounded-2xl h-14 px-8 font-bold shadow-xl shadow-primary/20">
-                Get Directions <Navigation className="w-4 h-4 ml-2" />
-              </Button>
-              <Button variant="outline" size="lg" className="rounded-2xl h-14 px-8 font-bold border-primary text-primary hover:bg-primary/5">
-                View on Google Maps <ExternalLink className="w-4 h-4 ml-2" />
+              <Button size="lg" className="rounded-2xl h-14 px-8 font-bold shadow-xl shadow-primary/20" asChild>
+                <a href="https://maps.google.com/?q=Kumasi+Business+Incubator+KNUST" target="_blank" rel="noopener noreferrer">
+                  Open In Google Maps <ExternalLink className="w-4 h-4 ml-2" />
+                </a>
               </Button>
             </div>
           </div>
 
-          {/* Map Embed */}
           <div className="lg:col-span-7 relative h-[600px] lg:h-[700px] group">
             <div className="absolute inset-0 bg-primary/10 rounded-[48px] -rotate-2 transition-transform group-hover:rotate-0 duration-700"></div>
             <div className="relative h-full w-full bg-white rounded-[48px] overflow-hidden shadow-2xl border-4 border-white">
@@ -129,7 +114,6 @@ export function Map() {
                 className="grayscale contrast-125 brightness-95"
               ></iframe>
               
-              {/* Overlay Label */}
               <div className="absolute bottom-8 left-8 p-6 bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 max-w-xs animate-in fade-in slide-in-from-bottom-4 duration-1000">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-3 h-3 rounded-full bg-accent animate-pulse"></div>
@@ -140,7 +124,6 @@ export function Map() {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
