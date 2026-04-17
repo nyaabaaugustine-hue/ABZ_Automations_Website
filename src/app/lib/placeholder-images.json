@@ -120,6 +120,24 @@
       "description": "Maintenance workshop",
       "imageUrl": "https://picsum.photos/seed/news-3/800/500",
       "imageHint": "workshop engineering"
+    },
+    {
+      "id": "reviewer-1",
+      "description": "Kwabena Appiah - Agricultural Manager",
+      "imageUrl": "https://picsum.photos/seed/rev1/200/200",
+      "imageHint": "smiling man"
+    },
+    {
+      "id": "reviewer-2",
+      "description": "Sarah Edusei - Residential Owner",
+      "imageUrl": "https://picsum.photos/seed/rev2/200/200",
+      "imageHint": "smiling woman"
+    },
+    {
+      "id": "reviewer-3",
+      "description": "Isaac Tetteh - Factory Supervisor",
+      "imageUrl": "https://picsum.photos/seed/rev3/200/200",
+      "imageHint": "manager portait"
     }
   ]
 }
