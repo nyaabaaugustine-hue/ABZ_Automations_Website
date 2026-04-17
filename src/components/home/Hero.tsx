@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -14,19 +13,22 @@ const slides = [
     image: PlaceHolderImages.find(img => img.id === "hero-water-1")?.imageUrl || "https://picsum.photos/seed/abz-hero1/1200/800",
     title: "Automating Your <span class='text-primary'>Water Future</span> Today",
     description: "Revolutionize how you manage water resources with our intelligent automation solutions. Efficiency, reliability, and precision at your fingertips.",
-    badge: "Next-Gen Water Systems"
+    badge: "Next-Gen Water Systems",
+    alt: "Smart water management system visualization"
   },
   {
     image: PlaceHolderImages.find(img => img.id === "hero-water-2")?.imageUrl || "https://picsum.photos/seed/abz-hero2/1200/800",
     title: "Smart <span class='text-accent'>Irrigation</span> for Modern Agriculture",
     description: "Maximize crop yield while minimizing water waste. Our sensor-driven systems adapt to real-time weather and soil data automatically.",
-    badge: "Sustainable Farming"
+    badge: "Sustainable Farming",
+    alt: "Advanced irrigation controller in a farm"
   },
   {
     image: PlaceHolderImages.find(img => img.id === "hero-water-3")?.imageUrl || "https://picsum.photos/seed/abz-hero3/1200/800",
     title: "Industrial Grade <span class='text-primary'>Water Control</span>",
     description: "Reliable, scalable, and powerful solutions for factories and multi-story buildings. Monitor flow and prevent leaks remotely from anywhere.",
-    badge: "Enterprise Solutions"
+    badge: "Enterprise Solutions",
+    alt: "Industrial water purification plant"
   }
 ];
 
@@ -57,7 +59,7 @@ export function Hero() {
           >
             <Image
               src={slide.image}
-              alt="Hero background"
+              alt={slide.alt}
               fill
               className={cn(
                 "object-cover brightness-[0.35] md:brightness-50 transition-transform duration-[10000ms]",

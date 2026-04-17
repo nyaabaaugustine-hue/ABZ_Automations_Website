@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -39,7 +38,10 @@ export function Navbar() {
           <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/20 group-hover:scale-105 transition-transform">
             <Droplets className="w-6 h-6" />
           </div>
-          <span className="font-headline font-bold text-xl tracking-tight text-foreground">
+          <span className={cn(
+            "font-headline font-bold text-xl tracking-tight transition-colors",
+            scrolled ? "text-foreground" : "text-white"
+          )}>
             ABZ<span className="text-primary">Automations</span>
           </span>
         </Link>
@@ -52,7 +54,9 @@ export function Navbar() {
               href={item.href}
               className={cn(
                 "text-sm font-medium transition-colors",
-                scrolled ? "text-muted-foreground hover:text-primary" : "text-foreground/80 hover:text-primary"
+                scrolled 
+                  ? "text-muted-foreground hover:text-primary" 
+                  : "text-white/90 hover:text-white"
               )}
             >
               {item.name}
@@ -65,7 +69,10 @@ export function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden p-2 text-foreground"
+          className={cn(
+            "md:hidden p-2 transition-colors",
+            scrolled || isOpen ? "text-foreground" : "text-white"
+          )}
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
