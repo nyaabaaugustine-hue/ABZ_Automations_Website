@@ -45,7 +45,7 @@ export function Hero() {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section className="relative min-h-[700px] h-screen flex items-center overflow-hidden bg-background">
+    <section className="relative min-h-[800px] h-screen flex items-center overflow-hidden bg-background">
       {/* Background Slides */}
       <div className="absolute inset-0 z-0">
         {slides.map((slide, index) => (
@@ -70,9 +70,9 @@ export function Hero() {
         ))}
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full pt-20 md:pt-40">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full pt-32 md:pt-48">
         <div className="text-white text-center md:text-left max-w-4xl">
-          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-[6%] bg-white/10 backdrop-blur-xl text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] mb-6 md:mb-10 border border-white/20 animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-[6%] bg-white/10 backdrop-blur-xl text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] mb-8 md:mb-12 border border-white/20 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <Zap className="w-3 h-3 md:w-4 md:h-4 text-accent fill-accent" />
             {slides[currentSlide].badge}
           </div>
@@ -85,7 +85,7 @@ export function Hero() {
           
           <p 
             key={`desc-${currentSlide}`}
-            className="text-base md:text-xl lg:text-2xl text-white/80 mb-8 md:mb-14 max-w-2xl leading-relaxed animate-in fade-in slide-in-from-left-16 duration-1000 delay-300 font-medium"
+            className="text-base md:text-xl lg:text-2xl text-white/80 mb-10 md:mb-16 max-w-2xl leading-relaxed animate-in fade-in slide-in-from-left-16 duration-1000 delay-300 font-medium"
           >
             {slides[currentSlide].description}
           </p>
@@ -102,7 +102,7 @@ export function Hero() {
             </Button>
           </div>
           
-          <div className="mt-12 md:mt-20 flex flex-wrap justify-center md:justify-start gap-8 md:gap-12 opacity-80">
+          <div className="mt-16 md:mt-24 flex flex-wrap justify-center md:justify-start gap-8 md:gap-12 opacity-80">
             <div className="flex items-center gap-3 md:gap-4 text-[10px] md:text-xs font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase">
               <ShieldCheck className="text-accent w-5 h-5 md:w-7 md:h-7" />
               <span>Certified Installations</span>
