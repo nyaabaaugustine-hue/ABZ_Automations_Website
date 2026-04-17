@@ -1,0 +1,47 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "hero-water-automation",
+      "description": "Smart water management system visualization",
+      "imageUrl": "https://picsum.photos/seed/abz-hero/1200/800",
+      "imageHint": "water automation"
+    },
+    {
+      "id": "product-autox",
+      "description": "AutoX flagship water control device",
+      "imageUrl": "https://picsum.photos/seed/autox/600/400",
+      "imageHint": "tech device"
+    },
+    {
+      "id": "service-pump",
+      "description": "Industrial water pump installation",
+      "imageUrl": "https://picsum.photos/seed/pump-service/600/400",
+      "imageHint": "water pump"
+    },
+    {
+      "id": "service-tank",
+      "description": "Professional water tank cleaning service",
+      "imageUrl": "https://picsum.photos/seed/tank-service/600/400",
+      "imageHint": "clean water"
+    },
+    {
+      "id": "team-member-1",
+      "description": "ABZ Automations Founder",
+      "imageUrl": "https://picsum.photos/seed/team1/400/400",
+      "imageHint": "professional man"
+    },
+    {
+      "id": "team-member-2",
+      "description": "Lead Engineer",
+      "imageUrl": "https://picsum.photos/seed/team2/400/400",
+      "imageHint": "engineer woman"
+    },
+    {
+      "id": "team-member-3",
+      "description": "Operations Manager",
+      "imageUrl": "https://picsum.photos/seed/team3/400/400",
+      "imageHint": "business professional"
+    }
+  ]
+}
