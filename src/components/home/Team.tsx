@@ -36,55 +36,55 @@ const team = [
 
 export function Team() {
   return (
-    <section id="team" className="py-32 bg-white relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] translate-x-1/2 -translate-y-1/2"></div>
+    <section id="team" className="py-16 md:py-24 bg-white relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] translate-x-1/2 -translate-y-1/2"></div>
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-24 space-y-6">
-          <Badge className="bg-primary/10 text-primary border-none px-6 py-2 font-bold uppercase tracking-[0.3em] text-[11px] rounded-full">
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <Badge className="bg-primary/10 text-primary border-none px-6 py-2 font-bold uppercase tracking-[0.3em] text-[10px] rounded-full">
             Our Hardworking Team
           </Badge>
-          <h2 className="font-headline text-5xl md:text-6xl lg:text-7xl font-bold">
+          <h2 className="font-headline text-3xl md:text-5xl lg:text-6xl font-bold">
             Meet The <span className="text-primary">Experts</span>
           </h2>
-          <p className="text-xl text-muted-foreground leading-relaxed">
+          <p className="text-base md:text-xl text-muted-foreground leading-relaxed">
             Decades of experience in automation and engineering for sustainable water management.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {team.map((member, idx) => (
             <div 
               key={idx} 
-              className="group bg-background rounded-[6%] overflow-hidden border border-border/50 shadow-sm hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.1)] transition-all duration-700 hover:-translate-y-4"
+              className="group bg-background rounded-[6%] overflow-hidden border border-border/50 shadow-sm hover:shadow-xl transition-all duration-700 hover:-translate-y-3"
             >
-              <div className="relative aspect-[3/4] overflow-hidden">
+              <div className="relative aspect-[4/5] overflow-hidden">
                 <Image
                   src={member.image}
                   alt={member.name}
                   fill
                   className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-end p-8 justify-center">
-                   <div className="flex gap-4 translate-y-8 group-hover:translate-y-0 transition-transform duration-700">
-                      <a href={member.socials.linkedin} className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-xl flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all border border-white/30">
-                        <Linkedin className="w-5 h-5" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-end p-6 justify-center">
+                   <div className="flex gap-3 translate-y-6 group-hover:translate-y-0 transition-transform duration-700">
+                      <a href={member.socials.linkedin} className="w-10 h-10 rounded-2xl bg-white/20 backdrop-blur-xl flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all border border-white/30">
+                        <Linkedin className="w-4 h-4" />
                       </a>
-                      <a href={member.socials.twitter} className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-xl flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all border border-white/30">
-                        <Twitter className="w-5 h-5" />
+                      <a href={member.socials.twitter} className="w-10 h-10 rounded-2xl bg-white/20 backdrop-blur-xl flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all border border-white/30">
+                        <Twitter className="w-4 h-4" />
                       </a>
-                      <a href={`mailto:${member.socials.mail}`} className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-xl flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all border border-white/30">
-                        <Mail className="w-5 h-5" />
+                      <a href={`mailto:${member.socials.mail}`} className="w-10 h-10 rounded-2xl bg-white/20 backdrop-blur-xl flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all border border-white/30">
+                        <Mail className="w-4 h-4" />
                       </a>
                    </div>
                 </div>
               </div>
               
-              <div className="p-10 text-left space-y-3 bg-white">
-                <h4 className="text-2xl font-headline font-bold leading-tight group-hover:text-primary transition-colors duration-300">
+              <div className="p-6 text-left space-y-2 bg-white">
+                <h4 className="text-xl font-headline font-bold leading-tight group-hover:text-primary transition-colors">
                   {member.name}
                 </h4>
-                <p className="text-primary font-bold text-xs uppercase tracking-[0.2em]">
+                <p className="text-primary font-bold text-[10px] uppercase tracking-[0.2em]">
                   {member.role}
                 </p>
               </div>

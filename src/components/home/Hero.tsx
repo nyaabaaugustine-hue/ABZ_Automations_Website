@@ -46,7 +46,7 @@ export function Hero() {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section className="relative min-h-[800px] h-screen flex items-center overflow-hidden bg-background">
+    <section className="relative min-h-[700px] h-[90vh] flex items-center overflow-hidden bg-background">
       {/* Background Slides */}
       <div className="absolute inset-0 z-0">
         {slides.map((slide, index) => (
@@ -71,80 +71,80 @@ export function Hero() {
         ))}
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full pt-40 md:pt-64">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full pt-28 md:pt-36">
         <div className="text-white text-center md:text-left max-w-4xl">
-          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-[6%] bg-white/10 backdrop-blur-xl text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] mb-8 md:mb-12 border border-white/20 animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-[6%] bg-white/10 backdrop-blur-xl text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] mb-6 md:mb-8 border border-white/20 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <Zap className="w-3 h-3 md:w-4 md:h-4 text-accent fill-accent" />
             {slides[currentSlide].badge}
           </div>
           
           <h1 
             key={`title-${currentSlide}`}
-            className="font-headline text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.1] mb-6 md:mb-10 animate-in fade-in slide-in-from-left-12 duration-1000 drop-shadow-2xl"
+            className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-4 md:mb-6 animate-in fade-in slide-in-from-left-12 duration-1000 drop-shadow-2xl"
             dangerouslySetInnerHTML={{ __html: slides[currentSlide].title }}
           />
           
           <p 
             key={`desc-${currentSlide}`}
-            className="text-base md:text-xl lg:text-2xl text-white/80 mb-10 md:mb-16 max-w-2xl leading-relaxed animate-in fade-in slide-in-from-left-16 duration-1000 delay-300 font-medium"
+            className="text-base md:text-lg lg:text-xl text-white/80 mb-8 md:mb-10 max-w-2xl leading-relaxed animate-in fade-in slide-in-from-left-16 duration-1000 delay-300 font-medium"
           >
             {slides[currentSlide].description}
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center md:justify-start animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-500">
-            <Button asChild size="lg" className="h-10 md:h-12 px-6 md:px-8 text-sm md:text-base font-bold group bg-primary hover:bg-primary/90 rounded-[6%] shadow-2xl shadow-primary/40 transition-all hover:-translate-y-1">
-              <Link href="/quote" className="flex items-center gap-2 md:gap-3">
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-5 justify-center md:justify-start animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-500">
+            <Button asChild className="h-12 px-8 font-bold group bg-primary hover:bg-primary/90 rounded-[6%] shadow-2xl shadow-primary/40 transition-all hover:-translate-y-1">
+              <Link href="/quote" className="flex items-center gap-3">
                 Start Your Quote
-                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-2 transition-transform duration-300" />
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="h-10 md:h-12 px-6 md:px-8 text-sm md:text-base font-bold bg-white/5 backdrop-blur-md text-white border-white/30 hover:bg-white hover:text-primary rounded-[6%] transition-all duration-300 hover:-translate-y-1">
+            <Button asChild variant="outline" className="h-12 px-8 font-bold bg-white/5 backdrop-blur-md text-white border-white/30 hover:bg-white hover:text-primary rounded-[6%] transition-all duration-300 hover:-translate-y-1">
               <Link href="/products">Explore Shop</Link>
             </Button>
           </div>
           
-          <div className="mt-16 md:mt-24 flex flex-wrap justify-center md:justify-start gap-8 md:gap-12 opacity-80">
+          <div className="mt-12 md:mt-16 flex flex-wrap justify-center md:justify-start gap-8 md:gap-10 opacity-80">
             <div className="flex items-center gap-3 md:gap-4 text-[10px] md:text-xs font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase">
-              <ShieldCheck className="text-accent w-5 h-5 md:w-7 md:h-7" />
+              <ShieldCheck className="text-accent w-5 h-5 md:w-6 md:h-6" />
               <span>Certified Installations</span>
             </div>
             <div className="flex items-center gap-3 md:gap-4 text-[10px] md:text-xs font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase">
-              <Droplets className="text-primary w-5 h-5 md:w-7 md:h-7" />
+              <Droplets className="text-primary w-5 h-5 md:w-6 md:h-6" />
               <span>99% Efficiency</span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Slider Controls - Reduced by 50% visually */}
-      <div className="absolute bottom-10 md:bottom-20 right-6 md:right-12 z-20 flex md:flex gap-2 md:gap-3">
+      {/* Slider Controls */}
+      <div className="absolute bottom-8 md:bottom-12 right-6 md:right-12 z-20 flex gap-2">
         <Button 
           variant="outline" 
           size="icon" 
           onClick={prevSlide}
-          className="rounded-[6%] bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white hover:text-primary h-6 w-6 md:h-8 md:w-8 transition-all duration-300 shadow-xl"
+          className="rounded-[6%] bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white hover:text-primary h-8 w-8 transition-all duration-300 shadow-xl"
         >
-          <ChevronLeft className="w-3 h-3 md:w-4 md:h-4" />
+          <ChevronLeft className="w-4 h-4" />
         </Button>
         <Button 
           variant="outline" 
           size="icon" 
           onClick={nextSlide}
-          className="rounded-[6%] bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white hover:text-primary h-6 w-6 md:h-8 md:w-8 transition-all duration-300 shadow-xl"
+          className="rounded-[6%] bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white hover:text-primary h-8 w-8 transition-all duration-300 shadow-xl"
         >
-          <ChevronRight className="w-3 h-3 md:w-4 md:h-4" />
+          <ChevronRight className="w-4 h-4" />
         </Button>
       </div>
 
       {/* Progress Indicators */}
-      <div className="absolute bottom-10 md:bottom-20 left-6 md:left-12 z-20 flex gap-3 md:gap-5">
+      <div className="absolute bottom-8 md:bottom-12 left-6 md:left-12 z-20 flex gap-2 md:gap-3">
         {slides.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrentSlide(i)}
             className={cn(
               "h-1.5 md:h-2 transition-all duration-500 rounded-sm",
-              i === currentSlide ? "w-12 md:w-20 bg-primary shadow-lg shadow-primary/50" : "w-6 md:w-10 bg-white/20 hover:bg-white/40"
+              i === currentSlide ? "w-10 md:w-16 bg-primary shadow-lg shadow-primary/50" : "w-5 md:w-8 bg-white/20 hover:bg-white/40"
             )}
             aria-label={`Go to slide ${i + 1}`}
           />
