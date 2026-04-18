@@ -6,6 +6,7 @@ import { WaterLoading } from '@/components/shared/WaterLoading';
 import { Toaster } from '@/components/ui/toaster';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { ThemeProvider } from '@/components/shared/ThemeProvider';
 
 export const metadata: Metadata = {
   title: 'ABZ Automations | Precision Water Solutions',
@@ -51,12 +52,14 @@ export default function RootLayout({
         className="font-body antialiased selection:bg-primary selection:text-primary-foreground" 
         suppressHydrationWarning
       >
-        <WaterLoading />
-        {children}
-        <FloatingHub />
-        <Toaster />
-        <Analytics />
-        <SpeedInsights />
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+          <WaterLoading />
+          {children}
+          <FloatingHub />
+          <Toaster />
+          <Analytics />
+          <SpeedInsights />
+        </ThemeProvider>
       </body>
     </html>
   );

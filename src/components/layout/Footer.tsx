@@ -19,8 +19,8 @@ const footerLinks = [
     links: [
       { name: 'About Us', href: '/#about' },
       { name: 'Our Team', href: '/#team' },
+      { name: 'Portfolio', href: '/portfolio' },
       { name: 'Careers', href: '#' },
-      { name: 'News', href: '#' },
     ],
   },
   {
@@ -35,7 +35,7 @@ const footerLinks = [
   {
     title: 'Support',
     links: [
-      { name: 'Contact Us', href: '/#contact' },
+      { name: 'Contact Us', href: '/contact' },
       { name: 'Help Center', href: '#' },
       { name: 'Privacy Policy', href: '#' },
       { name: 'Terms of Service', href: '#' },
@@ -121,10 +121,19 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-white/30 text-[10px] font-bold uppercase tracking-[0.2em]">
             © {year || '2026'} ABZ Automations Limited. Registered in Ghana.
           </p>
+          <div className="flex items-center gap-3 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
+            <span className="text-base">🇬🇭</span>
+            <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-white/50">Proudly Made in Ghana</span>
+            <div className="flex gap-0.5">
+              <span className="w-2 h-2 rounded-full bg-[#006B3F]" />
+              <span className="w-2 h-2 rounded-full bg-[#FCD116]" />
+              <span className="w-2 h-2 rounded-full bg-[#CE1126]" />
+            </div>
+          </div>
           <div className="flex gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-white/30">
             <Link href="#" className="hover:text-primary transition-colors">Privacy</Link>
             <Link href="#" className="hover:text-primary transition-colors">Terms</Link>

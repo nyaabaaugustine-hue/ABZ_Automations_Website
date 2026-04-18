@@ -47,6 +47,13 @@ export function Hero() {
 
   return (
     <section className="relative min-h-[700px] h-[90vh] flex items-center overflow-hidden bg-background">
+      {/* Ghana flag stripe — fixed top of section */}
+      <div className="absolute top-0 left-0 right-0 z-20 flex h-1">
+        <div className="flex-1 bg-[#006B3F]" />
+        <div className="flex-1 bg-[#FCD116]" />
+        <div className="flex-1 bg-[#CE1126]" />
+      </div>
+
       {/* Background Slides */}
       <div className="absolute inset-0 z-0">
         {slides.map((slide, index) => (
@@ -104,15 +111,19 @@ export function Hero() {
           </div>
           
           <div className="mt-12 md:mt-16 flex flex-wrap justify-center md:justify-start gap-8 md:gap-10 opacity-80">
-            <div className="flex items-center gap-3 md:gap-4 text-[10px] md:text-xs font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase">
-              <ShieldCheck className="text-accent w-5 h-5 md:w-6 md:h-6" />
-              <span>Certified Installations</span>
+              <div className="flex items-center gap-3 md:gap-4 text-[10px] md:text-xs font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase">
+                <ShieldCheck className="text-accent w-5 h-5 md:w-6 md:h-6" />
+                <span>Certified Installations</span>
+              </div>
+              <div className="flex items-center gap-3 md:gap-4 text-[10px] md:text-xs font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase">
+                <Droplets className="text-primary w-5 h-5 md:w-6 md:h-6" />
+                <span>99% Efficiency</span>
+              </div>
+              <div className="flex items-center gap-3 md:gap-4 text-[10px] md:text-xs font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase">
+                <span className="text-lg">🇬🇭</span>
+                <span>Proudly Made in Ghana</span>
+              </div>
             </div>
-            <div className="flex items-center gap-3 md:gap-4 text-[10px] md:text-xs font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase">
-              <Droplets className="text-primary w-5 h-5 md:w-6 md:h-6" />
-              <span>99% Efficiency</span>
-            </div>
-          </div>
         </div>
       </div>
 
