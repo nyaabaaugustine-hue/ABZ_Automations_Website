@@ -63,7 +63,7 @@ export function Map() {
                 { label: "Call Our Experts", value: "+233 (0) 54 619 8838", icon: Phone, color: "bg-accent/10", text: "text-accent" },
                 { label: "Email Inquiries", value: "info@abzautomations.com", icon: Mail, color: "bg-secondary", text: "text-primary" }
               ].map((item, i) => (
-                <div key={i} className="group bg-white p-5 rounded-[24px] border border-border/50 shadow-sm hover:shadow-lg transition-all flex items-start gap-4">
+                <div key={i} className="group bg-white dark:bg-card p-5 rounded-[24px] border border-border/50 shadow-sm hover:shadow-lg transition-all flex items-start gap-4">
                   <div className={`w-12 h-12 rounded-2xl ${item.color} flex items-center justify-center ${item.text} shrink-0`}>
                     <item.icon className="w-6 h-6" />
                   </div>
@@ -140,7 +140,7 @@ export function Map() {
           </div>
 
           {/* Right: form */}
-          <div className="bg-white rounded-3xl shadow-2xl border border-border/50 p-8 md:p-10">
+          <div className="bg-white dark:bg-card rounded-3xl shadow-2xl border border-border/50 p-8 md:p-10">
             <form onSubmit={handleSend} className="space-y-5">
               <div className="space-y-2">
                 <Label htmlFor="contact-name" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">

@@ -121,7 +121,7 @@ export function Reviews() {
                             ))}
                           </div>
                           {review.verified && (
-                            <span className="flex items-center gap-1 text-[9px] font-bold uppercase tracking-widest text-primary bg-primary/8 px-2 py-1 rounded-full border border-primary/15">
+                            <span className="flex items-center gap-1 text-[9px] font-bold uppercase tracking-widest text-primary bg-primary/10 px-2 py-1 rounded-full border border-primary/15">
                               <CheckCircle2 className="w-2.5 h-2.5" /> Verified
                             </span>
                           )}

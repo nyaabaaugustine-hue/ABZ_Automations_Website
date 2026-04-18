@@ -9,7 +9,7 @@ export function About() {
   const aboutImg = "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776424323/mn1_toifu3.jpg";
 
   return (
-    <section id="about" className="py-16 md:py-24 bg-white relative">
+    <section id="about" className="py-16 md:py-24 bg-background relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="relative">

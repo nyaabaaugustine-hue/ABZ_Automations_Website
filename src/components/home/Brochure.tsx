@@ -12,7 +12,7 @@ export function Brochure() {
   const brochureBg = PlaceHolderImages.find(img => img.id === "brochure-bg")?.imageUrl || "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776422246/abz_3_hp78qi.jpg";
 
   return (
-    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-background relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="relative rounded-[6%] p-8 md:p-20 border border-border/50 overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-10 md:gap-12 group shadow-2xl">
           {/* Background Image with Overlay */}

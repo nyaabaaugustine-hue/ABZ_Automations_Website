@@ -9,6 +9,8 @@ export function WaterLoading() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    // Animate progress bar: 0 → 70% quickly, then wait for load → 100%
+    const timer1 = setTimeout(() => setProgress(70), 200);
     const handleLoad = () => {
       setProgress(100);
       setTimeout(() => setIsVisible(false), 600);
@@ -20,10 +22,12 @@ export function WaterLoading() {
       window.addEventListener("load", handleLoad);
       const fallback = setTimeout(handleLoad, 4000);
       return () => {
+        clearTimeout(timer1);
         window.removeEventListener("load", handleLoad);
         clearTimeout(fallback);
       };
     }
+    return () => clearTimeout(timer1);
   }, []);
 
   if (!shouldRender) return null;
@@ -257,8 +261,8 @@ export function WaterLoading() {
         {/* Progress bar */}
         <div className="w-48 mx-auto mt-4 h-0.5 bg-white/10 rounded-full overflow-hidden">
           <div
-            className="h-full bg-[#1d8fcc] rounded-full transition-all duration-[2500ms] ease-out"
-            style={{ width: progress === 100 ? "100%" : "60%" }}
+            className="h-full bg-[#1d8fcc] rounded-full transition-all duration-[1500ms] ease-out"
+            style={{ width: `${progress}%` }}
           />
         </div>
       </div>

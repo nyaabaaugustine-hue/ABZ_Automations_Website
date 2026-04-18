@@ -36,7 +36,7 @@ const team = [
 
 export function Team() {
   return (
-    <section id="team" className="py-16 md:py-24 bg-white relative overflow-hidden">
+    <section id="team" className="py-16 md:py-24 bg-background relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] translate-x-1/2 -translate-y-1/2"></div>
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -80,7 +80,7 @@ export function Team() {
                 </div>
               </div>
               
-              <div className="p-6 text-left space-y-2 bg-white">
+              <div className="p-6 text-left space-y-2">
                 <h4 className="text-xl font-headline font-bold leading-tight group-hover:text-primary transition-colors">
                   {member.name}
                 </h4>

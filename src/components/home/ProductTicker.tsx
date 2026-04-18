@@ -61,7 +61,7 @@ const tickerProducts = [...products, ...products, ...products];
 
 export function ProductTicker() {
   return (
-    <section className="py-12 bg-white overflow-hidden border-y border-border/50">
+    <section className="py-12 bg-background overflow-hidden border-y border-border/50">
       <div className="max-w-7xl mx-auto px-6 mb-8 flex items-center justify-between">
          <h2 className="font-headline text-sm font-bold uppercase tracking-[0.2em] text-muted-foreground">Flagship Hardware Lineup</h2>
          <div className="h-px flex-grow mx-8 bg-border/50 hidden md:block"></div>

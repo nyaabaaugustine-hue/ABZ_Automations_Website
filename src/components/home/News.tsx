@@ -3,6 +3,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, ArrowRight, Zap, Target } from "lucide-react";
@@ -47,8 +48,8 @@ export function News() {
             <h2 className="text-primary font-bold uppercase tracking-widest text-xs mb-3">Success Stories</h2>
             <h3 className="font-headline text-3xl md:text-5xl font-bold">Project <span className="text-accent">Spotlight</span></h3>
           </div>
-          <Button variant="outline" className="rounded-[6%] border-primary text-primary hover:bg-primary/5 font-bold h-11">
-            View Technical Portfolio
+          <Button variant="outline" className="rounded-[6%] border-primary text-primary hover:bg-primary/5 font-bold h-11" asChild>
+            <Link href="/portfolio">View Technical Portfolio</Link>
           </Button>
         </div>
 

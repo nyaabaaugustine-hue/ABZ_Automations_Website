@@ -123,7 +123,7 @@ export function Footer() {
 
       <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-white/30 text-[10px] font-bold uppercase tracking-[0.2em]">
-            © {year || '2026'} ABZ Automations Limited. Registered in Ghana.
+            © {year || '2026'} ABZ Automations Limited. Registered in Ghana
           </p>
           <div className="flex items-center gap-3 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
             <span className="text-base">🇬🇭</span>

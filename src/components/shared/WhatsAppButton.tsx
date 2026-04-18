@@ -1,12 +1,12 @@
-
 "use client";
 
 import React from "react";
 import Image from "next/image";
+
 import { cn } from "@/lib/utils";
 
 /**
- * @fileOverview WhatsApp support button with custom engineering asset.
+ * @fileOverview WhatsApp support button.
  * Positioning is handled by the parent FloatingHub container.
  */
 export function WhatsAppButton() {
@@ -16,30 +16,31 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "block group transition-all duration-500",
+        "group flex items-center gap-3 transition-all duration-500",
         "animate-in fade-in slide-in-from-right-full duration-1000 ease-out"
       )}
       aria-label="Chat on WhatsApp"
     >
-      <div className="relative">
-        {/* Subtle glow effect on hover */}
-        <div className="absolute inset-0 bg-primary/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        
-        {/* Massive Image Container - Rebuilt for 50% scale increase */}
-        <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-[450px] md:h-[450px] transition-all duration-500 group-hover:scale-105 group-hover:-rotate-2">
-          <Image 
+      {/* Tooltip Label — appears on hover */}
+      <span className="opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0 pointer-events-none whitespace-nowrap px-3 py-1.5 bg-white/95 backdrop-blur-md text-primary text-[10px] font-bold uppercase tracking-[0.15em] rounded-xl shadow-xl border border-primary/10">
+        WhatsApp <span className="text-[#25D366]">Support</span>
+      </span>
+
+      {/* Button */}
+      <div className="relative transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1">
+        {/* Pulse ring — sized to match the image */}
+        <span className="absolute inset-0 rounded-full bg-[#25D366]/30 animate-ping" />
+        {/* Main button */}
+        <div className="relative flex items-center justify-center">
+          <Image
             src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776428931/SUP_k4f1ab.png"
-            alt="ABZ Support"
-            fill
-            priority
-            className="object-contain"
+            alt="WhatsApp Support"
+            width={80}
+            height={80}
+            className="w-16 h-16 md:w-20 md:h-20"
+            unoptimized
           />
         </div>
-        
-        {/* Tooltip Label */}
-        <span className="absolute right-full mr-4 top-1/2 -translate-y-1/2 px-4 py-2 bg-white/95 backdrop-blur-md text-primary text-[10px] font-bold uppercase tracking-[0.2em] rounded-xl shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-4 group-hover:translate-x-0 pointer-events-none whitespace-nowrap border border-primary/10">
-          Direct <span className="text-primary">Support</span>
-        </span>
       </div>
     </a>
   );

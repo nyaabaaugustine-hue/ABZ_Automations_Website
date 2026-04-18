@@ -70,7 +70,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="py-16 md:py-24 bg-white relative overflow-hidden">
+    <section id="services" className="py-16 md:py-24 bg-background relative overflow-hidden">
       <div className="absolute top-1/4 left-0 w-80 h-80 bg-primary/10 rounded-full blur-[100px] -translate-x-1/2"></div>
       <div className="absolute bottom-1/4 right-0 w-80 h-80 bg-accent/10 rounded-full blur-[100px] translate-x-1/2"></div>
 

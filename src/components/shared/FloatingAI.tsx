@@ -42,7 +42,7 @@ export function FloatingAI() {
       });
 
       setMessages(prev => [...prev, { role: "assistant", text: response.responseMessage }]);
-    } catch (error) {
+    } catch {
       setMessages(prev => [...prev, { role: "assistant", text: "I'm having trouble connecting. Please try again or visit our Quote page for full assistance." }]);
     } finally {
       setIsLoading(false);
