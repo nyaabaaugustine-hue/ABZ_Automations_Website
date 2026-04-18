@@ -4,30 +4,24 @@ import React, { useState, useEffect, useCallback, useRef } from "react";
 import { X, Play } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-// Change this key name to reset the "seen" state for all visitors
-const STORAGE_KEY = "abz_video_seen_v2";
-
 export function VideoPopup() {
   const [visible, setVisible] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const close = useCallback(() => {
     setMounted(false);
-    try { localStorage.setItem(STORAGE_KEY, "1"); } catch {}
+    setDismissed(true); // only suppresses for this session, not future loads
     timerRef.current = setTimeout(() => setVisible(false), 400);
   }, []);
 
   useEffect(() => {
-    // Only runs on client — safe for SSR
-    let seen = false;
-    try { seen = localStorage.getItem(STORAGE_KEY) === "1"; } catch {}
-    if (seen) return;
+    if (dismissed) return;
 
-    // Show after 2.8 s
+    // Show after 2.8 s on every page load
     timerRef.current = setTimeout(() => {
       setVisible(true);
-      // Double-rAF ensures the element is in the DOM before animating
       requestAnimationFrame(() =>
         requestAnimationFrame(() => setMounted(true))
       );
@@ -36,7 +30,7 @@ export function VideoPopup() {
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
     };
-  }, []);
+  }, [dismissed]);
 
   useEffect(() => {
     if (!visible) return;
