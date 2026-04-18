@@ -108,15 +108,30 @@ async function callGrok(messages: { role: string; content: string }[]): Promise<
 // ── Public function (same signature as before) ───────────────────────────────
 
 export async function aiQuoteAssistant(input: AiQuoteAssistantInput): Promise<AiQuoteAssistantOutput> {
-  // Build the OpenAI-style messages array
-  const messages: { role: string; content: string }[] = [
-    { role: 'system', content: SYSTEM_PROMPT },
-    ...input.conversationHistory.map((m) => ({
-      role: m.role === 'assistant' ? 'assistant' : 'user',
-      content: m.text,
-    })),
-    { role: 'user', content: input.currentMessage },
-  ];
+  // Gracefully handle missing API key — don't crash the build or page
+  if (!process.env.XAI_API_KEY) {
+    return {
+      responseMessage: 'Our AI assistant is currently offline. Please contact us directly via WhatsApp or the quote form below.',
+      isRequestComplete: false,
+      gatheredDetails: '',
+    };
+  }
 
-  return callGrok(messages);
+  try {
+    const messages: { role: string; content: string }[] = [
+      { role: 'system', content: SYSTEM_PROMPT },
+      ...input.conversationHistory.map((m) => ({
+        role: m.role === 'assistant' ? 'assistant' : 'user',
+        content: m.text,
+      })),
+      { role: 'user', content: input.currentMessage },
+    ];
+    return await callGrok(messages);
+  } catch {
+    return {
+      responseMessage: 'I\'m having trouble connecting right now. Please reach us directly on WhatsApp at +233 054 198 8383.',
+      isRequestComplete: false,
+      gatheredDetails: '',
+    };
+  }
 }
