@@ -20,7 +20,7 @@ export default function Icon() {
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776230467/image_j8ruov.webp"
+          src="https://res.cloudinary.com/dwsl2ktt2/image/upload/f_png/v1776230467/image_j8ruov.webp"
           alt="ABZ"
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />
