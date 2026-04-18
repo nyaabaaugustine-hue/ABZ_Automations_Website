@@ -32,15 +32,7 @@ export const metadata: Metadata = {
     description: 'Pioneering smart water automation and sustainable engineering solutions in Ghana.',
     images: ['https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776230467/image_j8ruov.webp'],
   },
-  icons: {
-    icon: [
-      { url: 'https://res.cloudinary.com/dwsl2ktt2/image/upload/c_thumb,w_200,g_face/v1776230467/image_j8ruov.webp', type: 'image/webp' },
-      { url: 'https://res.cloudinary.com/dwsl2ktt2/image/upload/c_thumb,w_32,g_face/v1776230467/image_j8ruov.webp', sizes: '32x32', type: 'image/webp' },
-      { url: 'https://res.cloudinary.com/dwsl2ktt2/image/upload/c_thumb,w_16,g_face/v1776230467/image_j8ruov.webp', sizes: '16x16', type: 'image/webp' },
-    ],
-    shortcut: 'https://res.cloudinary.com/dwsl2ktt2/image/upload/c_thumb,w_200,g_face/v1776230467/image_j8ruov.webp',
-    apple: 'https://res.cloudinary.com/dwsl2ktt2/image/upload/c_thumb,w_180,g_face/v1776230467/image_j8ruov.webp',
-  },
+  // favicon served by src/app/icon.tsx (Next.js dynamic icon route)
 };
 
 export default function RootLayout({
@@ -51,11 +43,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Force favicon — these explicit link tags override the physical favicon.ico */}
-        <link rel="icon" type="image/webp" sizes="32x32" href="https://res.cloudinary.com/dwsl2ktt2/image/upload/c_thumb,w_32,g_face/v1776230467/image_j8ruov.webp" />
-        <link rel="icon" type="image/webp" sizes="16x16" href="https://res.cloudinary.com/dwsl2ktt2/image/upload/c_thumb,w_16,g_face/v1776230467/image_j8ruov.webp" />
-        <link rel="shortcut icon" type="image/webp" href="https://res.cloudinary.com/dwsl2ktt2/image/upload/c_thumb,w_200,g_face/v1776230467/image_j8ruov.webp" />
-        <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/dwsl2ktt2/image/upload/c_thumb,w_180,g_face/v1776230467/image_j8ruov.webp" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@300..800&display=swap" rel="stylesheet" />

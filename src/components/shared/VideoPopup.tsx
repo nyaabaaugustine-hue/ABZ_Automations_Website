@@ -43,7 +43,7 @@ export function VideoPopup() {
   return (
     <div
       className={cn(
-        "fixed inset-0 z-[99999] flex items-center justify-center",
+        "fixed inset-0 z-[1000001] flex items-center justify-center",
         "px-3 py-3 sm:px-6 sm:py-6",
         "transition-opacity duration-300 ease-out",
         mounted ? "opacity-100" : "opacity-0"
