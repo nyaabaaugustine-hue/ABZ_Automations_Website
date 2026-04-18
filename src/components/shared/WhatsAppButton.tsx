@@ -33,7 +33,7 @@ export function WhatsAppButton() {
         {/* Main button */}
         <div className="relative flex items-center justify-center">
           <Image
-            src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776428931/SUP_k4f1ab.png"
+            src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1776482981/newlog_egxlea.png"
             alt="WhatsApp Support"
             width={80}
             height={80}

@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { FloatingAI } from "./FloatingAI";
 import { WhatsAppButton } from "./WhatsAppButton";
 
@@ -10,6 +11,12 @@ import { WhatsAppButton } from "./WhatsAppButton";
  * Both buttons are self-contained and sized correctly.
  */
 export function FloatingHub() {
+  const pathname = usePathname();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [pathname]);
+
   return (
     <div className="fixed bottom-6 right-6 z-[99999] flex flex-col items-end gap-4 pointer-events-none">
       {/* AI Assistant — top of stack */}
